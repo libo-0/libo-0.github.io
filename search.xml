@@ -950,25 +950,6 @@
     
     
     <entry>
-      <title>Virtualbox中通过HostOnly方式搭建5台ubuntu虚拟机</title>
-      <link href="/2019/01/13/Virtualbox%E4%B8%AD%E9%80%9A%E8%BF%87HostOnly%E6%96%B9%E5%BC%8F%E6%90%AD%E5%BB%BA5%E5%8F%B0ubuntu%E8%99%9A%E6%8B%9F%E6%9C%BA/"/>
-      <url>/2019/01/13/Virtualbox%E4%B8%AD%E9%80%9A%E8%BF%87HostOnly%E6%96%B9%E5%BC%8F%E6%90%AD%E5%BB%BA5%E5%8F%B0ubuntu%E8%99%9A%E6%8B%9F%E6%9C%BA/</url>
-      
-        <content type="html"><![CDATA[<p>在Virtualbox中安装5台虚拟机，要求5台ubuntu 虚拟机能够相互ping通，并且可以访问外网。</p><a id="more"></a><p>5台虚拟机如果要相互ping通，则需要在同一个网段，并且与网关在同一个网段，网关设为相同的地址。我的虚拟机地址设置为</p><pre><code>主机node1 192.168.101.237主机node2 192.168.101.239主机node3 192.168.101.240主机node4 192.168.101.241主机node5 192.168.101.243</code></pre><p>所有主机网管设置为 192.168.101.102， 即 VirtualBox Host-Only Ethernet Adapter 的IP 地址</p><p>安装虚拟机，配置网络连接方式为hostonly，5台虚拟机均选择网络适配器 VirtualBox Host-Only Ethernet Adapter. 在 win10 宿主机上对以太网进行共享，右击 <em>以太网</em> -&gt; <em>属性</em> -&gt; <em>共享</em> -&gt; 勾选两个复选框，选择分享到 VirtualBox Host-Only Ethernet Adapter 网卡。</p><p>虚拟机安装完后，对每台虚拟机: 修改 /etc/network/interfaces.</p><p>首先，查看网卡名称</p><pre><code>ifconfig</code></pre><p>我的为 enp0s3</p><p>修改 /etc/network/interfaces</p><pre><code>sudo vim /etc/network/interfaces</code></pre><p>添加以下设置静态ip，网关设置为 VirtualBox Host-Only Ethernet Adapter 网卡的IP地址</p><pre><code>auto enp0s3iface enp0s3 inet staticaddress 192.168.101.237netmask 255.255.255.0gateway 192.168.101.102</code></pre><p>重启网卡</p><pre><code>/etc/init.d/networking restart</code></pre><p>设置DNS</p><pre><code>sudo vim /etc/systemd/resolved.conf</code></pre><p>修改DNS</p><pre><code>DNS=114.114.114.114</code></pre><p>重启虚拟机</p>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> Virtualbox </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>windows下创建android项目</title>
       <link href="/2019/01/13/android/"/>
       <url>/2019/01/13/android/</url>
@@ -980,6 +961,25 @@
         <tags>
             
             <tag> android </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Virtualbox中通过HostOnly方式搭建5台ubuntu虚拟机</title>
+      <link href="/2019/01/13/Virtualbox%E4%B8%AD%E9%80%9A%E8%BF%87HostOnly%E6%96%B9%E5%BC%8F%E6%90%AD%E5%BB%BA5%E5%8F%B0ubuntu%E8%99%9A%E6%8B%9F%E6%9C%BA/"/>
+      <url>/2019/01/13/Virtualbox%E4%B8%AD%E9%80%9A%E8%BF%87HostOnly%E6%96%B9%E5%BC%8F%E6%90%AD%E5%BB%BA5%E5%8F%B0ubuntu%E8%99%9A%E6%8B%9F%E6%9C%BA/</url>
+      
+        <content type="html"><![CDATA[<p>在Virtualbox中安装5台虚拟机，要求5台ubuntu 虚拟机能够相互ping通，并且可以访问外网。</p><a id="more"></a><p>5台虚拟机如果要相互ping通，则需要在同一个网段，并且与网关在同一个网段，网关设为相同的地址。我的虚拟机地址设置为</p><pre><code>主机node1 192.168.101.237主机node2 192.168.101.239主机node3 192.168.101.240主机node4 192.168.101.241主机node5 192.168.101.243</code></pre><p>所有主机网管设置为 192.168.101.102， 即 VirtualBox Host-Only Ethernet Adapter 的IP 地址</p><p>安装虚拟机，配置网络连接方式为hostonly，5台虚拟机均选择网络适配器 VirtualBox Host-Only Ethernet Adapter. 在 win10 宿主机上对以太网进行共享，右击 <em>以太网</em> -&gt; <em>属性</em> -&gt; <em>共享</em> -&gt; 勾选两个复选框，选择分享到 VirtualBox Host-Only Ethernet Adapter 网卡。</p><p>虚拟机安装完后，对每台虚拟机: 修改 /etc/network/interfaces.</p><p>首先，查看网卡名称</p><pre><code>ifconfig</code></pre><p>我的为 enp0s3</p><p>修改 /etc/network/interfaces</p><pre><code>sudo vim /etc/network/interfaces</code></pre><p>添加以下设置静态ip，网关设置为 VirtualBox Host-Only Ethernet Adapter 网卡的IP地址</p><pre><code>auto enp0s3iface enp0s3 inet staticaddress 192.168.101.237netmask 255.255.255.0gateway 192.168.101.102</code></pre><p>重启网卡</p><pre><code>/etc/init.d/networking restart</code></pre><p>设置DNS</p><pre><code>sudo vim /etc/systemd/resolved.conf</code></pre><p>修改DNS</p><pre><code>DNS=114.114.114.114</code></pre><p>重启虚拟机</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Virtualbox </tag>
             
         </tags>
       
@@ -1148,25 +1148,6 @@
     
     
     <entry>
-      <title>spring 学习笔记</title>
-      <link href="/2019/01/13/spring/"/>
-      <url>/2019/01/13/spring/</url>
-      
-        <content type="html"><![CDATA[<h2 id="spring-之旅"><a href="#spring-之旅" class="headerlink" title="spring 之旅"></a>spring 之旅</h2><p>为了简化java开发的复杂性，spring 采取以下4中策略</p><a id="more"></a><ul><li>基于POJO的轻量级和最小侵入性编程；</li><li>通过依赖注入和面向接口实现松耦合</li><li>基于切面和惯例进行声明式编程；</li><li>通过切面和模板减少样板式代码</li></ul><h3 id="依赖注入-Dpendency-Inject"><a href="#依赖注入-Dpendency-Inject" class="headerlink" title="依赖注入 (Dpendency Inject)"></a>依赖注入 (Dpendency Inject)</h3><p>创建应用组件之间协作的行为通常称为装配（wiring). XML 是常见的一种装配方式。Spring 通过应用上下文（Application Context） 装在bean的定义并将它们组装起来。Spring应用上下文全权负责对象的创建和组装。Spring自带了多种应用上下文的实现，它们之间的区别在于如何加载配置。</p><ul><li>构造器注入</li></ul><h3 id="应用切面"><a href="#应用切面" class="headerlink" title="应用切面"></a>应用切面</h3><p>面向切面编程 (aspect-oriented programming)</p>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> Spring </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>spark概念学习</title>
       <link href="/2019/01/13/spark%E6%A6%82%E5%BF%B5%E5%AD%A6%E4%B9%A0/"/>
       <url>/2019/01/13/spark%E6%A6%82%E5%BF%B5%E5%AD%A6%E4%B9%A0/</url>
@@ -1178,6 +1159,25 @@
         <tags>
             
             <tag> Spark </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>spring 学习笔记</title>
+      <link href="/2019/01/13/spring/"/>
+      <url>/2019/01/13/spring/</url>
+      
+        <content type="html"><![CDATA[<h2 id="spring-之旅"><a href="#spring-之旅" class="headerlink" title="spring 之旅"></a>spring 之旅</h2><p>为了简化java开发的复杂性，spring 采取以下4中策略</p><a id="more"></a><ul><li>基于POJO的轻量级和最小侵入性编程；</li><li>通过依赖注入和面向接口实现松耦合</li><li>基于切面和惯例进行声明式编程；</li><li>通过切面和模板减少样板式代码</li></ul><h3 id="依赖注入-Dpendency-Inject"><a href="#依赖注入-Dpendency-Inject" class="headerlink" title="依赖注入 (Dpendency Inject)"></a>依赖注入 (Dpendency Inject)</h3><p>创建应用组件之间协作的行为通常称为装配（wiring). XML 是常见的一种装配方式。Spring 通过应用上下文（Application Context） 装在bean的定义并将它们组装起来。Spring应用上下文全权负责对象的创建和组装。Spring自带了多种应用上下文的实现，它们之间的区别在于如何加载配置。</p><ul><li>构造器注入</li></ul><h3 id="应用切面"><a href="#应用切面" class="headerlink" title="应用切面"></a>应用切面</h3><p>面向切面编程 (aspect-oriented programming)</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Spring </tag>
             
         </tags>
       

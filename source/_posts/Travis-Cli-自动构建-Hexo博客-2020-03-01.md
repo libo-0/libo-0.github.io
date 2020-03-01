@@ -4,6 +4,9 @@ date: 2020-03-01 23:23:09
 tags:
 ---
 
+Travis-Cli 是一种持续集成构建部署服务，支持自动化构建测试部署。我们可以用它来自动编译发布部署我们的 hexo github page 博客。
+
+<!-- more -->
 
 使用 Travis-Cli 持续集成构建服务，当我们将 `Hexo 博客源码`推送到 Github 仓库库，`travis-cli` 察觉到这次推送，自动从 `Github 仓库`拉取代码并构建，构建完成后，将结果推送到 `master 分支`。
 

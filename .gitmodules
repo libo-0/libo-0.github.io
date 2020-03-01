@@ -4,3 +4,9 @@
 [submodule "themes/volantis"]
 	path = themes/volantis
 	url = https://github.com/libo-0/hexo-theme-volantis.git
+[submodule "themes/mauppssant"]
+	path = themes/mauppssant
+	url = https://github.com/libo-0/maupassant-hexo.git
+[submodule "themes/hexo-theme-matery"]
+	path = themes/hexo-theme-matery
+	url = https://gitee.com/libo0/hexo-theme-matery.git

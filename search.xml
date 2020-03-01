@@ -525,9 +525,9 @@
       
         <tags>
             
-            <tag> util </tag>
-            
             <tag> website </tag>
+            
+            <tag> util </tag>
             
         </tags>
       
@@ -862,25 +862,6 @@
     
     
     <entry>
-      <title>Hadoop在windows下的单机配置</title>
-      <link href="/2019/01/13/Hadoop%E5%9C%A8windows%E4%B8%8B%E7%9A%84%E5%8D%95%E6%9C%BA%E9%85%8D%E7%BD%AE/"/>
-      <url>/2019/01/13/Hadoop%E5%9C%A8windows%E4%B8%8B%E7%9A%84%E5%8D%95%E6%9C%BA%E9%85%8D%E7%BD%AE/</url>
-      
-        <content type="html"><![CDATA[<ul><li><p>hadoop home /D:/Env/hadoop-2.9.2</p><p>  vim D:/Env/hadoop-2.9.2/etc/hadoop/hadoop-env.cmd<br>  set JAVA_HOME=C:\PROGRA~1\Java\jdk1.8.0_171</p></li></ul><a id="more"></a><h2 id="配置伪分布式模式"><a href="#配置伪分布式模式" class="headerlink" title="配置伪分布式模式"></a>配置伪分布式模式</h2><ul><li>修改hadoop-2.9.2\etc\hadoop\core-site.xml</li></ul><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 定义了namenode的位置--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">name</span>&gt;</span>fs.default.name<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">value</span>&gt;</span>hdfs://localhost:9000<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- 此目录为hdfs的根目录，存储的文件即存储在该目录 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">name</span>&gt;</span>hadoop.tmp.dir<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">value</span>&gt;</span>/D:/HDFS<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br></pre></td></tr></table></figure><ul><li>修改hadoop-2.9.2\etc\hadoop\hdfs-site.xml</li></ul><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 定义数据复制的数量，1 表示复制 1份 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">name</span>&gt;</span>dfs.replication<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">value</span>&gt;</span>1<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br></pre></td></tr></table></figure><ul><li>修改hadoop-2.9.2\etc\hadoop\mapred-site.xml</li></ul><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0"?&gt;</span></span><br><span class="line"><span class="meta">&lt;?xml-stylesheet type="text/xsl" href="configuration.xsl"?&gt;</span></span><br><span class="line">   </span><br><span class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 定义了JobTracker的位置--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">name</span>&gt;</span>mapred.job.tracker<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">value</span>&gt;</span>localhost:9001<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br></pre></td></tr></table></figure><pre><code>由于hadoop 在windows下运行需要winutil, 所以需要另外下载。下载[winutil](https://github.com/steveloughran/winutils), 将原hadoop 的bin 目录重命名为bin.bak， 将hadoop2.8.3/bin 目录复制到hadoop根目录。</code></pre><h3 id="启动hadoop"><a href="#启动hadoop" class="headerlink" title="启动hadoop"></a>启动hadoop</h3><p>首次启动hadoop, 需要格式化hadoop将要用到的HDFS文件系统</p><ul><li><p>格式化 NameNode<br>  hadoop namenode -format</p></li><li><p>启动 Hadoop</p><p>  start-dfs</p></li><li><p>终止 Hadoop</p><p>  stop-dfs</p></li></ul><p>这会打开两个窗口，一个datanode, 一个namenode.</p><ul><li><p>查看java 进程</p><p>  jps</p></li><li><p>查看文件系统</p><p>  hadoop fs -ls /</p></li><li><p>创建目录</p><p>  hadoop fs -mkdir /user</p></li><li><p>从本地拷贝文件</p><p>  hadoop fs -copyFromLocal test.txt /</p></li><li><p>文件拷贝</p><p>  hadoop fs -cp /test.txt /data</p></li><li><p>查看hdfs 文件内容</p><p>  hadoop fs -cat /test.txt</p></li><li><p>下载文件到本地</p><p>  hadoop fs -copyToLocal /text.txt</p></li><li><p>查看帮助</p><p>  hadoop fs -help</p></li></ul><h4 id="网页查看-hadoop"><a href="#网页查看-hadoop" class="headerlink" title="网页查看 hadoop"></a>网页查看 hadoop</h4><pre><code>[localhost:50070](http://localhost:50070)</code></pre>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> hadoop </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>Hbase基本操作</title>
       <link href="/2019/01/13/Hbase%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/"/>
       <url>/2019/01/13/Hbase%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/</url>
@@ -892,6 +873,25 @@
         <tags>
             
             <tag> Hbase </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Hadoop在windows下的单机配置</title>
+      <link href="/2019/01/13/Hadoop%E5%9C%A8windows%E4%B8%8B%E7%9A%84%E5%8D%95%E6%9C%BA%E9%85%8D%E7%BD%AE/"/>
+      <url>/2019/01/13/Hadoop%E5%9C%A8windows%E4%B8%8B%E7%9A%84%E5%8D%95%E6%9C%BA%E9%85%8D%E7%BD%AE/</url>
+      
+        <content type="html"><![CDATA[<ul><li><p>hadoop home /D:/Env/hadoop-2.9.2</p><p>  vim D:/Env/hadoop-2.9.2/etc/hadoop/hadoop-env.cmd<br>  set JAVA_HOME=C:\PROGRA~1\Java\jdk1.8.0_171</p></li></ul><a id="more"></a><h2 id="配置伪分布式模式"><a href="#配置伪分布式模式" class="headerlink" title="配置伪分布式模式"></a>配置伪分布式模式</h2><ul><li>修改hadoop-2.9.2\etc\hadoop\core-site.xml</li></ul><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 定义了namenode的位置--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">name</span>&gt;</span>fs.default.name<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">value</span>&gt;</span>hdfs://localhost:9000<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- 此目录为hdfs的根目录，存储的文件即存储在该目录 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">name</span>&gt;</span>hadoop.tmp.dir<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">value</span>&gt;</span>/D:/HDFS<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br></pre></td></tr></table></figure><ul><li>修改hadoop-2.9.2\etc\hadoop\hdfs-site.xml</li></ul><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 定义数据复制的数量，1 表示复制 1份 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">name</span>&gt;</span>dfs.replication<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">value</span>&gt;</span>1<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br></pre></td></tr></table></figure><ul><li>修改hadoop-2.9.2\etc\hadoop\mapred-site.xml</li></ul><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0"?&gt;</span></span><br><span class="line"><span class="meta">&lt;?xml-stylesheet type="text/xsl" href="configuration.xsl"?&gt;</span></span><br><span class="line">   </span><br><span class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 定义了JobTracker的位置--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">name</span>&gt;</span>mapred.job.tracker<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">value</span>&gt;</span>localhost:9001<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br></pre></td></tr></table></figure><pre><code>由于hadoop 在windows下运行需要winutil, 所以需要另外下载。下载[winutil](https://github.com/steveloughran/winutils), 将原hadoop 的bin 目录重命名为bin.bak， 将hadoop2.8.3/bin 目录复制到hadoop根目录。</code></pre><h3 id="启动hadoop"><a href="#启动hadoop" class="headerlink" title="启动hadoop"></a>启动hadoop</h3><p>首次启动hadoop, 需要格式化hadoop将要用到的HDFS文件系统</p><ul><li><p>格式化 NameNode<br>  hadoop namenode -format</p></li><li><p>启动 Hadoop</p><p>  start-dfs</p></li><li><p>终止 Hadoop</p><p>  stop-dfs</p></li></ul><p>这会打开两个窗口，一个datanode, 一个namenode.</p><ul><li><p>查看java 进程</p><p>  jps</p></li><li><p>查看文件系统</p><p>  hadoop fs -ls /</p></li><li><p>创建目录</p><p>  hadoop fs -mkdir /user</p></li><li><p>从本地拷贝文件</p><p>  hadoop fs -copyFromLocal test.txt /</p></li><li><p>文件拷贝</p><p>  hadoop fs -cp /test.txt /data</p></li><li><p>查看hdfs 文件内容</p><p>  hadoop fs -cat /test.txt</p></li><li><p>下载文件到本地</p><p>  hadoop fs -copyToLocal /text.txt</p></li><li><p>查看帮助</p><p>  hadoop fs -help</p></li></ul><h4 id="网页查看-hadoop"><a href="#网页查看-hadoop" class="headerlink" title="网页查看 hadoop"></a>网页查看 hadoop</h4><pre><code>[localhost:50070](http://localhost:50070)</code></pre>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> hadoop </tag>
             
         </tags>
       
@@ -1039,25 +1039,6 @@
     
     
     <entry>
-      <title>CSS层叠样式表学习笔记</title>
-      <link href="/2019/01/13/css/"/>
-      <url>/2019/01/13/css/</url>
-      
-        <content type="html"><![CDATA[<h2 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h2><a id="more"></a><ul><li><p>id 选择器  </p><p>  #para1{</p><pre><code>color:red;</code></pre><p>  }</p></li><li><p>class 选择器</p><p>  .center{</p><pre><code>text-align: center;</code></pre><p>  }</p></li></ul>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> css </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>好用的Firefox浏览器插件</title>
       <link href="/2019/01/13/firefox/"/>
       <url>/2019/01/13/firefox/</url>
@@ -1069,6 +1050,25 @@
         <tags>
             
             <tag> firefox </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>CSS层叠样式表学习笔记</title>
+      <link href="/2019/01/13/css/"/>
+      <url>/2019/01/13/css/</url>
+      
+        <content type="html"><![CDATA[<h2 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h2><a id="more"></a><ul><li><p>id 选择器  </p><p>  #para1{</p><pre><code>color:red;</code></pre><p>  }</p></li><li><p>class 选择器</p><p>  .center{</p><pre><code>text-align: center;</code></pre><p>  }</p></li></ul>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> css </tag>
             
         </tags>
       

@@ -812,31 +812,19 @@ export PATH=${JAVA_HOME}/bin:$PATH</code></pre><ul>
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/01/13/Linux%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4%E8%AE%B0%E5%BD%95/">
+                <a href="/2019/01/13/Mi-pro%E5%A4%A7%E6%95%B0%E6%8D%AE%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="Linux的基本操作命令记录">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="Mi-pro大数据环境配置">
                         
-                        <span class="card-title">Linux的基本操作命令记录</span>
+                        <span class="card-title">Mi-pro大数据环境配置</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
-打包文件
-  tar -cf archiver.tar foo bar
-
-
-
-
-
-解压文件 .tar.gz
-  tar xf java8.tar.gz -C /home/node1/env
-
-
-将文件解压到/home/node1/env 
+                            这是我在自己笔记本中学习大数据的配置，使用 Virtualbox6.0 虚拟机软件. 对每台虚拟机设置了网卡1 NAT网卡和网卡2 桥接网卡，桥接网卡设置界面名称 Realtec USB FE Family Controller, 并在每台
                         
                     </div>
                     <div class="publish-info">
@@ -854,12 +842,12 @@ export PATH=${JAVA_HOME}/bin:$PATH</code></pre><ul>
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/linux/">
-                        <span class="chip bg-color">linux</span>
+                    <a href="/tags/hadoop/">
+                        <span class="chip bg-color">hadoop</span>
                     </a>
                     
-                    <a href="/tags/shell/">
-                        <span class="chip bg-color">shell</span>
+                    <a href="/tags/BigData/">
+                        <span class="chip bg-color">BigData</span>
                     </a>
                     
                 </div>
@@ -873,19 +861,26 @@ export PATH=${JAVA_HOME}/bin:$PATH</code></pre><ul>
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/01/13/Mi-pro%E5%A4%A7%E6%95%B0%E6%8D%AE%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">
+                <a href="/2019/01/13/Spark%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="Mi-pro大数据环境配置">
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="Spark安装与配置">
                         
-                        <span class="card-title">Mi-pro大数据环境配置</span>
+                        <span class="card-title">Spark安装与配置</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            这是我在自己笔记本中学习大数据的配置，使用 Virtualbox6.0 虚拟机软件. 对每台虚拟机设置了网卡1 NAT网卡和网卡2 桥接网卡，桥接网卡设置界面名称 Realtec USB FE Family Controller, 并在每台
+                            
+安装Spark-2.4.0
+  tar xf spark-2.4.0.tar.gz -C /env
+
+
+
+
+将 spark-2.4.0/yarn 目录下的 spark-2.4.0-yarn-shuffle.jar 拷贝到/env/hado
                         
                     </div>
                     <div class="publish-info">
@@ -903,12 +898,8 @@ export PATH=${JAVA_HOME}/bin:$PATH</code></pre><ul>
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/hadoop/">
-                        <span class="chip bg-color">hadoop</span>
-                    </a>
-                    
-                    <a href="/tags/BigData/">
-                        <span class="chip bg-color">BigData</span>
+                    <a href="/tags/Spark/">
+                        <span class="chip bg-color">Spark</span>
                     </a>
                     
                 </div>

@@ -1,0 +1,1201 @@
+<!DOCTYPE HTML>
+<html lang="zh">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="ipv6, java,nodejs">
+    <meta name="description" content="IPV6IPv6 特点
+
+大的地址空间使用128比特表示,近似3.4* 10^38 个地址.
+简化的头部端到端的链接每个系统现在都有独特的IP地址,可以通过直接互联网传输而不用NAT和其他转换组件. IPv6完全实现后,每个主机可以直接到达">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>ipv6 | libo 工作学习记录</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    
+    <script src="/libs/jquery/jquery.min.js"></script>
+    
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper head-container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">libo 工作学习记录</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>Index</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>Tags</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>Categories</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>Archives</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>About</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>Contact</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>Friends</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="Search" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">libo 工作学习记录</div>
+        <div class="logo-desc">
+            
+            工作半年的 Java 工程师的学习记录
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			Index
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			Tags
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			Categories
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			Archives
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			About
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			Contact
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			Friends
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">ipv6</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        height: calc(100vh - 250px);
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/ipv6/">
+                                <span class="chip bg-color">ipv6</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
+                    2019-01-20
+                </div>
+                
+
+                
+
+                
+
+                
+				
+                
+            </div>
+            
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="IPV6"><a href="#IPV6" class="headerlink" title="IPV6"></a>IPV6</h1><h2 id="IPv6-特点"><a href="#IPv6-特点" class="headerlink" title="IPv6 特点"></a><a href="https://www.tutorialspoint.com/ipv6/ipv6_features.htm" target="_blank" rel="noopener">IPv6 特点</a></h2><a id="more"></a>
+
+<h3 id="大的地址空间"><a href="#大的地址空间" class="headerlink" title="大的地址空间"></a>大的地址空间</h3><p>使用128比特表示,近似3.4* 10^38 个地址.</p>
+<h3 id="简化的头部"><a href="#简化的头部" class="headerlink" title="简化的头部"></a>简化的头部</h3><h3 id="端到端的链接"><a href="#端到端的链接" class="headerlink" title="端到端的链接"></a>端到端的链接</h3><p>每个系统现在都有独特的IP地址,可以通过直接互联网传输而不用NAT和其他转换组件. IPv6完全实现后,每个主机可以直接到达网络上的其他主机,没有防火墙,组织政策的限制.</p>
+<h3 id="自动配置"><a href="#自动配置" class="headerlink" title="自动配置"></a>自动配置</h3><p>IPv6同时支持有状态的和无状态的主机设备自动配置. 这种方式,DHCP服务器的缺失不会中断内部端沟通.</p>
+<h3 id="更快的前向和路由"><a href="#更快的前向和路由" class="headerlink" title="更快的前向和路由"></a>更快的前向和路由</h3><p>简化了头部将不必要的信息, 头部第一部分的信息足够路由器做决定</p>
+<h3 id="IPSec"><a href="#IPSec" class="headerlink" title="IPSec"></a>IPSec</h3><p>IP安全</p>
+<h3 id="没有广播"><a href="#没有广播" class="headerlink" title="没有广播"></a>没有广播</h3><h3 id="任播支持-Anycast-Support"><a href="#任播支持-Anycast-Support" class="headerlink" title="[任播支持](Anycast Support)"></a>[任播支持](Anycast Support)</h3><h3 id="移动性"><a href="#移动性" class="headerlink" title="移动性"></a>移动性</h3><p>不管你在地球上的任何地方,都保持相同的IPv6地址,这个特点充分利用了IP配置和扩展头.</p>
+<h3 id="优化特权支持"><a href="#优化特权支持" class="headerlink" title="优化特权支持"></a>优化特权支持</h3><h3 id="优化传输"><a href="#优化传输" class="headerlink" title="优化传输"></a>优化传输</h3><p>每个设备都有一个独特的IP地址.这个方法保存IP地址,NAT不在需要.所以设备之间可以直接通信,列如,VoIP和任何流媒体可以更有效率. </p>
+<p>另外,头负载更少,路由器能够更快的做绝定</p>
+<h3 id="扩展性"><a href="#扩展性" class="headerlink" title="扩展性"></a>扩展性</h3><h2 id="IPv6地址模式"><a href="#IPv6地址模式" class="headerlink" title="IPv6地址模式"></a>IPv6地址模式</h2><h3 id="单一传播-Unicast"><a href="#单一传播-Unicast" class="headerlink" title="单一传播(Unicast)"></a>单一传播(Unicast)</h3><h3 id="多路传送-Multicast"><a href="#多路传送-Multicast" class="headerlink" title="多路传送(Multicast)"></a>多路传送(Multicast)</h3><h3 id="任播-Anycast"><a href="#任播-Anycast" class="headerlink" title="任播(Anycast)"></a>任播(Anycast)</h3><p>在这种模式下,多台接口(主机)被赋予了相同的任播地址.当一个主机想要与一个任播地址通信时,它发送一个单播消息. 在复杂的路由方法的帮助下,这个单播消息被传递到离发送者路由花费最近的主机.</p>
+<h2 id="IPv6-地址类型-amp-格式"><a href="#IPv6-地址类型-amp-格式" class="headerlink" title="IPv6-地址类型&amp;格式"></a><a href="https://www.tutorialspoint.com/ipv6/ipv6_address_types.htm" target="_blank" rel="noopener">IPv6-地址类型&amp;格式</a></h2><h3 id="地址结构"><a href="#地址结构" class="headerlink" title="地址结构"></a>地址结构</h3><p>128位地址被分为8个16bits的块.每个块被转换为4位16进制的数字,以冒号:作为区分.<br>    0010000000000001 0000000000000000 0011001000111000 1101111111100001 0000000001100011 0000000000000000 0000000000000000 1111111011111011</p>
+<pre><code>2001:0000:3238:DFE1:0063:0000:0000:FEFB</code></pre><p>即使转换为16进制格式,IPv6地址依然很长.IPv6提供一些规则来缩短地址,规则如下:</p>
+<ol>
+<li>去除前面的零:</li>
+</ol>
+<p>在第5块,0063,前面的两个0可以省略如下:</p>
+<pre><code>2001:0000:3238:DFE1:63:0000:0000:FEFB</code></pre><ol start="2">
+<li><p>如果两个块或以上包含连续的0,省略他们,替代为双冒号::, 例如第6块和第7块:</p>
+<p> 2001:0000:3238:DFE1:63::FEFB</p>
+</li>
+</ol>
+<p>如果仍然有块都为0,则可以使用单个0缩短:</p>
+<pre><code>2001:0:3238:DFE1:63::FEFB</code></pre><h3 id="接口ID"><a href="#接口ID" class="headerlink" title="接口ID"></a>接口ID</h3><p>IPv6有三种不同类型的单播地址模式.地址的后半部分(后64位)总是表示接口ID. 系统MAC地址由48bit组成表示为16进制形式. MAC地址被认为是世界范围独一无二的. 接口IP充分利用了MAC地址的独特性.一个主机可以自动配置接口IP通过使用IEEE的扩展独特标识符形式(Extended Unique Identifier(EUI-64)).首先,一个主机将自己的MAC地址平均分为两等份. 然后16进制值 0xFFFE 插入其中,组成EUI-64接口ID</p>
+<pre><code>001122 ABCDEF
+001122 FFFE ABCDEF</code></pre><p>为了转换EUI-64到IPv6的接口标识符:</p>
+<h2 id="IPv6-Special-Addresses"><a href="#IPv6-Special-Addresses" class="headerlink" title="IPv6-Special Addresses"></a><a href="https://www.tutorialspoint.com/ipv6/ipv6_special_addresses.htm" target="_blank" rel="noopener">IPv6-Special Addresses</a></h2><p>下面是一些保留地址</p>
+<table>
+<thead>
+<tr>
+<th align="left">IPv6 Address</th>
+<th align="left">Meaning</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">::/128</td>
+<td align="left">未明确的地址</td>
+</tr>
+<tr>
+<td align="left">::/0</td>
+<td align="left">默认路由</td>
+</tr>
+<tr>
+<td align="left">::1/128</td>
+<td align="left">回环地址</td>
+</tr>
+</tbody></table>
+<ul>
+<li><p>0:0:0:0:0:0:0:0/128 没有特别说明,据说是未明确的地址.为了简化, 表示为 ::/128</p>
+</li>
+<li><p>在IPv4中,地址0.0.0.0与网络掩码0.0.0.0 表示默认路由. 相同的概念被应用到IPv6中, 地址 0.0.0.0.0.0.0.0 与掩码都为0 表示默认路由. 应用IPv6规则,这个地址被亚索为 ::/0.</p>
+</li>
+<li><p>在IPv4中,回环地址表示127.0.0.1-127.255.255.255. 但是IPv6中,只有0:0:0:0:0:0:0:1/128表示回环地址,压缩为::1/128.</p>
+</li>
+</ul>
+<h3 id="为路由协议保留多播地址"><a href="#为路由协议保留多播地址" class="headerlink" title="为路由协议保留多播地址"></a>为路由协议保留多播地址</h3><h3 id="为路由器-节点保留多播地址"><a href="#为路由器-节点保留多播地址" class="headerlink" title="为路由器/节点保留多播地址"></a>为路由器/节点保留多播地址</h3><h2 id="IPv6头部"><a href="#IPv6头部" class="headerlink" title="IPv6头部"></a><a href="https://www.tutorialspoint.com/ipv6/ipv6_headers.htm" target="_blank" rel="noopener">IPv6头部</a></h2><p>IPv6固定头部40字节长</p>
+<h3 id="扩展头"><a href="#扩展头" class="headerlink" title="扩展头"></a>扩展头</h3><h2 id="IPv6沟通"><a href="#IPv6沟通" class="headerlink" title="IPv6沟通"></a><a href="https://www.tutorialspoint.com/ipv6/ipv6_communication.htm" target="_blank" rel="noopener">IPv6沟通</a></h2><p>在IPv4中,一个主机想要与网络上的另一个主机沟通,需要一个ip地址(通过DHCP方式或者人工设置). 只要一个主机有一个有效的IP地址,它就能与子网下的任何主机交流.为了在第三层交流,一个主机必须知道其他主机的IP地址.在一个连接上交流,连接通过各种嵌入的硬件MAC地址.为了知道一个已知IP主机的MAC地址,一个主机发送ARP广播请求,目的主机发送回它的MAC地址.</p>
+<p>在IPv6中没有广播方法.对于IPv6来说, 从DHCP或者人工配置获得IP是不必要的,它会自己配置自己的IP.</p>
+<p>ARP被ICMPv6近邻发现协议替代.</p>
+<h3 id="近邻发现协议-Neighbor-discovery-Protocol"><a href="#近邻发现协议-Neighbor-discovery-Protocol" class="headerlink" title="近邻发现协议(Neighbor discovery Protocol)"></a>近邻发现协议(Neighbor discovery Protocol)</h3><p>在IPv6网络中,一个主机有能力使用一个独特的连接本地地址自动配置IP.一旦一个主机获得一个IPv6地址,它就加入一个多路传播组(multicast groups). 在那个端的所有通信只在那些多播地址中产生.在IPv6中一个主机经历一系列状态:</p>
+<ul>
+<li><p>近邻请求(Neighbor Solicitatiion): 在使用人工,DHCP服务器或者自动配置的方法配置了IPv6地址后,主机为它的所有IPv6地址发送一个近邻请求消息(Neighbor Solicitation message) 给 FF02::1/16多播地址,为了知道没有人占据相同的地址.</p>
+</li>
+<li><p>重复地址发现(DAD(Duplicate Address Detection)): 当主机没有在段上听到任何关于近邻发现消息的消息时,它假定在段上不存在重复的地址.</p>
+</li>
+<li><p>近邻推荐(Neighbor Advertisement): 在把地址赋给接口,组好它们运行后,主机再次在段上发送给所有其他主机近邻推荐消息,告诉它们这个IPv6地址已经赋值给它的接口.</p>
+</li>
+</ul>
+<p>一旦一个主机配置完IPv6地址后,它做下列事:</p>
+<ul>
+<li><p>路由请求(Router Solicitation): 一个主机在它所在的段上发出一个路由请求多播包(FF02::2/16), 来获得在段上的其他路由器的存在, 它帮助主机配置路由器作为默认网关. 如果它的默认网关下线,主机转移到下一个路由器,使它成为默认网关.</p>
+</li>
+<li><p>路由推荐(Router Advertisement): 当一个路由器收到一个路由请求消息, 它回复主机,在那个连接上告诉它自身的存在.</p>
+</li>
+<li><p>重定向(Redirect): 当路由器接收到路由请求后它知道这对于主机来说不是最好的网关,路由器发送会一个重定向消息告诉主机有一个更好的下一跳(next-hop)路由器可以获得.下一跳(next-hop)是主机将要发送数据到目的地的主机,但是不属于相同的段(segment).</p>
+</li>
+</ul>
+<h2 id="IPv6子网IPv6-Subnetting"><a href="#IPv6子网IPv6-Subnetting" class="headerlink" title="IPv6子网IPv6 Subnetting"></a><a href="https://www.tutorialspoint.com/ipv6/ipv6_subnetting.htm" target="_blank" rel="noopener">IPv6子网IPv6 Subnetting</a></h2><p>IPv6的后64位总是表示主机的.</p>
+<table>
+<thead>
+<tr>
+<th align="left">Routing Prefix</th>
+<th align="left">Subnet ID</th>
+<th align="left">Interface ID</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">48bits</td>
+<td align="left">16bits</td>
+<td align="left">64 bits</td>
+</tr>
+</tbody></table>
+<h2 id="从IPv4过度到IPv6"><a href="#从IPv4过度到IPv6" class="headerlink" title="从IPv4过度到IPv6"></a><a href="https://www.tutorialspoint.com/ipv6/ipv6_ipv4_to_ipv6.htm" target="_blank" rel="noopener">从IPv4过度到IPv6</a></h2><p>IPv6不是向后兼容的.为了克服这些缺点,使用一下技术过度到IPv6.</p>
+<h3 id="双栈路由器-Dual-Stack-Routers"><a href="#双栈路由器-Dual-Stack-Routers" class="headerlink" title="双栈路由器(Dual Stack Routers)"></a>双栈路由器(Dual Stack Routers)</h3><p>一个路由器可以同时安装IPv4和IPv6地址配置接口指向网络相关IP域.</p>
+<h3 id="管道-Tunneling"><a href="#管道-Tunneling" class="headerlink" title="管道(Tunneling)"></a>管道(Tunneling)</h3><p><img src="/img/tunneling.jpg" alt="tunneling img"></p>
+<h3 id="NAT协议转换-NAT-Protocol-Translation"><a href="#NAT协议转换-NAT-Protocol-Translation" class="headerlink" title="NAT协议转换(NAT Protocol Translation)"></a>NAT协议转换(NAT Protocol Translation)</h3><p><img src="/img/nat.jpg" alt="nat img"></p>
+<h2 id="IPv6-移动性-Mobility"><a href="#IPv6-移动性-Mobility" class="headerlink" title="IPv6 移动性(Mobility)"></a><a href="https://www.tutorialspoint.com/ipv6/ipv6_mobility.htm" target="_blank" rel="noopener">IPv6 移动性(Mobility)</a></h2><p>当一个主机连接到网络,它需要一个IP地址.所有通信都使用那个连接上的IP地址. 只要主机改变物理位置, 也就是说,移动到另一区域/子网/网络/连接,它的ip地址就改变的,所有与老IP地址的通信都不可行了.</p>
+<p>IPv6移动性提供了一个方法,主机漫游到不同地方二不用丢失通信和IP地址.</p>
+<p>多个实体包含在这个科技中:</p>
+<ul>
+<li><p>Mobile Node: 需要Ipv6移动性的设备.</p>
+</li>
+<li><p>Home Link: 这个连接配置家庭子网前缀,这是移动IPv6设备获得它的家庭地址</p>
+</li>
+<li><p>Home Address: 这是移动节点从Home Link 获得的地址.如果移动节点保留在相同的Home Link,各种实体的沟通像平常一样.</p>
+</li>
+<li><p>Home Agent: 这是一个路由器扮演这移动节点注册员的角色.Home Agent 连接到Home Link 维持所有移动节点的信息, 他们的家庭地址,他们目前的IP地址.</p>
+</li>
+<li><p>Foreign Link: 任何其他连接都不是移动节点的家庭连接.</p>
+</li>
+<li><p>Care-of Address: 当一个移动节点联系到一个外部节点,它需要从外部连接子网获取一个新的IP地址.Home Agent 同时维持Home Address 和 Care-of Address的信息. 多个Care-of 地址可以赋值给移动节点,但是任何情况下,只有一个Care-of 地址绑定到Home Address(家庭地址).</p>
+</li>
+<li><p>Correspondent Node: 任何Ipv6运许的设备都试图与移动节点进行沟通.</p>
+</li>
+</ul>
+<h3 id="移动性操作"><a href="#移动性操作" class="headerlink" title="移动性操作"></a>移动性操作</h3><p>当移动节点待在Home Link 中,所有的通信发生在家庭地址内.如下表示</p>
+<p><img src="/img/MN_in_HL.jpg" alt="nat img"></p>
+<p>当一个移动节点离开Home Link 连接到 Foreign Link,IPv6的特点开始显现.在连接到Foreign Link后,移动节点从Foreign Link 获得一个IPv6地址.这个地址叫做 Care-of 地址.移动节点发送一个与Care-of地址绑定请求到Home Agent .Home Agent 绑定移动节点的Home Address 和 Care-of Address, 在两者之间建立一个通道(Tunnel).</p>
+<p>无论何时 通信记者(Correspondent Node)试图与移动节点(在 Home Address 中的二)建立连接, Home Agent 拦截包并通过已建立的管道转发到移动节点 Care-of 地址.</p>
+<p><img src="/img/MN_in_FL.jpg" alt="nat img"></p>
+<p>当Correspondent Node 初始化通信通过发送包给在Home Address上的移动节点,这些包有Home Agent通过管道传输给移动节点.为了路由优化,当移动节点从Correspondent Node接受包时,它不转寄回复给Home Agent. 作为替代,它直接发送包给Corresopndent Node使用Home Address作为源地址. 这模式是可选的,并不默认.</p>
+<h2 id="IPv6传输方法"><a href="#IPv6传输方法" class="headerlink" title="IPv6传输方法"></a>IPv6传输方法</h2><p>网络工程社区已经开发了几种方法使网络操作逐渐从IPv4移植到IPv6.有一下三种方法:</p>
+<ul>
+<li><p>双栈(Dual Stack),允许在他们的网络上IPv4和IPv6同时工作.</p>
+</li>
+<li><p><a href="https://en.wikipedia.org/wiki/Carrier-grade_NAT" target="_blank" rel="noopener">Carrier-grade NAT(CGN)</a> ,又叫大规模NAT(large-scale NAT(LSN)), 意思是多个居民家庭的网络共享一个公共的IP地址, 居民网络组成一个较大的局域网,通过网络地址转换(NAT)方式介入网络.这种方法是为了应对IPv4地址枯竭的问题.</p>
+</li>
+<li><p>载体传输, 将ipv6的数据报封装,使用ipv4通道传输. 方式有Teredo, ISATAP</p>
+</li>
+</ul>
+
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        Author:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://libo-0.github.io" rel="external nofollow noreferrer">libo</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        Link:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://libo-0.github.io/2019/01/20/ipv6/">http://libo-0.github.io/2019/01/20/ipv6/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        Reprint policy:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    All articles in this blog are used except for special statements
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    reprint polocy. If reproduced, please indicate source
+                    <a href="http://libo-0.github.io" target="_blank">libo</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>Copied successfully, please follow the reprint policy of this article</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">more</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/ipv6/">
+                                    <span class="chip bg-color">ipv6</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+            <div class="card">
+                <a href="/2019/01/20/IDEA-%E5%85%A8%E5%B1%80%E9%A1%B9%E7%9B%AE%E9%85%8D%E7%BD%AE/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="IDEA-项目默认配置">
+                        
+                        <span class="card-title">IDEA-项目默认配置</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            项目默认配置File-&gt;other Settings-&gt;Settings for new Projects
+
+
+Maven配置配置conf/settings.xml,添加阿里云仓库
+123456&lt;mirror&gt;   
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2019-01-20
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            libo
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/IDEA/">
+                        <span class="chip bg-color">IDEA</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                Next&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2019/01/20/markdown%E8%AF%AD%E6%B3%95%E8%AE%B0%E5%BD%95/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="markdown 语法">
+                        
+                        <span class="card-title">markdown 语法</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            参考文档
+markdown1.0.1
+
+代码块
+
+用```表示代码块
+html代码12345&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;/body&gt;
+
+xml代码1&lt;properties&g
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-01-20
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            libo
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/markdown/">
+                        <span class="chip bg-color">markdown</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+    
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 代码块折行 -->
+
+<style type="text/css">
+code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
+</style>
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;TOC</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+    <footer class="page-footer bg-color">
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            <span id="year">2019</span>
+            <a href="http://libo-0.github.io" target="_blank">libo</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/blinkfox" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:1181062873@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1181062873" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1181062873" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;Search</span>
+            <input type="search" id="searchInput" name="s" placeholder="Please enter a search keyword"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>

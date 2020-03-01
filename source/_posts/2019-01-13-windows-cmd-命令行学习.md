@@ -9,6 +9,8 @@ tags: [cmd,windows]
 
 * [Windows cmd 命令大全](https://www.jb51.net/article/141568.htm)
 
+<!-- more -->
+
 * [脚本之家-脚本专栏](https://www.jb51.net/list/index_96.htm)
 
 * [List of Command Prompt Commands](https://www.lifewire.com/list-of-command-prompt-commands-4092302)

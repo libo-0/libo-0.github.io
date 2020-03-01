@@ -7,6 +7,8 @@ tags: [windows10,linux]
 
 linux 远程安装 vnc 服务器 x11vnc ，windows10 安装 UltraVNC Viewer 是一种不错的方式，并且都是免费的。
 
+<!-- more -->
+
 * 方式: linux 远程安装 *VNC* 服务器 *x11nvc*, window10 安装 UltraVNC Viewer
 
 ## Linux 安装vnc服务端

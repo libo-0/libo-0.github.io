@@ -11,6 +11,8 @@ tags: [mysql]
 sudo apt install mysql-server
 ```
 
+<!-- more -->
+
 ## mysql服务器操作
 
 * 查看状态

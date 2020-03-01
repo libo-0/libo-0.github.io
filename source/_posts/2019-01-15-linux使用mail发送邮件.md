@@ -11,6 +11,8 @@ tags: [linux,mail]
 
     mail
 
+<!-- more -->
+
 提示
 
     Command 'mail' not found, but can be installed with:

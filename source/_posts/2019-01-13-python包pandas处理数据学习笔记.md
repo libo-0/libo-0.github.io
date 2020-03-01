@@ -10,6 +10,8 @@ pandas 有两种数据结构： 序列(Series), 数据帧(DataFrame)。数据帧
     for col in df.columns:
         series = df[col]
 
+<!-- more -->
+
 ## 10 Minutes to pandas
 
 导入pandas

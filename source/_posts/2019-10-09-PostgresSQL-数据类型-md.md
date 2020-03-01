@@ -8,6 +8,8 @@ tags:
 
 Postgresql 不仅包含了 SQL 定义的数据类型：bigint, bit, bit varying, boolean, char, character varying, character, varchar, date, double precision, integer, interval, numeric, decimal, real, smallint, time(with or without time zone), timestamp(with or without time zone), xml 等等，还定义了很多自己的数据类型。
 
+<!-- more -->
+
 Postgresql 的数据类型大概分为： 数值类型，金钱类型，字符类型，二进制数据类型，日期时间类型，布尔类型，枚举类型，地理类型，网络地址类型，位字符串类型，文本搜索类型，UUID 类型，XML 类型， JSON 类型，数组类型， 复合类型，范围类型， 对象标识符类型， pg_lsn 类型，Pseudo 类型 等等。
 
 ## 数值类型

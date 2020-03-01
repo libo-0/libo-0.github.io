@@ -9,6 +9,8 @@ tags: [linux,windows,pdf]
 
 [Sourceforge.net](https://sourceforge.net/projects/jbookmarks/)
 
+<!-- more -->
+
 [百度网盘地址](https://pan.baidu.com/s/1vNpJBBXwHFpPbJiu1E2Piw)
 
 pdfbookmark使给pdf添加书签变得简单，下载即可使用。同时支持windows和linux系统，可能需要java运行时环境。

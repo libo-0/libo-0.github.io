@@ -10,6 +10,8 @@ tags: [hadoop]
     vim D:/Env/hadoop-2.9.2/etc/hadoop/hadoop-env.cmd
     set JAVA_HOME=C:\PROGRA~1\Java\jdk1.8.0_171
 
+<!-- more -->
+
 ## 配置伪分布式模式
 
 * 修改hadoop-2.9.2\etc\hadoop\core-site.xml

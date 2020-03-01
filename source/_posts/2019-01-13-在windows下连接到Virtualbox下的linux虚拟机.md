@@ -9,6 +9,8 @@ tags: [ssh,windows,linux,Virtualbox]
 
 * 首先虚拟机要安装 openssh-server
 
+<!-- more -->
+
 进入ubuntu虚拟机terminal,输入:
 
     sudo apt install openssh-server

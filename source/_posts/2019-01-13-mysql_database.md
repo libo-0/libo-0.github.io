@@ -8,6 +8,8 @@ tags: [mysql]
     create database ShareBook;
     use ShareBook;
 
+<!-- more -->
+
 ## 笔记
 
 ### Mysql 查看帮助

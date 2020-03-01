@@ -11,6 +11,8 @@ tags: [windows10,WSL,xfce4,linux,xrdp]
     sudo apt install vnc4server
     sudo apt install xubuntu-desktop
 
+<!-- more -->
+
 修改端口3389，改为其他的
     sudo vi /etc/xrdp/xrdp.ini
 

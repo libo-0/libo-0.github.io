@@ -8,6 +8,8 @@ Postgresql 的 jsonb 类型，官方文档中有很多相关函数和操作符�
 
 其中 stations 是表 traffic_line 中的 jsonb 属性，格式如下：
 
+<!-- more -->
+
 ``` json
 [{
 	"labels": ["label5", "label2"],

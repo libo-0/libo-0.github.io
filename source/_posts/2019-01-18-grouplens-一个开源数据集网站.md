@@ -9,6 +9,8 @@ tags: [dataset]
 
 推荐一个机器学习的数据集网站,GroupLens是美国著名公立大学明尼苏达大学双城校区计算机部门的研究实验室的一个研究实验室,擅长推荐系统,在线社区,移动端无处不在的技术,数字图和本地地理信息系统.
 
+<!-- more -->
+
 GroupLens is a research lab in the Department of Computer Science and Engineering at the University of Minnesota, Twin Cities specializing in recommender systems, online communities, mobile and ubiquitous technologies, digital libraries, and local geographic information systems.
 
 Our mission statement:

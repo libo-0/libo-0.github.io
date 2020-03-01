@@ -9,6 +9,8 @@ tags: [WSL, Linux, Ubuntu]
 
     sudo vim /etc/apt/sources.list
 
+<!-- more -->
+
 全部删除或注释，改为以下源
 
     deb http://mirrors.aliyun.com/ubuntu/ bionic main restricted universe multiverse

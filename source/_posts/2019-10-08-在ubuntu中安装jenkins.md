@@ -13,6 +13,8 @@ sudo apt-get update
 sudo apt-get install jenkins
 ```
 
+<!-- more -->
+
 日志文件位置： /var/log/jenkins/jenkins.log
 
 [0]: https://jenkins.io/zh/doc/book/installing/#debianubuntu

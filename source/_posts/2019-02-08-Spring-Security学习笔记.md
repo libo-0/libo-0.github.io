@@ -11,6 +11,8 @@ tags : [Spring, Security]
 
 Spring Security 是一个强大的可定制的验证和入口控制框架.它是防护基于Spring的应用实际上的标准.
 
+<!-- more -->
+
 Spring Security 是一个框架专注于Java应用提供验证和授权.如同其他的Spring项目,Spring Security 的真实能力被发现很容易扩展来符合自定义的需求.
 
 ### 特点

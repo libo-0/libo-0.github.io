@@ -6,6 +6,8 @@ tags:
 
 Postgresql 表数据类型可以是 json 和 jsonb，区别是 jsonb 类型会校验数据是否符合 json 格式，并将解析后的数据存储，而 json 是直接存储。所以 jsonb 插入慢，查询快，json 插入快，查询慢。
 
+<!-- more -->
+
 当 Postgresql 表中有 jsonb 类型时，通过 Mybatis 来生成 mapper.xml 时，需要自定义 TypeHandler。然后在 Mybatis 的 generater-config.xml 中对应的表配置该 TypeHandler。
 
 ``` xml

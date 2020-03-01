@@ -104,9 +104,20 @@ deploy:
    message: Site updated {{ now('YYYY-MM-DD HH:mm:ss') }}
    token: $GITEE_TOKEN
 
+-  type: rsync
+   host: 47.106.116.17
+   user: root
+   root: /var/www/html
+   port: 22
+   delete: true
+   verbose: true
+   ignore_errors: true
+
 -  type: git
-   repo: git@github.com:libo-0/libo-0.git
+   repo: git@github.com:libo-0/libo-0.github.io.git
    branch: master
    message: Site updated {{ now('YYYY-MM-DD HH:mm:ss') }}
    token: $GITHUB_TOKEN
+
+
 

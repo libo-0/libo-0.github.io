@@ -1,3 +1,6 @@
 [submodule "themes/ayer"]
 	path = themes/ayer
 	url = https://github.com/libo-0/hexo-theme-ayer.git
+[submodule "themes/volantis"]
+	path = themes/volantis
+	url = https://github.com/libo-0/hexo-theme-volantis.git

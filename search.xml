@@ -950,25 +950,6 @@
     
     
     <entry>
-      <title>windows下创建android项目</title>
-      <link href="/2019/01/13/android/"/>
-      <url>/2019/01/13/android/</url>
-      
-        <content type="html"><![CDATA[<h1 id="windows下创建android项目"><a href="#windows下创建android项目" class="headerlink" title="windows下创建android项目"></a>windows下创建android项目</h1><a id="more"></a><h2 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h2><h4 id="单位"><a href="#单位" class="headerlink" title="单位"></a>单位</h4><ul><li>dp(dip) device independent pixels (设备独立像素)</li><li>px(pixels)</li><li>pt(point) 1pt = 1/72 英寸</li><li>sp(scaled pixels)</li></ul><h2 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h2><h3 id="环境变量"><a href="#环境变量" class="headerlink" title="环境变量"></a>环境变量</h3><ul><li><p>C:\Program Files\Android-SDK-Manager\tools</p></li><li><p>C:\Program Files\Android-SDK-Manager\platform-tools</p></li><li><p>ANT_HOME  C:\Program Files\apache-ant-1.10.5</p></li><li><p>gradle4.1 C:\Program Files\Android Studio\gradle\gradle-4.1\bin</p></li></ul><h3 id="gradle-仓库设置"><a href="#gradle-仓库设置" class="headerlink" title="gradle 仓库设置"></a>gradle 仓库设置</h3><pre><code>maven{        url &apos;http://maven.aliyun.com/nexus/content/groups/public/&apos;    }</code></pre><h2 id="创建项目-默认ant构建"><a href="#创建项目-默认ant构建" class="headerlink" title="创建项目(默认ant构建)"></a>创建项目(默认ant构建)</h2><pre><code>android create project --target android-23 --package com.example.foo --name Foo --activity HelloWorldAcitvity --path .\MyAndroidd</code></pre><ul><li>–name 生成的.apk文件名称</li><li>–gradle 使用Gradle 格式</li><li>–gradleversion Gradle版本</li></ul><h3 id="项目目录"><a href="#项目目录" class="headerlink" title="项目目录"></a>项目目录</h3><ul><li>AndroidManifext.xml 告知Android新建项目有关内容的配置文件</li><li>bin 生成的二进制代码文件(编译好的类文件)</li><li>build.properties 可编辑的属性文件</li><li>build.xml Ant构建控制文件</li><li>project.properties 保存所用到的SDK版本和库</li><li>其他已知文件</li></ul><h3 id="创建gradle构建项目"><a href="#创建gradle构建项目" class="headerlink" title="创建gradle构建项目"></a>创建gradle构建项目</h3><pre><code>android create project --target android-23 --package com.example.foo --gradle --gradle-version 4.6</code></pre><p>–name Foo –activity HelloWorldActivity –path HelloGradle</p><h3 id="构建项目"><a href="#构建项目" class="headerlink" title="构建项目"></a>构建项目</h3><ul><li><p>ant 构建</p><p>  ant debug</p></li><li><p>gradle 构建</p><p> gradlew build </p></li></ul><h3 id="部署到虚拟机"><a href="#部署到虚拟机" class="headerlink" title="部署到虚拟机"></a>部署到虚拟机</h3><pre><code>android create avd -n my_droid -t 2 --abi default/x86_64</code></pre><ul><li><p>android 调试桥服务器与模拟器进行通信</p><p>  adb start-server<br>  emulator -avd my_droid</p></li></ul><h2 id="adb-使用"><a href="#adb-使用" class="headerlink" title="adb 使用"></a>adb 使用</h2><ul><li>安装应用<br>  adb install package.apk</li><li>卸载应用<br>  adb uninstall com.exaple.packageName</li><li>shell 打开手机shell<br>  adb shell</li><li>查看日志<br>  adb logcat</li></ul><h3 id="ant-的缺点"><a href="#ant-的缺点" class="headerlink" title="ant 的缺点"></a>ant 的缺点</h3><p>ant 自身无法处理依赖项，而maven提供依赖项管理功能，maven是java环境中使用最广泛的构建工具</p><h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><h3 id="常用缩略短语"><a href="#常用缩略短语" class="headerlink" title="常用缩略短语"></a>常用缩略短语</h3><ul><li>NPE (NUll Pointer Exception)</li><li>ANR (Application Not Responding</li><li>FC (Force Close)</li></ul><h3 id="Android-Studio"><a href="#Android-Studio" class="headerlink" title="Android Studio"></a>Android Studio</h3><ul><li>查看日志 View-&gt;Tool Window-&gt;logcat   alt + 6</li></ul><h4 id="调试"><a href="#调试" class="headerlink" title="调试"></a>调试</h4><p>利用Log.d() 方法可以方便进行android应用程序调试, 该方法在LogCat窗口输出必要的值和信息.</p><pre><code>import android.util.Log;Log.d(&quot;Testing&quot;, &quot;Checkpoint 1&quot;);</code></pre><p>Log.d() 方法不支持变量, 可以通过String.format()格式化输出.</p><h4 id="检查代码"><a href="#检查代码" class="headerlink" title="检查代码"></a>检查代码</h4><pre><code>cmd: lint .androidStudio: Analyze-&gt;Inspect Code.</code></pre><h2 id="HttpClient"><a href="#HttpClient" class="headerlink" title="HttpClient"></a>HttpClient</h2><p>因为android6.0 以后官方不在支持Httpclient</p><h3 id="添加库"><a href="#添加库" class="headerlink" title="添加库"></a>添加库</h3><h3 id="httpclient"><a href="#httpclient" class="headerlink" title="httpclient"></a>httpclient</h3><p>在模块build.properties </p><ul><li><p>在android{}标签中添加</p><p>  useLibrary ‘org.apache.http.legacy’</p></li><li><p>在dependencies{}标签添加</p><p>  compile group: ‘org.apache.httpcomponents’, name: ‘httpclient-android’, version: ‘4.3.5.1’</p></li></ul><h3 id="design"><a href="#design" class="headerlink" title="design"></a>design</h3><ul><li>desgin<br>  implementation ‘com.android.support:design:26.0.0-beta1’</li></ul>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> android </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>Virtualbox中通过HostOnly方式搭建5台ubuntu虚拟机</title>
       <link href="/2019/01/13/Virtualbox%E4%B8%AD%E9%80%9A%E8%BF%87HostOnly%E6%96%B9%E5%BC%8F%E6%90%AD%E5%BB%BA5%E5%8F%B0ubuntu%E8%99%9A%E6%8B%9F%E6%9C%BA/"/>
       <url>/2019/01/13/Virtualbox%E4%B8%AD%E9%80%9A%E8%BF%87HostOnly%E6%96%B9%E5%BC%8F%E6%90%AD%E5%BB%BA5%E5%8F%B0ubuntu%E8%99%9A%E6%8B%9F%E6%9C%BA/</url>
@@ -980,6 +961,25 @@
         <tags>
             
             <tag> Virtualbox </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>windows下创建android项目</title>
+      <link href="/2019/01/13/android/"/>
+      <url>/2019/01/13/android/</url>
+      
+        <content type="html"><![CDATA[<h1 id="windows下创建android项目"><a href="#windows下创建android项目" class="headerlink" title="windows下创建android项目"></a>windows下创建android项目</h1><a id="more"></a><h2 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h2><h4 id="单位"><a href="#单位" class="headerlink" title="单位"></a>单位</h4><ul><li>dp(dip) device independent pixels (设备独立像素)</li><li>px(pixels)</li><li>pt(point) 1pt = 1/72 英寸</li><li>sp(scaled pixels)</li></ul><h2 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h2><h3 id="环境变量"><a href="#环境变量" class="headerlink" title="环境变量"></a>环境变量</h3><ul><li><p>C:\Program Files\Android-SDK-Manager\tools</p></li><li><p>C:\Program Files\Android-SDK-Manager\platform-tools</p></li><li><p>ANT_HOME  C:\Program Files\apache-ant-1.10.5</p></li><li><p>gradle4.1 C:\Program Files\Android Studio\gradle\gradle-4.1\bin</p></li></ul><h3 id="gradle-仓库设置"><a href="#gradle-仓库设置" class="headerlink" title="gradle 仓库设置"></a>gradle 仓库设置</h3><pre><code>maven{        url &apos;http://maven.aliyun.com/nexus/content/groups/public/&apos;    }</code></pre><h2 id="创建项目-默认ant构建"><a href="#创建项目-默认ant构建" class="headerlink" title="创建项目(默认ant构建)"></a>创建项目(默认ant构建)</h2><pre><code>android create project --target android-23 --package com.example.foo --name Foo --activity HelloWorldAcitvity --path .\MyAndroidd</code></pre><ul><li>–name 生成的.apk文件名称</li><li>–gradle 使用Gradle 格式</li><li>–gradleversion Gradle版本</li></ul><h3 id="项目目录"><a href="#项目目录" class="headerlink" title="项目目录"></a>项目目录</h3><ul><li>AndroidManifext.xml 告知Android新建项目有关内容的配置文件</li><li>bin 生成的二进制代码文件(编译好的类文件)</li><li>build.properties 可编辑的属性文件</li><li>build.xml Ant构建控制文件</li><li>project.properties 保存所用到的SDK版本和库</li><li>其他已知文件</li></ul><h3 id="创建gradle构建项目"><a href="#创建gradle构建项目" class="headerlink" title="创建gradle构建项目"></a>创建gradle构建项目</h3><pre><code>android create project --target android-23 --package com.example.foo --gradle --gradle-version 4.6</code></pre><p>–name Foo –activity HelloWorldActivity –path HelloGradle</p><h3 id="构建项目"><a href="#构建项目" class="headerlink" title="构建项目"></a>构建项目</h3><ul><li><p>ant 构建</p><p>  ant debug</p></li><li><p>gradle 构建</p><p> gradlew build </p></li></ul><h3 id="部署到虚拟机"><a href="#部署到虚拟机" class="headerlink" title="部署到虚拟机"></a>部署到虚拟机</h3><pre><code>android create avd -n my_droid -t 2 --abi default/x86_64</code></pre><ul><li><p>android 调试桥服务器与模拟器进行通信</p><p>  adb start-server<br>  emulator -avd my_droid</p></li></ul><h2 id="adb-使用"><a href="#adb-使用" class="headerlink" title="adb 使用"></a>adb 使用</h2><ul><li>安装应用<br>  adb install package.apk</li><li>卸载应用<br>  adb uninstall com.exaple.packageName</li><li>shell 打开手机shell<br>  adb shell</li><li>查看日志<br>  adb logcat</li></ul><h3 id="ant-的缺点"><a href="#ant-的缺点" class="headerlink" title="ant 的缺点"></a>ant 的缺点</h3><p>ant 自身无法处理依赖项，而maven提供依赖项管理功能，maven是java环境中使用最广泛的构建工具</p><h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><h3 id="常用缩略短语"><a href="#常用缩略短语" class="headerlink" title="常用缩略短语"></a>常用缩略短语</h3><ul><li>NPE (NUll Pointer Exception)</li><li>ANR (Application Not Responding</li><li>FC (Force Close)</li></ul><h3 id="Android-Studio"><a href="#Android-Studio" class="headerlink" title="Android Studio"></a>Android Studio</h3><ul><li>查看日志 View-&gt;Tool Window-&gt;logcat   alt + 6</li></ul><h4 id="调试"><a href="#调试" class="headerlink" title="调试"></a>调试</h4><p>利用Log.d() 方法可以方便进行android应用程序调试, 该方法在LogCat窗口输出必要的值和信息.</p><pre><code>import android.util.Log;Log.d(&quot;Testing&quot;, &quot;Checkpoint 1&quot;);</code></pre><p>Log.d() 方法不支持变量, 可以通过String.format()格式化输出.</p><h4 id="检查代码"><a href="#检查代码" class="headerlink" title="检查代码"></a>检查代码</h4><pre><code>cmd: lint .androidStudio: Analyze-&gt;Inspect Code.</code></pre><h2 id="HttpClient"><a href="#HttpClient" class="headerlink" title="HttpClient"></a>HttpClient</h2><p>因为android6.0 以后官方不在支持Httpclient</p><h3 id="添加库"><a href="#添加库" class="headerlink" title="添加库"></a>添加库</h3><h3 id="httpclient"><a href="#httpclient" class="headerlink" title="httpclient"></a>httpclient</h3><p>在模块build.properties </p><ul><li><p>在android{}标签中添加</p><p>  useLibrary ‘org.apache.http.legacy’</p></li><li><p>在dependencies{}标签添加</p><p>  compile group: ‘org.apache.httpcomponents’, name: ‘httpclient-android’, version: ‘4.3.5.1’</p></li></ul><h3 id="design"><a href="#design" class="headerlink" title="design"></a>design</h3><ul><li>desgin<br>  implementation ‘com.android.support:design:26.0.0-beta1’</li></ul>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> android </tag>
             
         </tags>
       
@@ -1089,25 +1089,6 @@
     
     
     <entry>
-      <title>linux配置远程免密登录</title>
-      <link href="/2019/01/13/linux%E9%85%8D%E7%BD%AE%E8%BF%9C%E7%A8%8B%E5%85%8D%E5%AF%86%E7%99%BB%E5%BD%95/"/>
-      <url>/2019/01/13/linux%E9%85%8D%E7%BD%AE%E8%BF%9C%E7%A8%8B%E5%85%8D%E5%AF%86%E7%99%BB%E5%BD%95/</url>
-      
-        <content type="html"><![CDATA[<p>在本地执行</p><a id="more"></a><pre><code>ssh-keygen -t rsa</code></pre><p>这会在用户目录生成 id_rsa 和 id_rsa.pub 两个文件</p><p>将 id_rsa.pub 发送到远程要登陆的linux 服务器</p><pre><code>scp ./id_rsa.pub  username@remotehost:/home/username/</code></pre><p>然后追加到 ~/.ssh/authorized_keys</p><pre><code>cat ~/.id_rsa.pub &gt;&gt; ~/.ssh/authorized_keys</code></pre><p>然后就可以在本地免密远程登录了。</p>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> linux </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>mysql_database</title>
       <link href="/2019/01/13/mysql_database/"/>
       <url>/2019/01/13/mysql_database/</url>
@@ -1119,6 +1100,25 @@
         <tags>
             
             <tag> mysql </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>linux配置远程免密登录</title>
+      <link href="/2019/01/13/linux%E9%85%8D%E7%BD%AE%E8%BF%9C%E7%A8%8B%E5%85%8D%E5%AF%86%E7%99%BB%E5%BD%95/"/>
+      <url>/2019/01/13/linux%E9%85%8D%E7%BD%AE%E8%BF%9C%E7%A8%8B%E5%85%8D%E5%AF%86%E7%99%BB%E5%BD%95/</url>
+      
+        <content type="html"><![CDATA[<p>在本地执行</p><a id="more"></a><pre><code>ssh-keygen -t rsa</code></pre><p>这会在用户目录生成 id_rsa 和 id_rsa.pub 两个文件</p><p>将 id_rsa.pub 发送到远程要登陆的linux 服务器</p><pre><code>scp ./id_rsa.pub  username@remotehost:/home/username/</code></pre><p>然后追加到 ~/.ssh/authorized_keys</p><pre><code>cat ~/.id_rsa.pub &gt;&gt; ~/.ssh/authorized_keys</code></pre><p>然后就可以在本地免密远程登录了。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> linux </tag>
             
         </tags>
       

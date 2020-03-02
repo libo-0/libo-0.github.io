@@ -2,6 +2,14 @@
 title: Travis-Cli-自动构建-Hexo博客
 date: 2020-03-01 23:23:09
 tags:
+  - CI
+  - Travis-CI
+  - 持续集成
+categories:
+  - CI
+  - Travis-CI
+  - 工具
+img: /images/travis-ci.jpg
 ---
 
 Travis-Cli 是一种持续集成构建部署服务，支持自动化构建测试部署。我们可以用它来自动编译发布部署我们的 hexo github page 博客。

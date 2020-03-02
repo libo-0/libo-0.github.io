@@ -26,6 +26,7 @@
     <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
     <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
     <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/highlight/styles/monokai.css">
     <link rel="stylesheet" type="text/css" href="/css/matery.css">
     <link rel="stylesheet" type="text/css" href="/css/my.css">
     
@@ -416,7 +417,7 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">lsof -i:9025</span><br><span class="line"><span class="built_in">kill</span> pid</span><br></pre></td></tr></table></figure>
+                <figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">lsof -i:9025<br><span class="hljs-built_in">kill</span> pid<br></code></pre></td></tr></table></figure>
 
 <a id="more"></a>
 
@@ -774,7 +775,7 @@ sudo systemctl stop apache2
 
 <!-- 代码块功能依赖 -->
 <script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
-
+<script type="text/javascript" src="/libs/highlight/highlight.pack.js"></script>
 <!-- 代码语言 -->
 
 <script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>

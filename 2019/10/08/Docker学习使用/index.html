@@ -21,6 +21,7 @@
     <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
     <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
     <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/highlight/styles/monokai.css">
     <link rel="stylesheet" type="text/css" href="/css/matery.css">
     <link rel="stylesheet" type="text/css" href="/css/my.css">
     
@@ -411,7 +412,7 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="在-Ubuntu-中创建-docker-用户"><a href="#在-Ubuntu-中创建-docker-用户" class="headerlink" title="在 Ubuntu 中创建 docker 用户"></a>在 Ubuntu 中创建 docker 用户</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo adduser docker</span><br><span class="line"></span><br><span class="line">&lt;!-- more --&gt;</span><br><span class="line"></span><br><span class="line">sudo usermod -aG docker docker</span><br><span class="line"><span class="comment"># 将 docker 用户添加到 sudo 组</span></span><br><span class="line">sudo usermod -aG sudo docker</span><br></pre></td></tr></table></figure>
+                <h2 id="在-Ubuntu-中创建-docker-用户"><a href="#在-Ubuntu-中创建-docker-用户" class="headerlink" title="在 Ubuntu 中创建 docker 用户"></a>在 Ubuntu 中创建 docker 用户</h2><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">sudo adduser docker<br><br>&lt;!-- more --&gt;<br><br>sudo usermod -aG docker docker<br><span class="hljs-comment"># 将 docker 用户添加到 sudo 组</span><br>sudo usermod -aG sudo docker<br></code></pre></td></tr></table></figure>
 
             </div>
             <hr/>
@@ -774,7 +775,7 @@ wget -q -O - https://pkg.jenkins.io/debian/jenkins.io.key | sudo apt-key add -su
 
 <!-- 代码块功能依赖 -->
 <script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
-
+<script type="text/javascript" src="/libs/highlight/highlight.pack.js"></script>
 <!-- 代码语言 -->
 
 <script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>

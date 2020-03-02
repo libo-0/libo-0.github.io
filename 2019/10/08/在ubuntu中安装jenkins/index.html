@@ -22,6 +22,7 @@ wget -q -O - https://pkg.jenkins.io/debian/jenkins.io.key | sudo apt-key add -su
     <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
     <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
     <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/highlight/styles/monokai.css">
     <link rel="stylesheet" type="text/css" href="/css/matery.css">
     <link rel="stylesheet" type="text/css" href="/css/my.css">
     
@@ -417,7 +418,7 @@ wget -q -O - https://pkg.jenkins.io/debian/jenkins.io.key | sudo apt-key add -su
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <p><a href="https://jenkins.io/zh/doc/book/installing/#debianubuntu" target="_blank" rel="noopener">官方指导安装</a></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">wget -q -O - https://pkg.jenkins.io/debian/jenkins.io.key | sudo apt-key add -</span><br><span class="line">sudo sh -c <span class="string">'echo deb http://pkg.jenkins.io/debian-stable binary/ &gt; /etc/apt/sources.list.d/jenkins.list'</span></span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install jenkins</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">wget -q -O - https://pkg.jenkins.io/debian/jenkins.io.key | sudo apt-key add -<br>sudo sh -c <span class="hljs-string">'echo deb http://pkg.jenkins.io/debian-stable binary/ &gt; /etc/apt/sources.list.d/jenkins.list'</span><br>sudo apt-get update<br>sudo apt-get install jenkins<br></code></pre></td></tr></table></figure>
 
 <a id="more"></a>
 
@@ -775,7 +776,7 @@ Spring Security 是一个框架专注于Java应用提供验证和
 
 <!-- 代码块功能依赖 -->
 <script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
-
+<script type="text/javascript" src="/libs/highlight/highlight.pack.js"></script>
 <!-- 代码语言 -->
 
 <script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>

@@ -34,6 +34,7 @@ sudo service mysql stop
     <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
     <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
     <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/highlight/styles/monokai.css">
     <link rel="stylesheet" type="text/css" href="/css/matery.css">
     <link rel="stylesheet" type="text/css" href="/css/my.css">
     
@@ -428,7 +429,7 @@ sudo service mysql stop
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="一步安装"><a href="#一步安装" class="headerlink" title="一步安装"></a>一步安装</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt install mysql-server</span><br></pre></td></tr></table></figure>
+                <h2 id="一步安装"><a href="#一步安装" class="headerlink" title="一步安装"></a>一步安装</h2><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">sudo apt install mysql-server<br></code></pre></td></tr></table></figure>
 
 <a id="more"></a>
 
@@ -449,7 +450,7 @@ sudo service mysql stop
 <ul>
 <li>创建用户</li>
 </ul>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">user</span> <span class="string">'username'</span>@<span class="string">'%'</span> <span class="keyword">identified</span> <span class="keyword">by</span> <span class="string">'password'</span>;</span><br><span class="line"><span class="keyword">grant</span> <span class="keyword">all</span> <span class="keyword">on</span> *.* <span class="keyword">to</span> <span class="string">'username'</span>@<span class="string">'%'</span>;</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">create</span> <span class="hljs-keyword">user</span> <span class="hljs-string">'username'</span>@<span class="hljs-string">'%'</span> <span class="hljs-keyword">identified</span> <span class="hljs-keyword">by</span> <span class="hljs-string">'password'</span>;<br><span class="hljs-keyword">grant</span> <span class="hljs-keyword">all</span> <span class="hljs-keyword">on</span> *.* <span class="hljs-keyword">to</span> <span class="hljs-string">'username'</span>@<span class="hljs-string">'%'</span>;<br></code></pre></td></tr></table></figure>
 
 
             </div>
@@ -816,7 +817,7 @@ github
 
 <!-- 代码块功能依赖 -->
 <script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
-
+<script type="text/javascript" src="/libs/highlight/highlight.pack.js"></script>
 <!-- 代码语言 -->
 
 <script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>

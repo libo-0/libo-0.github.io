@@ -21,6 +21,7 @@
     <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
     <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
     <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/highlight/styles/monokai.css">
     <link rel="stylesheet" type="text/css" href="/css/matery.css">
     <link rel="stylesheet" type="text/css" href="/css/my.css">
     
@@ -293,21 +294,21 @@
                     <div class="post-statis col l4 hide-on-med-and-down" data-aos="zoom-in-right">
                         
 <div class="statis">
-    <span class="count"><a href="/">76</a></span>
+    <span class="count"><a href="/">77</a></span>
     <span class="name">文章</span>
 </div>
 
 
 
 <div class="statis">
-    <span class="count"><a href="/categories">8</a></span>
+    <span class="count"><a href="/categories">9</a></span>
     <span class="name">分类</span>
 </div>
 
 
 
 <div class="statis">
-    <span class="count"><a href="/tags">74</a></span>
+    <span class="count"><a href="/tags">77</a></span>
     <span class="name">标签</span>
 </div>
 
@@ -323,21 +324,21 @@
                                 <div class="post-statis hide-on-large-only" data-aos="zoom-in-right">
                                     
 <div class="statis">
-    <span class="count"><a href="/">76</a></span>
+    <span class="count"><a href="/">77</a></span>
     <span class="name">文章</span>
 </div>
 
 
 
 <div class="statis">
-    <span class="count"><a href="/categories">8</a></span>
+    <span class="count"><a href="/categories">9</a></span>
     <span class="name">分类</span>
 </div>
 
 
 
 <div class="statis">
-    <span class="count"><a href="/tags">74</a></span>
+    <span class="count"><a href="/tags">77</a></span>
     <span class="name">标签</span>
 </div>
 
@@ -473,7 +474,7 @@
                 name: '文章篇数',
                 type: 'line',
                 color: ['#6772e5'],
-                data: [0,0,0,0,0,0,0,13,2,0,0,0,4],
+                data: [0,0,0,0,0,0,0,13,2,0,0,0,5],
                 markPoint: {
                     symbolSize: 45,
                     color: ['#fa755a','#3ecf8e','#82d3f4'],
@@ -515,7 +516,7 @@
                 type: 'pie',
                 radius: '50%',
                 color: ['#6772e5', '#ff9e0f', '#fa755a', '#3ecf8e', '#82d3f4', '#ab47bc', '#525f7f', '#f51c47', '#26A69A'],
-                data: [{"name":"Git","value":1},{"name":"hexo","value":1},{"name":"静态博客","value":1},{"name":"Postman","value":1},{"name":"工具","value":1},{"name":"CI","value":1},{"name":"Travis-CI","value":1},{"name":"工具","value":1}],
+                data: [{"name":"Docker","value":1},{"name":"Git","value":1},{"name":"hexo","value":1},{"name":"静态博客","value":1},{"name":"Postman","value":1},{"name":"工具","value":1},{"name":"CI","value":1},{"name":"Travis-CI","value":1},{"name":"工具","value":1}],
                 itemStyle: {
                     emphasis: {
                         shadowBlur: 10,
@@ -539,7 +540,7 @@
         xAxis: [
             {
                 type: 'category',
-                data: ["linux","windows","hadoop","Spark","mysql","WSL","IDEA","Spring","Virtualbox","windows10"]
+                data: ["linux","windows","hadoop","Spark","mysql","WSL","IDEA","Virtualbox","Spring","windows10"]
             }
         ],
         yAxis: [
@@ -720,8 +721,38 @@
         <div class="tag-chips center-align">
             
             
+            <a href="/tags/Docker/">
+                <span class="chip center-align waves-effect waves-light chip-default">Docker</span>
+            </a>
+            
+            
+            
+            <a href="/tags/multi-stage/">
+                <span class="chip center-align waves-effect waves-light chip-default">multi-stage</span>
+            </a>
+            
+            
+            
+            <a href="/tags/spring-boot-in-docker/">
+                <span class="chip center-align waves-effect waves-light chip-default">spring-boot-in-docker</span>
+            </a>
+            
+            
+            
             <a href="/tags/Emmet/">
                 <span class="chip center-align waves-effect waves-light chip-default">Emmet</span>
+            </a>
+            
+            
+            
+            <a href="/tags/Hbase/">
+                <span class="chip center-align waves-effect waves-light chip-default">Hbase</span>
+            </a>
+            
+            
+            
+            <a href="/tags/hadoop/">
+                <span class="chip center-align waves-effect waves-light chip-default">hadoop</span>
             </a>
             
             
@@ -734,12 +765,6 @@
             
             <a href="/tags/hexo/">
                 <span class="chip center-align waves-effect waves-light chip-default">hexo</span>
-            </a>
-            
-            
-            
-            <a href="/tags/Hbase/">
-                <span class="chip center-align waves-effect waves-light chip-default">Hbase</span>
             </a>
             
             
@@ -764,24 +789,6 @@
             
             
             
-            <a href="/tags/socket/">
-                <span class="chip center-align waves-effect waves-light chip-default">socket</span>
-            </a>
-            
-            
-            
-            <a href="/tags/c/">
-                <span class="chip center-align waves-effect waves-light chip-default">c</span>
-            </a>
-            
-            
-            
-            <a href="/tags/hadoop/">
-                <span class="chip center-align waves-effect waves-light chip-default">hadoop</span>
-            </a>
-            
-            
-            
             <a href="/tags/shell/">
                 <span class="chip center-align waves-effect waves-light chip-default">shell</span>
             </a>
@@ -794,14 +801,20 @@
             
             
             
-            <a href="/tags/Postman/">
-                <span class="chip center-align waves-effect waves-light chip-default">Postman</span>
+            <a href="/tags/socket/">
+                <span class="chip center-align waves-effect waves-light chip-default">socket</span>
             </a>
             
             
             
-            <a href="/tags/%E5%B7%A5%E5%85%B7/">
-                <span class="chip center-align waves-effect waves-light chip-default">工具</span>
+            <a href="/tags/c/">
+                <span class="chip center-align waves-effect waves-light chip-default">c</span>
+            </a>
+            
+            
+            
+            <a href="/tags/PowerShell/">
+                <span class="chip center-align waves-effect waves-light chip-default">PowerShell</span>
             </a>
             
             
@@ -824,8 +837,44 @@
             
             
             
-            <a href="/tags/PowerShell/">
-                <span class="chip center-align waves-effect waves-light chip-default">PowerShell</span>
+            <a href="/tags/Postman/">
+                <span class="chip center-align waves-effect waves-light chip-default">Postman</span>
+            </a>
+            
+            
+            
+            <a href="/tags/%E5%B7%A5%E5%85%B7/">
+                <span class="chip center-align waves-effect waves-light chip-default">工具</span>
+            </a>
+            
+            
+            
+            <a href="/tags/Virtualbox/">
+                <span class="chip center-align waves-effect waves-light chip-default">Virtualbox</span>
+            </a>
+            
+            
+            
+            <a href="/tags/Spring/">
+                <span class="chip center-align waves-effect waves-light chip-default">Spring</span>
+            </a>
+            
+            
+            
+            <a href="/tags/Security/">
+                <span class="chip center-align waves-effect waves-light chip-default">Security</span>
+            </a>
+            
+            
+            
+            <a href="/tags/spark/">
+                <span class="chip center-align waves-effect waves-light chip-default">spark</span>
+            </a>
+            
+            
+            
+            <a href="/tags/ml/">
+                <span class="chip center-align waves-effect waves-light chip-default">ml</span>
             </a>
             
             
@@ -848,14 +897,8 @@
             
             
             
-            <a href="/tags/Spring/">
-                <span class="chip center-align waves-effect waves-light chip-default">Spring</span>
-            </a>
-            
-            
-            
-            <a href="/tags/Security/">
-                <span class="chip center-align waves-effect waves-light chip-default">Security</span>
+            <a href="/tags/apache2/">
+                <span class="chip center-align waves-effect waves-light chip-default">apache2</span>
             </a>
             
             
@@ -866,38 +909,8 @@
             
             
             
-            <a href="/tags/Virtualbox/">
-                <span class="chip center-align waves-effect waves-light chip-default">Virtualbox</span>
-            </a>
-            
-            
-            
-            <a href="/tags/spark/">
-                <span class="chip center-align waves-effect waves-light chip-default">spark</span>
-            </a>
-            
-            
-            
-            <a href="/tags/ml/">
-                <span class="chip center-align waves-effect waves-light chip-default">ml</span>
-            </a>
-            
-            
-            
             <a href="/tags/firefox/">
                 <span class="chip center-align waves-effect waves-light chip-default">firefox</span>
-            </a>
-            
-            
-            
-            <a href="/tags/apache2/">
-                <span class="chip center-align waves-effect waves-light chip-default">apache2</span>
-            </a>
-            
-            
-            
-            <a href="/tags/dataset/">
-                <span class="chip center-align waves-effect waves-light chip-default">dataset</span>
             </a>
             
             
@@ -920,6 +933,18 @@
             
             
             
+            <a href="/tags/dataset/">
+                <span class="chip center-align waves-effect waves-light chip-default">dataset</span>
+            </a>
+            
+            
+            
+            <a href="/tags/ipv6/">
+                <span class="chip center-align waves-effect waves-light chip-default">ipv6</span>
+            </a>
+            
+            
+            
             <a href="/tags/javaweb/">
                 <span class="chip center-align waves-effect waves-light chip-default">javaweb</span>
             </a>
@@ -934,12 +959,6 @@
             
             <a href="/tags/jsp/">
                 <span class="chip center-align waves-effect waves-light chip-default">jsp</span>
-            </a>
-            
-            
-            
-            <a href="/tags/ipv6/">
-                <span class="chip center-align waves-effect waves-light chip-default">ipv6</span>
             </a>
             
             
@@ -1064,12 +1083,6 @@
             
             
             
-            <a href="/tags/pdf/">
-                <span class="chip center-align waves-effect waves-light chip-default">pdf</span>
-            </a>
-            
-            
-            
             <a href="/tags/hbase/">
                 <span class="chip center-align waves-effect waves-light chip-default">hbase</span>
             </a>
@@ -1078,6 +1091,12 @@
             
             <a href="/tags/hdfs/">
                 <span class="chip center-align waves-effect waves-light chip-default">hdfs</span>
+            </a>
+            
+            
+            
+            <a href="/tags/pdf/">
+                <span class="chip center-align waves-effect waves-light chip-default">pdf</span>
             </a>
             
             
@@ -1106,12 +1125,6 @@
             
             
             
-            <a href="/tags/jenkins/">
-                <span class="chip center-align waves-effect waves-light chip-default">jenkins</span>
-            </a>
-            
-            
-            
             <a href="/tags/docs/">
                 <span class="chip center-align waves-effect waves-light chip-default">docs</span>
             </a>
@@ -1130,6 +1143,12 @@
             
             
             
+            <a href="/tags/%E7%BD%91%E7%AB%99%E6%A8%A1%E6%9D%BF/">
+                <span class="chip center-align waves-effect waves-light chip-default">网站模板</span>
+            </a>
+            
+            
+            
             <a href="/tags/terminal/">
                 <span class="chip center-align waves-effect waves-light chip-default">terminal</span>
             </a>
@@ -1142,8 +1161,8 @@
             
             
             
-            <a href="/tags/%E7%BD%91%E7%AB%99%E6%A8%A1%E6%9D%BF/">
-                <span class="chip center-align waves-effect waves-light chip-default">网站模板</span>
+            <a href="/tags/jenkins/">
+                <span class="chip center-align waves-effect waves-light chip-default">jenkins</span>
             </a>
             
             

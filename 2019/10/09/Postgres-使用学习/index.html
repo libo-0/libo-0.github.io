@@ -21,6 +21,7 @@
     <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
     <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
     <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/highlight/styles/monokai.css">
     <link rel="stylesheet" type="text/css" href="/css/matery.css">
     <link rel="stylesheet" type="text/css" href="/css/my.css">
     
@@ -414,9 +415,9 @@
                 <p>PostgreSQL 是客户端/服务架构。服务器端的程序叫做 postgres。PostgreSQL 是一个关系型数据库管理系统。每个表是行的集合。表的每一行包含相同的有名列集合，每一列都是一种特定的数据类型。一个数据库包含很多表，多个数据库组成一个数据库簇，由单个 PostgreSQL 服务器实例管理。</p>
 <a id="more"></a>
 
-<h2 id="角色"><a href="#角色" class="headerlink" title="角色"></a>角色</h2><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">role</span> <span class="keyword">name</span>;</span><br><span class="line"><span class="keyword">drop</span> <span class="keyword">role</span> <span class="keyword">name</span>;</span><br><span class="line">createuser name;</span><br><span class="line">dropuser name;</span><br><span class="line"><span class="keyword">select</span> rolname <span class="keyword">from</span> pg_roles;</span><br><span class="line"><span class="keyword">create</span> <span class="keyword">role</span> <span class="keyword">name</span> login;</span><br><span class="line"><span class="keyword">create</span> <span class="keyword">user</span> <span class="keyword">name</span>;</span><br><span class="line"><span class="keyword">grant</span> group_role <span class="keyword">to</span> role1, ...;</span><br><span class="line"><span class="keyword">revoke</span> group_role <span class="keyword">from</span> fole1, ...;</span><br><span class="line"></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">role</span> joe login inherit;</span><br><span class="line"><span class="keyword">create</span> <span class="keyword">role</span> <span class="keyword">admin</span> noinherit;</span><br><span class="line"></span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> bobs_table owner <span class="keyword">to</span> alice;</span><br></pre></td></tr></table></figure>
+<h2 id="角色"><a href="#角色" class="headerlink" title="角色"></a>角色</h2><figure class="highlight SQL"><table><tr><td class="code"><pre><code class="hljs SQL"><span class="hljs-keyword">create</span> <span class="hljs-keyword">role</span> <span class="hljs-keyword">name</span>;<br><span class="hljs-keyword">drop</span> <span class="hljs-keyword">role</span> <span class="hljs-keyword">name</span>;<br>createuser name;<br>dropuser name;<br><span class="hljs-keyword">select</span> rolname <span class="hljs-keyword">from</span> pg_roles;<br><span class="hljs-keyword">create</span> <span class="hljs-keyword">role</span> <span class="hljs-keyword">name</span> login;<br><span class="hljs-keyword">create</span> <span class="hljs-keyword">user</span> <span class="hljs-keyword">name</span>;<br><span class="hljs-keyword">grant</span> group_role <span class="hljs-keyword">to</span> role1, ...;<br><span class="hljs-keyword">revoke</span> group_role <span class="hljs-keyword">from</span> fole1, ...;<br><br><span class="hljs-keyword">create</span> <span class="hljs-keyword">role</span> joe login inherit;<br><span class="hljs-keyword">create</span> <span class="hljs-keyword">role</span> <span class="hljs-keyword">admin</span> noinherit;<br><br><span class="hljs-keyword">alter</span> <span class="hljs-keyword">table</span> bobs_table owner <span class="hljs-keyword">to</span> alice;<br></code></pre></td></tr></table></figure>
 
-<h2 id="用户"><a href="#用户" class="headerlink" title="用户"></a>用户</h2><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">user</span> blog <span class="keyword">password</span> <span class="string">'blog'</span>;</span><br></pre></td></tr></table></figure>
+<h2 id="用户"><a href="#用户" class="headerlink" title="用户"></a>用户</h2><figure class="highlight SQL"><table><tr><td class="code"><pre><code class="hljs SQL"><span class="hljs-keyword">create</span> <span class="hljs-keyword">user</span> blog <span class="hljs-keyword">password</span> <span class="hljs-string">'blog'</span>;<br></code></pre></td></tr></table></figure>
 
 <h2 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h2><ul>
 <li>创建数据库</li>
@@ -452,7 +453,7 @@
 <li>从文件执行 SQL 语句</li>
 </ul>
 <p><code>\i basic.sql</code></p>
-<h2 id="创建表"><a href="#创建表" class="headerlink" title="创建表"></a>创建表</h2><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> weather(</span><br><span class="line">    city <span class="built_in">varchar</span>(<span class="number">80</span>),</span><br><span class="line">    temp_lo <span class="built_in">int</span>,           <span class="comment">-- low temperature</span></span><br><span class="line">    temp_hi <span class="built_in">int</span>,           <span class="comment">-- high temperature</span></span><br><span class="line">    prcp    <span class="built_in">real</span>,          <span class="comment">-- precipitation</span></span><br><span class="line">    <span class="built_in">date</span>    <span class="built_in">date</span>,</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<h2 id="创建表"><a href="#创建表" class="headerlink" title="创建表"></a>创建表</h2><figure class="highlight sql"><table><tr><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">create</span> <span class="hljs-keyword">table</span> weather(<br>    city <span class="hljs-built_in">varchar</span>(<span class="hljs-number">80</span>),<br>    temp_lo <span class="hljs-built_in">int</span>,           <span class="hljs-comment">-- low temperature</span><br>    temp_hi <span class="hljs-built_in">int</span>,           <span class="hljs-comment">-- high temperature</span><br>    prcp    <span class="hljs-built_in">real</span>,          <span class="hljs-comment">-- precipitation</span><br>    <span class="hljs-built_in">date</span>    <span class="hljs-built_in">date</span>,<br>);<br></code></pre></td></tr></table></figure>
 
 <ul>
 <li>删除表</li>
@@ -462,7 +463,7 @@
 <ul>
 <li>插入数据</li>
 </ul>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> weather <span class="keyword">values</span>(<span class="string">'San Francisco'</span>, <span class="number">46</span>, <span class="number">50</span>, <span class="number">0.25</span>, <span class="string">'1994-11-27'</span>);</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">insert</span> <span class="hljs-keyword">into</span> weather <span class="hljs-keyword">values</span>(<span class="hljs-string">'San Francisco'</span>, <span class="hljs-number">46</span>, <span class="hljs-number">50</span>, <span class="hljs-number">0.25</span>, <span class="hljs-string">'1994-11-27'</span>);<br></code></pre></td></tr></table></figure>
 
 <p>不是简单数字类型的必须用单引号 ‘‘ 包围起来。</p>
 
@@ -803,7 +804,7 @@
 
 <!-- 代码块功能依赖 -->
 <script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
-
+<script type="text/javascript" src="/libs/highlight/highlight.pack.js"></script>
 <!-- 代码语言 -->
 
 <script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>

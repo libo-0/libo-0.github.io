@@ -4,6 +4,39 @@
   
     
     <entry>
+      <title>如何将swagger接口文档导出到postman集合</title>
+      <link href="/2020/03/03/%E5%A6%82%E4%BD%95%E5%B0%86swagger%E6%8E%A5%E5%8F%A3%E6%96%87%E6%A1%A3%E5%AF%BC%E5%87%BA%E5%88%B0postman%E9%9B%86%E5%90%88/"/>
+      <url>/2020/03/03/%E5%A6%82%E4%BD%95%E5%B0%86swagger%E6%8E%A5%E5%8F%A3%E6%96%87%E6%A1%A3%E5%AF%BC%E5%87%BA%E5%88%B0postman%E9%9B%86%E5%90%88/</url>
+      
+        <content type="html"><![CDATA[<p><code>Swagger</code> 是强大的面向接口定义、自动生成接口文档的工具，支持导出 <code>open-api2.0</code> 格式接口文档。Postman 是强大的接口测试工具，这两种工具的结合将摩擦出怎样的火花？</p><a id="more"></a><p>在 spring boot 项目中导入 Swagger 的 maven 依赖，通过在 controller 中添加标记，便可在 swagger-ui 中生成接口文档。在 swagger-ui 页面，打开浏览器开发者工具，刷新页面，发现 swagger-ui 的生成的 <code>open-api2.0</code> 文档在 <a href="http://localhost:9031/v2/api-docs" target="_blank" rel="noopener">http://localhost:9031/v2/api-docs</a> 接口，是符合 <code>open-api2.0</code> 定义的 json 数据。</p><p><img src="/images/postman-import-open-api2.jpg" alt="postman import open-api2.0"></p><p>打开 <code>postman</code>, 选择导入-&gt;从链接导入，粘贴 <a href="http://localhost:9031/v2/api-docs" target="_blank" rel="noopener">http://localhost:9031/v2/api-docs</a> 即可导入到 postman 集合中。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> api </category>
+          
+          <category> postman </category>
+          
+          <category> swagger </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> swagger </tag>
+            
+            <tag> open-api2.0 </tag>
+            
+            <tag> postman </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>设计模式</title>
       <link href="/2020/03/03/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
       <url>/2020/03/03/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</url>
@@ -724,6 +757,25 @@
     
     
     <entry>
+      <title>xming6.9.0 下载</title>
+      <link href="/2019/01/20/xming%E4%B8%8B%E8%BD%BD/"/>
+      <url>/2019/01/20/xming%E4%B8%8B%E8%BD%BD/</url>
+      
+        <content type="html"><![CDATA[<h2 id="xming6-9-0下载"><a href="#xming6-9-0下载" class="headerlink" title="xming6.9.0下载"></a><a href="">xming6.9.0下载</a></h2><p>下载资源不易找，国外慢，国内CSDN要下载分，一个仅2M大小的软件，却让我找了半个小时的资源，让我感受到了满满的恶意。</p><a id="more"></a><p><a href="https://en.softonic.com/download/xming/windows/post-download" target="_blank" rel="noopener">国外下载地址</a><a href="https://en.softonic.com/download/xming/windows/post-download/" target="_blank" rel="noopener">https://en.softonic.com/download/xming/windows/post-download/</a>，有20kb以上的速度，还能够下。</p><p><a href="https://pan.baidu.com/s/1wMDA-8zqd8eiu6iGWGPqFQ" target="_blank" rel="noopener">百度云地址</a></p><p><a href="https://download.csdn.net/download/qq_18801027/10924654" target="_blank" rel="noopener">CSDN地址1积分</a></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> WSL </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>wsl-linux-ubuntu18.04更换阿里云源</title>
       <link href="/2019/01/20/wsl-linux-ubuntu18.04%E4%B8%8E16.04-%E6%9B%B4%E6%8D%A2%E9%98%BF%E9%87%8C%E4%BA%91%E6%BA%90/"/>
       <url>/2019/01/20/wsl-linux-ubuntu18.04%E4%B8%8E16.04-%E6%9B%B4%E6%8D%A2%E9%98%BF%E9%87%8C%E4%BA%91%E6%BA%90/</url>
@@ -739,25 +791,6 @@
             <tag> Linux </tag>
             
             <tag> Ubuntu </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>xming6.9.0 下载</title>
-      <link href="/2019/01/20/xming%E4%B8%8B%E8%BD%BD/"/>
-      <url>/2019/01/20/xming%E4%B8%8B%E8%BD%BD/</url>
-      
-        <content type="html"><![CDATA[<h2 id="xming6-9-0下载"><a href="#xming6-9-0下载" class="headerlink" title="xming6.9.0下载"></a><a href="">xming6.9.0下载</a></h2><p>下载资源不易找，国外慢，国内CSDN要下载分，一个仅2M大小的软件，却让我找了半个小时的资源，让我感受到了满满的恶意。</p><a id="more"></a><p><a href="https://en.softonic.com/download/xming/windows/post-download" target="_blank" rel="noopener">国外下载地址</a><a href="https://en.softonic.com/download/xming/windows/post-download/" target="_blank" rel="noopener">https://en.softonic.com/download/xming/windows/post-download/</a>，有20kb以上的速度，还能够下。</p><p><a href="https://pan.baidu.com/s/1wMDA-8zqd8eiu6iGWGPqFQ" target="_blank" rel="noopener">百度云地址</a></p><p><a href="https://download.csdn.net/download/qq_18801027/10924654" target="_blank" rel="noopener">CSDN地址1积分</a></p>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> WSL </tag>
             
         </tags>
       
@@ -1084,6 +1117,25 @@
     
     
     <entry>
+      <title>Virtualbox中通过HostOnly方式搭建5台ubuntu虚拟机</title>
+      <link href="/2019/01/13/Virtualbox%E4%B8%AD%E9%80%9A%E8%BF%87HostOnly%E6%96%B9%E5%BC%8F%E6%90%AD%E5%BB%BA5%E5%8F%B0ubuntu%E8%99%9A%E6%8B%9F%E6%9C%BA/"/>
+      <url>/2019/01/13/Virtualbox%E4%B8%AD%E9%80%9A%E8%BF%87HostOnly%E6%96%B9%E5%BC%8F%E6%90%AD%E5%BB%BA5%E5%8F%B0ubuntu%E8%99%9A%E6%8B%9F%E6%9C%BA/</url>
+      
+        <content type="html"><![CDATA[<p>在Virtualbox中安装5台虚拟机，要求5台ubuntu 虚拟机能够相互ping通，并且可以访问外网。</p><a id="more"></a><p>5台虚拟机如果要相互ping通，则需要在同一个网段，并且与网关在同一个网段，网关设为相同的地址。我的虚拟机地址设置为</p><pre><code>主机node1 192.168.101.237主机node2 192.168.101.239主机node3 192.168.101.240主机node4 192.168.101.241主机node5 192.168.101.243</code></pre><p>所有主机网管设置为 192.168.101.102， 即 VirtualBox Host-Only Ethernet Adapter 的IP 地址</p><p>安装虚拟机，配置网络连接方式为hostonly，5台虚拟机均选择网络适配器 VirtualBox Host-Only Ethernet Adapter. 在 win10 宿主机上对以太网进行共享，右击 <em>以太网</em> -&gt; <em>属性</em> -&gt; <em>共享</em> -&gt; 勾选两个复选框，选择分享到 VirtualBox Host-Only Ethernet Adapter 网卡。</p><p>虚拟机安装完后，对每台虚拟机: 修改 /etc/network/interfaces.</p><p>首先，查看网卡名称</p><pre><code>ifconfig</code></pre><p>我的为 enp0s3</p><p>修改 /etc/network/interfaces</p><pre><code>sudo vim /etc/network/interfaces</code></pre><p>添加以下设置静态ip，网关设置为 VirtualBox Host-Only Ethernet Adapter 网卡的IP地址</p><pre><code>auto enp0s3iface enp0s3 inet staticaddress 192.168.101.237netmask 255.255.255.0gateway 192.168.101.102</code></pre><p>重启网卡</p><pre><code>/etc/init.d/networking restart</code></pre><p>设置DNS</p><pre><code>sudo vim /etc/systemd/resolved.conf</code></pre><p>修改DNS</p><pre><code>DNS=114.114.114.114</code></pre><p>重启虚拟机</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Virtualbox </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Spark机器学习笔记</title>
       <link href="/2019/01/13/Spark%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
       <url>/2019/01/13/Spark%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
@@ -1097,25 +1149,6 @@
             <tag> spark </tag>
             
             <tag> ml </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Virtualbox中通过HostOnly方式搭建5台ubuntu虚拟机</title>
-      <link href="/2019/01/13/Virtualbox%E4%B8%AD%E9%80%9A%E8%BF%87HostOnly%E6%96%B9%E5%BC%8F%E6%90%AD%E5%BB%BA5%E5%8F%B0ubuntu%E8%99%9A%E6%8B%9F%E6%9C%BA/"/>
-      <url>/2019/01/13/Virtualbox%E4%B8%AD%E9%80%9A%E8%BF%87HostOnly%E6%96%B9%E5%BC%8F%E6%90%AD%E5%BB%BA5%E5%8F%B0ubuntu%E8%99%9A%E6%8B%9F%E6%9C%BA/</url>
-      
-        <content type="html"><![CDATA[<p>在Virtualbox中安装5台虚拟机，要求5台ubuntu 虚拟机能够相互ping通，并且可以访问外网。</p><a id="more"></a><p>5台虚拟机如果要相互ping通，则需要在同一个网段，并且与网关在同一个网段，网关设为相同的地址。我的虚拟机地址设置为</p><pre><code>主机node1 192.168.101.237主机node2 192.168.101.239主机node3 192.168.101.240主机node4 192.168.101.241主机node5 192.168.101.243</code></pre><p>所有主机网管设置为 192.168.101.102， 即 VirtualBox Host-Only Ethernet Adapter 的IP 地址</p><p>安装虚拟机，配置网络连接方式为hostonly，5台虚拟机均选择网络适配器 VirtualBox Host-Only Ethernet Adapter. 在 win10 宿主机上对以太网进行共享，右击 <em>以太网</em> -&gt; <em>属性</em> -&gt; <em>共享</em> -&gt; 勾选两个复选框，选择分享到 VirtualBox Host-Only Ethernet Adapter 网卡。</p><p>虚拟机安装完后，对每台虚拟机: 修改 /etc/network/interfaces.</p><p>首先，查看网卡名称</p><pre><code>ifconfig</code></pre><p>我的为 enp0s3</p><p>修改 /etc/network/interfaces</p><pre><code>sudo vim /etc/network/interfaces</code></pre><p>添加以下设置静态ip，网关设置为 VirtualBox Host-Only Ethernet Adapter 网卡的IP地址</p><pre><code>auto enp0s3iface enp0s3 inet staticaddress 192.168.101.237netmask 255.255.255.0gateway 192.168.101.102</code></pre><p>重启网卡</p><pre><code>/etc/init.d/networking restart</code></pre><p>设置DNS</p><pre><code>sudo vim /etc/systemd/resolved.conf</code></pre><p>修改DNS</p><pre><code>DNS=114.114.114.114</code></pre><p>重启虚拟机</p>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> Virtualbox </tag>
             
         </tags>
       
@@ -1143,17 +1176,17 @@
     
     
     <entry>
-      <title>CSS层叠样式表学习笔记</title>
-      <link href="/2019/01/13/css/"/>
-      <url>/2019/01/13/css/</url>
+      <title>好用的Firefox浏览器插件</title>
+      <link href="/2019/01/13/firefox/"/>
+      <url>/2019/01/13/firefox/</url>
       
-        <content type="html"><![CDATA[<h2 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h2><a id="more"></a><ul><li><p>id 选择器  </p><p>  #para1{</p><pre><code>color:red;</code></pre><p>  }</p></li><li><p>class 选择器</p><p>  .center{</p><pre><code>text-align: center;</code></pre><p>  }</p></li></ul>]]></content>
+        <content type="html"><![CDATA[<h2 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h2><a id="more"></a><ul><li><p><a href="https://addons.mozilla.org/en-US/firefox/addon/youdao-dictionary/" target="_blank" rel="noopener">有道翻译插件</a></p></li><li><p><a href="https://addons.mozilla.org/zh-CN/firefox/addon/adblock-plus/" target="_blank" rel="noopener">去广告插件 Adblock Plus</a></p></li></ul>]]></content>
       
       
       
         <tags>
             
-            <tag> css </tag>
+            <tag> firefox </tag>
             
         </tags>
       
@@ -1183,17 +1216,36 @@
     
     
     <entry>
-      <title>好用的Firefox浏览器插件</title>
-      <link href="/2019/01/13/firefox/"/>
-      <url>/2019/01/13/firefox/</url>
+      <title>CSS层叠样式表学习笔记</title>
+      <link href="/2019/01/13/css/"/>
+      <url>/2019/01/13/css/</url>
       
-        <content type="html"><![CDATA[<h2 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h2><a id="more"></a><ul><li><p><a href="https://addons.mozilla.org/en-US/firefox/addon/youdao-dictionary/" target="_blank" rel="noopener">有道翻译插件</a></p></li><li><p><a href="https://addons.mozilla.org/zh-CN/firefox/addon/adblock-plus/" target="_blank" rel="noopener">去广告插件 Adblock Plus</a></p></li></ul>]]></content>
+        <content type="html"><![CDATA[<h2 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h2><a id="more"></a><ul><li><p>id 选择器  </p><p>  #para1{</p><pre><code>color:red;</code></pre><p>  }</p></li><li><p>class 选择器</p><p>  .center{</p><pre><code>text-align: center;</code></pre><p>  }</p></li></ul>]]></content>
       
       
       
         <tags>
             
-            <tag> firefox </tag>
+            <tag> css </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>linux-命令小程序学习</title>
+      <link href="/2019/01/13/linux-%E5%91%BD%E4%BB%A4%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0/"/>
+      <url>/2019/01/13/linux-%E5%91%BD%E4%BB%A4%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0/</url>
+      
+        <content type="html"><![CDATA[<h2 id="wc"><a href="#wc" class="headerlink" title="wc"></a>wc</h2><p>wc 字数统计工具</p><pre><code>echo &quot;this is a test&quot; &gt;&gt; test.txtwc test.txt</code></pre><a id="more"></a><p><img src="/img/wc-echo-1.png" alt="result"></p><pre><code>echo &quot;this is a test&quot; &gt;&gt; test.txtwc test.txt</code></pre><p><img src="/img/wc-echo-2.png" alt="result"></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> linux </tag>
             
         </tags>
       
@@ -1217,25 +1269,6 @@
             <tag> tomcat </tag>
             
             <tag> jsp </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>linux-命令小程序学习</title>
-      <link href="/2019/01/13/linux-%E5%91%BD%E4%BB%A4%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0/"/>
-      <url>/2019/01/13/linux-%E5%91%BD%E4%BB%A4%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0/</url>
-      
-        <content type="html"><![CDATA[<h2 id="wc"><a href="#wc" class="headerlink" title="wc"></a>wc</h2><p>wc 字数统计工具</p><pre><code>echo &quot;this is a test&quot; &gt;&gt; test.txtwc test.txt</code></pre><a id="more"></a><p><img src="/img/wc-echo-1.png" alt="result"></p><pre><code>echo &quot;this is a test&quot; &gt;&gt; test.txtwc test.txt</code></pre><p><img src="/img/wc-echo-2.png" alt="result"></p>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> linux </tag>
             
         </tags>
       
@@ -1402,27 +1435,6 @@
     
     
     <entry>
-      <title>使用snap终止软件安装</title>
-      <link href="/2019/01/13/%E4%BD%BF%E7%94%A8snap%E7%BB%88%E6%AD%A2%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/"/>
-      <url>/2019/01/13/%E4%BD%BF%E7%94%A8snap%E7%BB%88%E6%AD%A2%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/</url>
-      
-        <content type="html"><![CDATA[<p>ubuntu之前在应用安装软件，觉得太慢，就手动终止了，后面再安装报错： “snap has “install-snap” change in process”。</p><a id="more"></a><ul><li><p>查看改变</p><p>  snap changes</p></li></ul><p><img src="../images/snap_changes.png" alt="&quot;input cmd result&quot;"></p><ul><li><p>终止change</p><p>  sudo snap abort 6</p></li><li><p>重新安装</p><p>  sudo snap install chromium</p></li></ul>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> linux </tag>
-            
-            <tag> snap </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>单机ubuntu大数据环境配置</title>
       <link href="/2019/01/13/%E5%8D%95%E6%9C%BAubuntu%E5%A4%A7%E6%95%B0%E6%8D%AE%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
       <url>/2019/01/13/%E5%8D%95%E6%9C%BAubuntu%E5%A4%A7%E6%95%B0%E6%8D%AE%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</url>
@@ -1444,17 +1456,19 @@
     
     
     <entry>
-      <title>在IDEA中打包jar文件</title>
-      <link href="/2019/01/13/%E5%9C%A8IDEA%E4%B8%AD%E6%89%93%E5%8C%85jar%E6%96%87%E4%BB%B6/"/>
-      <url>/2019/01/13/%E5%9C%A8IDEA%E4%B8%AD%E6%89%93%E5%8C%85jar%E6%96%87%E4%BB%B6/</url>
+      <title>使用snap终止软件安装</title>
+      <link href="/2019/01/13/%E4%BD%BF%E7%94%A8snap%E7%BB%88%E6%AD%A2%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/"/>
+      <url>/2019/01/13/%E4%BD%BF%E7%94%A8snap%E7%BB%88%E6%AD%A2%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/</url>
       
-        <content type="html"><![CDATA[<p>直接将模块打包为jar的这里就不赘述了，这里是从模块中选择部分代码和库文件打包成一个jar文件。</p><a id="more"></a><ol><li><p>在IDEA 中 打开 Project Structure -&gt; Artifacts -&gt; 点击 + 号 -&gt; jar -&gt; emmpy, 对jar 文件重命名，然后在 OUtput Layout 中添加目录，目录结构为你的报结构，将你要添加的类.class 按报结构放到目录中，然后点击 下方 Create Manifest，自己选择一个目录， 选择主类，类路径就不用选了。</p></li><li><p>如果没有引用库文件，就可以点击 OK了。Build -&gt; Build Artifact, 选择对应的就好了。如果引用了库文件，则在右面板 Available Elements 中找到对应库， 如 mysql-cononctor.jar, 右击-&gt; Extract into OutPut Root, 点击 OK || Apply 就可以了，然后生成 Artifact.</p></li></ol>]]></content>
+        <content type="html"><![CDATA[<p>ubuntu之前在应用安装软件，觉得太慢，就手动终止了，后面再安装报错： “snap has “install-snap” change in process”。</p><a id="more"></a><ul><li><p>查看改变</p><p>  snap changes</p></li></ul><p><img src="../images/snap_changes.png" alt="&quot;input cmd result&quot;"></p><ul><li><p>终止change</p><p>  sudo snap abort 6</p></li><li><p>重新安装</p><p>  sudo snap install chromium</p></li></ul>]]></content>
       
       
       
         <tags>
             
-            <tag> IDEA </tag>
+            <tag> linux </tag>
+            
+            <tag> snap </tag>
             
         </tags>
       
@@ -1480,6 +1494,25 @@
             <tag> windows </tag>
             
             <tag> ssh </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>在IDEA中打包jar文件</title>
+      <link href="/2019/01/13/%E5%9C%A8IDEA%E4%B8%AD%E6%89%93%E5%8C%85jar%E6%96%87%E4%BB%B6/"/>
+      <url>/2019/01/13/%E5%9C%A8IDEA%E4%B8%AD%E6%89%93%E5%8C%85jar%E6%96%87%E4%BB%B6/</url>
+      
+        <content type="html"><![CDATA[<p>直接将模块打包为jar的这里就不赘述了，这里是从模块中选择部分代码和库文件打包成一个jar文件。</p><a id="more"></a><ol><li><p>在IDEA 中 打开 Project Structure -&gt; Artifacts -&gt; 点击 + 号 -&gt; jar -&gt; emmpy, 对jar 文件重命名，然后在 OUtput Layout 中添加目录，目录结构为你的报结构，将你要添加的类.class 按报结构放到目录中，然后点击 下方 Create Manifest，自己选择一个目录， 选择主类，类路径就不用选了。</p></li><li><p>如果没有引用库文件，就可以点击 OK了。Build -&gt; Build Artifact, 选择对应的就好了。如果引用了库文件，则在右面板 Available Elements 中找到对应库， 如 mysql-cononctor.jar, 右击-&gt; Extract into OutPut Root, 点击 OK || Apply 就可以了，然后生成 Artifact.</p></li></ol>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> IDEA </tag>
             
         </tags>
       

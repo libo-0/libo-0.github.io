@@ -4,14 +4,13 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Kafka-概览-生产者, java,nodejs">
-    <meta name="description" content="
+    <meta name="keywords" content="IP-地址, java,nodejs">
+    <meta name="description" content="IPv4 地址有 32 位，即
+2^32&amp;#x3D;(2^10)^3 * 2^2&amp;#x3D; 1024 * 1024 * 1024 * 4约等于 40 亿
 
-构造一个 Kafka Producer写消息到 Kafka 的第一步是创建一个生产者对象。一个 Kafka 生产者必须包含这三个属性：
 
-bootstrap.servers
-
-生产者用来建立到 Kafka 簇的初始连接的 broker ">
+每 8 位 用一个 . 号分隔，例如：193.32.216.9 的二进制表示
+1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -19,7 +18,7 @@ bootstrap.servers
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Kafka-概览-生产者 | libo 工作学习记录</title>
+    <title>IP-地址 | libo 工作学习记录</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -247,12 +246,12 @@ bootstrap.servers
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Kafka-概览-生产者</h1>
+                    <h1 class="description center-align post-title">IP-地址</h1>
                 </div>
             </div>
         </div>
@@ -369,8 +368,8 @@ bootstrap.servers
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Kafka/">
-                                <span class="chip bg-color">Kafka</span>
+                            <a href="/tags/IP/">
+                                <span class="chip bg-color">IP</span>
                             </a>
                         
                     </div>
@@ -381,8 +380,8 @@ bootstrap.servers
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Kafka/" class="post-category">
-                                Kafka
+                            <a href="/categories/IP/" class="post-category">
+                                IP
                             </a>
                         
                     </div>
@@ -408,14 +407,14 @@ bootstrap.servers
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.2k
+                    279
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    4 分
+                    1 分
                 </div>
                 
 				
@@ -431,58 +430,23 @@ bootstrap.servers
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <a id="more"></a>
+                <p>IPv4 地址有 32 位，即</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs math">2^32<br>&#x3D;(2^10)^3 * 2^2<br>&#x3D; 1024 * 1024 * 1024 * 4<br>约等于 40 亿<br></code></pre></td></tr></table></figure>
 
-<h2 id="构造一个-Kafka-Producer"><a href="#构造一个-Kafka-Producer" class="headerlink" title="构造一个 Kafka Producer"></a>构造一个 Kafka Producer</h2><p>写消息到 Kafka 的第一步是创建一个生产者对象。一个 Kafka 生产者必须包含这三个属性：</p>
-<ul>
-<li>bootstrap.servers</li>
-</ul>
-<p>生产者用来建立到 Kafka 簇的初始连接的 broker 列表，host:port 形式。</p>
-<ul>
-<li>key.serializer</li>
-</ul>
-<p>生产到 Kafka 的用来序列化记录的 key 的类。Kafka broker 期待 byte array 类型的 key 和 value 消息。</p>
-<ul>
-<li>value.serializer</li>
-</ul>
-<figure class="highlight Java"><table><tr><td class="code"><pre><code class="hljs Java"><span class="hljs-keyword">private</span> Properties kafkaProps = <span class="hljs-keyword">new</span> Properties(); kafkaProps.put(<span class="hljs-string">"bootstrap.servers"</span>, <span class="hljs-string">"broker1:9092,broker2:9092"</span>);<br>kafkaProps.put(<span class="hljs-string">"key.serializer"</span>, <span class="hljs-string">"org.apache.kafka.common.serialization.StringSerializer"</span>); kafkaProps.put(<span class="hljs-string">"value.serializer"</span>, <span class="hljs-string">"org.apache.kafka.common.serialization.StringSerializer"</span>); <br>producer = <span class="hljs-keyword">new</span> KafkaProducer&lt;String, String&gt;(kafkaProps);<br></code></pre></td></tr></table></figure>
+<a id="more"></a>
+<p>每 8 位 用一个 . 号分隔，例如：193.32.216.9 的二进制表示</p>
+<p><code>11000001 00100000 11011000 00001001</code></p>
+<p>IP 地址由网络地址和主机地址两部分组成。按照这种方式，氛围 5 类 IP 地址：</p>
+<ol>
+<li>A 类  0｜7位网络号  24位主机号</li>
+<li>B 类  10｜ 14位网络号  16位主机号</li>
+<li>C 类  110 ｜ 21位网络号  8位主机号</li>
+<li>D 类 1110｜ 28位多播组号</li>
+<li>E 类 11110 27位留待后用</li>
+</ol>
+<p>A类：（1.0.0.0-126.0.0.0） 子网掩码：255.0.0.0<br>B类：（128.0.0.0-191.255.0.0) 子网掩码：255.255.255.0<br>C类：（192.0.0.0-223.255.255.0）子网掩码：255.255.255.0<br>D类：（224.0.0.0-239.255.255.254）多路多播用户<br>E类：（240.0.0.0-255.255.255.254）保留地址</p>
+<p>在ABC 3类地址中，各自保留了 3 个区域作为私有地址，地址范围：<br>A类地址： 10.0.0.0～10.255.255.255<br>B类地址： 172.16.0.0～172.31.255.255<br>C类地址： 192.168.0.0～192.168.255.255</p>
 
-<h2 id="发送消息的-3-种主要方法"><a href="#发送消息的-3-种主要方法" class="headerlink" title="发送消息的 3 种主要方法"></a>发送消息的 3 种主要方法</h2><ul>
-<li>Fire and forget</li>
-<li>Synchronous send</li>
-<li>Asynchronous send</li>
-</ul>
-<h2 id="发送消息到-Kafka"><a href="#发送消息到-Kafka" class="headerlink" title="发送消息到 Kafka"></a>发送消息到 Kafka</h2><figure class="highlight Java"><table><tr><td class="code"><pre><code class="hljs Java">ProducerRecord&lt;String, String&gt; record =<br>            <span class="hljs-keyword">new</span> ProducerRecord&lt;&gt;(<span class="hljs-string">"CustomerCountry"</span>, <span class="hljs-string">"Precision Products"</span>,<span class="hljs-string">"France"</span>);<br><span class="hljs-keyword">try</span> &#123; producer.send(record);<br>&#125; <span class="hljs-keyword">catch</span> (Exception e) &#123; e.printStackTrace();<br>&#125;<br></code></pre></td></tr></table></figure>
-
-<p>生产者接受 <code>ProducerRecord</code> 对象，这个消息被放入一个 buffer，在一个单独的线程中被发送到 broker，send()方法返回一个 Java Future object：<code>RecordMetadata</code>。</p>
-<h2 id="Sending-a-Message-Synchronously"><a href="#Sending-a-Message-Synchronously" class="headerlink" title="Sending a Message Synchronously"></a>Sending a Message Synchronously</h2><figure class="highlight Java"><table><tr><td class="code"><pre><code class="hljs Java">ProducerRecord&lt;String, String&gt; record =<br>            <span class="hljs-keyword">new</span> ProducerRecord&lt;&gt;(<span class="hljs-string">"CustomerCountry"</span>, <span class="hljs-string">"Precision Products"</span>, <span class="hljs-string">"France"</span>);<br><span class="hljs-keyword">try</span> &#123;<br>producer.send(record).get();<br>    &#125; <span class="hljs-keyword">catch</span> (Exception e) &#123;<br>e.printStackTrace();<br>&#125;<br></code></pre></td></tr></table></figure>
-
-<p>使用 <code>Future.get()</code> 来等待 Kafka 的回复。没有发送成功抛异常；没有错误会获得一个 RecordMetadata 对象。</p>
-<h2 id="Sending-a-Message-Asynchronously"><a href="#Sending-a-Message-Asynchronously" class="headerlink" title="Sending a Message Asynchronously"></a>Sending a Message Asynchronously</h2><figure class="highlight Java"><table><tr><td class="code"><pre><code class="hljs Java"><span class="hljs-keyword">private</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">DemoProducerCallback</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Callback</span> </span>&#123;<br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onCompletion</span><span class="hljs-params">(RecordMetadata recordMetadata, Exception e)</span> </span>&#123;<br>         <span class="hljs-keyword">if</span> (e != <span class="hljs-keyword">null</span>) &#123;<br>            e.printStackTrace(); &#125;<br>&#125; &#125;<br>ProducerRecord&lt;String, String&gt; record =<br>            <span class="hljs-keyword">new</span> ProducerRecord&lt;&gt;(<span class="hljs-string">"CustomerCountry"</span>, <span class="hljs-string">"Biomedical Materials"</span>, <span class="hljs-string">"USA"</span>);<br>producer.send(record, <span class="hljs-keyword">new</span> DemoProducerCallback());<br></code></pre></td></tr></table></figure>
-
-<p>为了使用回调，需要实现 <code>org.apache.kafka. clients.producer.Callback</code> 接口，有一个 <code>onCompletion()</code> 方法。</p>
-<h2 id="Configuring-Producers"><a href="#Configuring-Producers" class="headerlink" title="Configuring Producers"></a>Configuring Producers</h2><p>Producer 有很多配置参数；大多数在 Apache Kafka 文件中有默认的值。一些参数对内存使用，性能，生产者的可靠性有很大影响。</p>
-<h3 id="acks"><a href="#acks" class="headerlink" title="acks"></a>acks</h3><p>acks 参数控制有多少个分区复制必须接收到这条记录，生产者才会认为是一次写成功。这个参数对消息的几率有很大影响。acks 有3 个允许的值。</p>
-<ul>
-<li><p>acks = 0，生产者不会等待 broker 认为消息发送成功的回复。虽然生产者不知道消息是否发送成功或丢失，但是可以用最快的网络发送消息，因此可以有较高的吞吐量。</p>
-</li>
-<li><p>acks = 1， 生产者会接收到 broker 的 leader replica 的接收成功回复。如果消息不能写到 leader，producer 会接收到错误信息，并重试发送。取决于发送信息是同步还是异步，会影响延迟或吞吐量。</p>
-</li>
-<li><p>acks=all， broker 的所有同步 replicas 接收到消息后，生产者才会接收到成功的响应。这是最安全的设置，因为你可以确保超过 1个 broker 接收到这个消息，及时崩溃，消息也会存活。然而延迟会更高。</p>
-</li>
-</ul>
-<h3 id="buffer-memory"><a href="#buffer-memory" class="headerlink" title="buffer.memory"></a>buffer.memory</h3><p>这回设置生产者在发送消息到 broker 之前的缓存消息的 buffer 大小。</p>
-<h3 id="compress-type"><a href="#compress-type" class="headerlink" title="compress.type"></a>compress.type</h3><p>默认，消息发送不被压缩。这个参数可以是：snappy, gzip, lz4。snappy 压缩由 Google 发明，提供令人满意的压缩率，较低的 CPU 花费，并且有不错的性能，所以推荐在性能和带宽作为关注点时使用。Gzip 使用更多的 CPU，但是有更高的压缩比，推荐在网络带宽被限制时使用。通过启用压缩，减少了网络利用和存储，这通常是 Kafka 发送信息的瓶颈。</p>
-<h3 id="retries"><a href="#retries" class="headerlink" title="retries"></a>retries</h3><p>当生产者从服务器收到一个错误信息时，错误可能是短暂的（分区 leader 缺失）。这种情况，重试参数的默认值决定了生产者在放弃发送消息并通知客户端发生了一个问题之前，重试发送多少次。默认，生产者会在重试之间间隔 100 ms，但是你能够使用 retry.backoff.ms 来控制。</p>
-<h3 id="batch-size"><a href="#batch-size" class="headerlink" title="batch.size"></a>batch.size</h3><p>当多条记录发送到相同的分区时，生产者会将他们打包成一批。这将被用来控制 每个 batch 在内存中以 byte 为单位的大小。当 batch 满了以后，所有在 batch 中的消息将被发送。然而，producer 不会等到 batch 满了以后才会发送。producer 会发送<br>half-full batch 大小，甚至是只包含一条消息。因此，设置 batch 太大会不会造成延迟；只是 batch 会用更多的内存。设置太小，会给系统添加负担，因为生唱着发送的太频繁。</p>
-<h3 id="linger-ms"><a href="#linger-ms" class="headerlink" title="linger.ms"></a>linger.ms</h3><p>控制在下一条消息到来前多久等待多久开始发送 batch</p>
-<h3 id="client-id"><a href="#client-id" class="headerlink" title="client.id"></a>client.id</h3><p>任意字符串，被 broker 标识消息来源，用于日志，metrics。</p>
-<h3 id="max-in-flight-requests-per-connection"><a href="#max-in-flight-requests-per-connection" class="headerlink" title="max.in.flight.requests.per.connection"></a>max.in.flight.requests.per.connection</h3><h3 id="timeout-ms-request-timeout-ms-metadata-fetch-timeout-ms"><a href="#timeout-ms-request-timeout-ms-metadata-fetch-timeout-ms" class="headerlink" title="timeout.ms, request.timeout.ms, metadata.fetch.timeout.ms"></a>timeout.ms, request.timeout.ms, metadata.fetch.timeout.ms</h3><h3 id="max-block-ms"><a href="#max-block-ms" class="headerlink" title="max.block.ms"></a>max.block.ms</h3><h3 id="max-request-size"><a href="#max-request-size" class="headerlink" title="max.request.size"></a>max.request.size</h3><h3 id="receive-buffer-bytes-and-send-buffer-bytes"><a href="#receive-buffer-bytes-and-send-buffer-bytes" class="headerlink" title="receive.buffer.bytes and send.buffer.bytes"></a>receive.buffer.bytes and send.buffer.bytes</h3><h2 id="分区"><a href="#分区" class="headerlink" title="分区"></a>分区</h2><p>相同 key 的 消息会被写到相同分区。</p>
-<p>创建 key-value 记录</p>
-<figure class="highlight Java"><table><tr><td class="code"><pre><code class="hljs Java">ProducerRecord&lt;Integer, String&gt; record =<br>            <span class="hljs-keyword">new</span> ProducerRecord&lt;&gt;(<span class="hljs-string">"CustomerCountry"</span>, <span class="hljs-string">"Laboratory Equipment"</span>, <span class="hljs-string">"USA"</span>);<br></code></pre></td></tr></table></figure>
-
-<p>创建 key 为 null 记录</p>
-<figure class="highlight Java"><table><tr><td class="code"><pre><code class="hljs Java">ProducerRecord&lt;Integer, String&gt; record =<br>           <span class="hljs-keyword">new</span> ProducerRecord&lt;&gt;(<span class="hljs-string">"CustomerCountry"</span>, <span class="hljs-string">"USA"</span>);<br></code></pre></td></tr></table></figure>
             </div>
             <hr/>
 
@@ -507,7 +471,7 @@ bootstrap.servers
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://libo0.gitee.io/2020/03/06/Kafka-%E6%A6%82%E8%A7%88-%E7%94%9F%E4%BA%A7%E8%80%85/">http://libo0.gitee.io/2020/03/06/Kafka-%E6%A6%82%E8%A7%88-%E7%94%9F%E4%BA%A7%E8%80%85/</a>
+                    <a href="http://libo0.gitee.io/2020/03/06/IP-%E5%9C%B0%E5%9D%80/">http://libo0.gitee.io/2020/03/06/IP-%E5%9C%B0%E5%9D%80/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -545,8 +509,8 @@ bootstrap.servers
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Kafka/">
-                                    <span class="chip bg-color">Kafka</span>
+                                <a href="/tags/IP/">
+                                    <span class="chip bg-color">IP</span>
                                 </a>
                             
                         </div>
@@ -717,7 +681,7 @@ bootstrap.servers
         repo: '',
         owner: '',
         admin: null,
-        id: '2020-03-06T14-50-05',
+        id: '2020-03-06T15-53-45',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -738,9 +702,65 @@ bootstrap.servers
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2020/03/06/IP-%E5%9C%B0%E5%9D%80/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="IP-地址">
+                        
+                        <span class="card-title">IP-地址</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            IPv4 地址有 32 位，即
+2^32&#x3D;(2^10)^3 * 2^2&#x3D; 1024 * 1024 * 1024 * 4约等于 40 亿
+
+
+每 8 位 用一个 . 号分隔，例如：193.32.216.9 的二进制表示
+1
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-03-06
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/IP/" class="post-category">
+                                    IP
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/IP/">
+                        <span class="chip bg-color">IP</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
             <div class="card">
                 <a href="/2020/03/06/Docker-%E5%85%A5%E9%97%A8/">
                     <div class="card-image">
@@ -769,57 +789,6 @@ docker 命令
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-03-06
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/Docker/" class="post-category">
-                                    Docker
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/Docker/">
-                        <span class="chip bg-color">Docker</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2020/03/06/Docker-multi-stage-%E6%9E%84%E5%BB%BA-spring-boot-%E5%BA%94%E7%94%A8/">
-                    <div class="card-image">
-                        
-                        <img src="/images/docker.jpg" class="responsive-img" alt="Docker-multi-stage-构建-spring-boot-应用">
-                        
-                        <span class="card-title">Docker-multi-stage-构建-spring-boot-应用</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            Docker 支持多阶段构建，下一个阶段可以拷贝上一个阶段的输出。阶段一 FROM 语句作为分隔。FROM 代表从那个镜像衍生，即从 docker hub 拉取改镜像。
-
-
-Docker 镜像类似于面向对象编程的类，Docker 容器类似面
-                        
-                    </div>
-                    <div class="publish-info">
                             <span class="publish-date">
                                 <i class="far fa-clock fa-fw icon-date"></i>2020-03-06
                             </span>
@@ -840,14 +809,6 @@ Docker 镜像类似于面向对象编程的类，Docker 容器类似面
                     
                     <a href="/tags/Docker/">
                         <span class="chip bg-color">Docker</span>
-                    </a>
-                    
-                    <a href="/tags/multi-stage/">
-                        <span class="chip bg-color">multi-stage</span>
-                    </a>
-                    
-                    <a href="/tags/spring-boot-in-docker/">
-                        <span class="chip bg-color">spring-boot-in-docker</span>
                     </a>
                     
                 </div>

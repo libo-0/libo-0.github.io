@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="分类, java,nodejs">
-    <meta name="description" content="分类 | libo 工作学习记录">
+    <meta name="keywords" content="分类: IP, java,nodejs">
+    <meta name="description" content="分类: IP | libo 工作学习记录">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,7 +13,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>分类 | libo 工作学习记录</title>
+    <title>分类: IP | libo 工作学习记录</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -447,7 +447,7 @@
                 
                 <a href="/categories/IP/" title="IP: 1">
                     <span class="chip center-align waves-effect waves-light
-                             chip-default "
+                             chip-active "
                             style="background-color: #E8F8F5;">IP
                         <span class="tag-length">1</span>
                     </span>
@@ -460,64 +460,66 @@
 </div>
 
     
-    <style type="text/css">
-    #category-radar {
-        width: 100%;
-        height: 360px;
-    }
-</style>
 
-<div class="container" data-aos="fade-up">
-    <div class="card">
-        <div id="category-radar" class="card-content"></div>
-    </div>
-</div>
+    <article id="articles" class="container articles">
+        <div class="row tags-posts">
+            
+            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2020/03/06/IP-%E5%9C%B0%E5%9D%80/">
+                        <div class="card-image tag-image">
+                            
+                            
+                            <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="IP-地址">
+                            
+                            <span class="card-title">IP-地址</span>
+                        </div>
+                    </a>
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                IPv4 地址有 32 位，即
+2^32&#x3D;(2^10)^3 * 2^2&#x3D; 1024 * 1024 * 1024 * 4约等于 40 亿
 
-<script type="text/javascript" src="/libs/echarts/echarts.min.js"></script>
-<script type="text/javascript">
-    let radarChart = echarts.init(document.getElementById('category-radar'));
 
-    
+每 8 位 用一个 . 号分隔，例如：193.32.216.9 的二进制表示
+1
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-03-06
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/IP/" class="post-category">
+                                    IP
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
 
-    let option = {
-        title: {
-            left: 'center',
-            text: '文章分类雷达图',
-            textStyle: {
-                fontWeight: 500,
-                fontSize: 22
-            }
-        },
-        tooltip: {},
-        radar: {
-            name: {
-                textStyle: {
-                    color: '#3C4858'
-                }
-            },
-            indicator: [{"name":"Docker","max":4},{"name":"Git","max":4},{"name":"hexo","max":4},{"name":"静态博客","max":4},{"name":"Postman","max":4},{"name":"工具","max":4},{"name":"CI","max":4},{"name":"Travis-CI","max":4},{"name":"工具","max":4},{"name":"设计模式","max":4},{"name":"api","max":4},{"name":"postman","max":4},{"name":"swagger","max":4},{"name":"PostgreSQL","max":4},{"name":"索引","max":4},{"name":"Kafka","max":4},{"name":"psql","max":4},{"name":"IP","max":4}],
-            nameGap: 5,
-            center: ['50%','55%'],
-            radius: '66%'
-        },
-        series: [{
-            type: 'radar',
-            color: ['#3ecf8e'],
-            itemStyle: {normal: {areaStyle: {type: 'default'}}},
-            data : [
-                {
-                    value : [3,1,1,1,2,1,1,1,1,1,1,1,1,2,1,1,1,1],
-                    name : '文章分类数量'
-                }
-            ]
-        }]
-    };
-
-    radarChart.setOption(option);
-</script>
-    
-
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/IP/">
+                            <span class="chip bg-color">IP</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+        </div>
+    </article>
 </main>
+
+
 
 
     <footer class="page-footer bg-color">

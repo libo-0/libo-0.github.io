@@ -4,6 +4,56 @@
   
     
     <entry>
+      <title>IP-地址</title>
+      <link href="/2020/03/06/IP-%E5%9C%B0%E5%9D%80/"/>
+      <url>/2020/03/06/IP-%E5%9C%B0%E5%9D%80/</url>
+      
+        <content type="html"><![CDATA[<p>IPv4 地址有 32 位，即</p><figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs math">2^32<br>&#x3D;(2^10)^3 * 2^2<br>&#x3D; 1024 * 1024 * 1024 * 4<br>约等于 40 亿<br></code></pre></td></tr></table></figure><a id="more"></a><p>每 8 位 用一个 . 号分隔，例如：193.32.216.9 的二进制表示</p><p><code>11000001 00100000 11011000 00001001</code></p><p>IP 地址由网络地址和主机地址两部分组成。按照这种方式，氛围 5 类 IP 地址：</p><ol><li>A 类  0｜7位网络号  24位主机号</li><li>B 类  10｜ 14位网络号  16位主机号</li><li>C 类  110 ｜ 21位网络号  8位主机号</li><li>D 类 1110｜ 28位多播组号</li><li>E 类 11110 27位留待后用</li></ol><p>A类：（1.0.0.0-126.0.0.0） 子网掩码：255.0.0.0<br>B类：（128.0.0.0-191.255.0.0) 子网掩码：255.255.255.0<br>C类：（192.0.0.0-223.255.255.0）子网掩码：255.255.255.0<br>D类：（224.0.0.0-239.255.255.254）多路多播用户<br>E类：（240.0.0.0-255.255.255.254）保留地址</p><p>在ABC 3类地址中，各自保留了 3 个区域作为私有地址，地址范围：<br>A类地址： 10.0.0.0～10.255.255.255<br>B类地址： 172.16.0.0～172.31.255.255<br>C类地址： 192.168.0.0～192.168.255.255</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> IP </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> IP </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Docker-入门</title>
+      <link href="/2020/03/06/Docker-%E5%85%A5%E9%97%A8/"/>
+      <url>/2020/03/06/Docker-%E5%85%A5%E9%97%A8/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Docker-入门"><a href="#Docker-入门" class="headerlink" title="Docker 入门"></a>Docker 入门</h1><ul><li><a href="https://hub.docker.com" target="_blank" rel="noopener">Docker 仓库,镜像地址</a></li><li><a href="https://runoob.com/docker" target="_blank" rel="noopener">Docker 菜鸟教程</a></li></ul><a id="more"></a><h2 id="Docker-安装"><a href="#Docker-安装" class="headerlink" title="Docker 安装"></a>Docker 安装</h2><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">wget -qO- https://get.docker.com/ | sh<br></code></pre></td></tr></table></figure><h2 id="docker-命令"><a href="#docker-命令" class="headerlink" title="docker 命令"></a>docker 命令</h2><ul><li>启动 Docker 服务</li></ul><p>当以非 root 用户使用 docker 时可能报错，具体原因及解决办法参考[以非root用户身份管理Docker][3]。</p><p><code>sudo service docker start</code></p><ul><li>查看 Docker 服务状态</li></ul><p><code>sudo service docker status</code></p><ul><li>查看本地主机镜像</li></ul><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">docker images<br></code></pre></td></tr></table></figure><ul><li>搜索网络镜像</li></ul><p><code>docker search (httpd)</code></p><ul><li>拉取镜像</li></ul><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">docker pull httpd<br></code></pre></td></tr></table></figure><ul><li>运行使用镜像</li></ul><p><code>docker run httpd</code></p><ul><li>查看 Docker 当前运行的容器</li></ul><p><code>docker ps</code></p><ul><li>查看 Docker 容器内标准输出</li></ul><p><code>docker logs 2b17a2394</code><br><code>docker logs amazing_cori</code></p><ul><li>停止 Docker 容器</li></ul><p><code>docker stop 2b1b7a489832</code><br><code>docker stop amaxing_cori</code></p><p><a href="https://www.runoob.com/docker/ubuntu-docker-install.html" target="_blank" rel="noopener">安装参考菜鸟教程</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Docker </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Docker </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Kafka-概览-生产者</title>
       <link href="/2020/03/06/Kafka-%E6%A6%82%E8%A7%88-%E7%94%9F%E4%BA%A7%E8%80%85/"/>
       <url>/2020/03/06/Kafka-%E6%A6%82%E8%A7%88-%E7%94%9F%E4%BA%A7%E8%80%85/</url>

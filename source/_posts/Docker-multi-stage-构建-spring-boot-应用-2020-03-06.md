@@ -7,7 +7,9 @@ tags:
 categories:
   - Docker
 img: /images/docker.jpg
+date: 2020-03-06 11:26:02
 ---
+
 
 Docker 支持多阶段构建，下一个阶段可以拷贝上一个阶段的输出。阶段一 FROM 语句作为分隔。FROM 代表从那个镜像衍生，即从 docker hub 拉取改镜像。
 
@@ -17,7 +19,7 @@ Docker 镜像类似于面向对象编程的类，Docker 容器类似面向对象
 
 ## Multi-stage
 
-```java
+```bash
 # 第一阶段
 ARG MAVEN_VERSION=3.6.3-jdk-8-slim
 FROM maven:${MAVEN_VERSION} AS build-stage

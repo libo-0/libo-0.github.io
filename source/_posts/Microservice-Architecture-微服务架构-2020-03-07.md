@@ -18,7 +18,7 @@ date: 2020-03-07 15:03:17
 
 一个微服务架构包含了小的自主化的服务集合。每个服务是自我包含的，应该实现单个业务能力。
 
-[图片来源 docs.microsoft.com, Building a microservices on Azure][0]
+![图片来源 docs.microsoft.com, Building a microservices on Azure][0]
 
 ## 什么是微服务？
 

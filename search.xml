@@ -338,11 +338,11 @@
     
     
     <entry>
-      <title>Git-学习笔记</title>
-      <link href="/2020/03/02/Git-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-      <url>/2020/03/02/Git-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+      <title>Git-Submodule-学习</title>
+      <link href="/2020/03/02/Git-Submodule-%E5%AD%A6%E4%B9%A0/"/>
+      <url>/2020/03/02/Git-Submodule-%E5%AD%A6%E4%B9%A0/</url>
       
-        <content type="html"><![CDATA[<p>Git 命令用法，tag， submodule。</p><a id="more"></a><h2 id="Git-tag"><a href="#Git-tag" class="headerlink" title="Git tag"></a>Git tag</h2><p>Git tag 用于打标签，打一次标签对应 GitHub 的一次源码 release。</p><p><code>git tab v1.0.0</code><br><code>git push master v1.0.0</code></p><h2 id="Git-submodule"><a href="#Git-submodule" class="headerlink" title="Git submodule"></a>Git submodule</h2><p>Git 支持子模块，子模块也是一个 Git 项目。Git 不能在父项目提交子项目模块的代码。子项目只能在自己的 Git 项目提交。</p><ol><li>添加子模块</li></ol><p><code>git submodule add http://github.com/libo-0/hexo-theme-matery.git themes/matery</code></p><p>上述命令会在当前项目目录创建 theme/matery 目录追踪之前的 Git 仓库。</p><ol start="2"><li>更新子模块</li></ol><p><code>git submodule update --remote</code></p><h2 id="Git-同时-push-到多个远程仓库"><a href="#Git-同时-push-到多个远程仓库" class="headerlink" title="Git 同时 push 到多个远程仓库"></a>Git 同时 push 到多个远程仓库</h2><p><code>git remote set-url --add origin git@github.com:warmfrog/warmfrog.github.io.git</code></p>]]></content>
+        <content type="html"><![CDATA[<p>Git 命令用法，tag， submodule。</p><a id="more"></a><h2 id="Git-clone"><a href="#Git-clone" class="headerlink" title="Git clone"></a>Git clone</h2><ol><li>递归克隆，包含子模块</li></ol><p><code>git clone --recursive [URL to Git repo]</code></p><h2 id="Git-tag"><a href="#Git-tag" class="headerlink" title="Git tag"></a>Git tag</h2><p>Git tag 用于打标签，打一次标签对应 GitHub 的一次源码 release。</p><p><code>git tab v1.0.0</code><br><code>git push master v1.0.0</code></p><h2 id="Git-submodule"><a href="#Git-submodule" class="headerlink" title="Git submodule"></a>Git submodule</h2><p>Git 支持子模块，子模块也是一个 Git 项目。Git 不能在父项目提交子项目模块的代码。子项目只能在自己的 Git 项目提交。</p><ol><li>添加子模块</li></ol><p><code>git submodule add http://github.com/libo-0/hexo-theme-matery.git themes/matery</code></p><p>上述命令会在当前项目目录创建 theme/matery 目录追踪之前的 Git 仓库。</p><ol start="2"><li>更新子模块</li></ol><p><code>git submodule update --remote</code></p><ol start="3"><li>拉取子模块</li></ol><p><code>git submodule update --init</code></p><ol start="4"><li>拉取包含子模块的子模块</li></ol><p><code>git submodule update --init --recursive</code></p><ol start="5"><li>同时下载多个子模块</li></ol><p><code>git submodule update --init --recursive --jobs 8</code></p><p><code>git clone --recursive --jobs 8 [URL to Git repo]</code></p><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># short version</span><br>git submodule update --init --recursive -j 8<br></code></pre></td></tr></table></figure><ol start="6"><li>拉取子模块</li></ol><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 拉取包含子模块的改变</span><br>git pull --recurse-submodules<br><br><span class="hljs-comment"># 拉取所有子模块的改变</span><br>git submodule update --remote<br></code></pre></td></tr></table></figure><ol start="7"><li>在每个子模块执行命令</li></ol><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">git submodule foreach <span class="hljs-string">'git reset --hard'</span><br><span class="hljs-comment"># 包含嵌套子模块</span><br>git submodule foreach --recursive <span class="hljs-string">'git reset --hard'</span><br></code></pre></td></tr></table></figure><ol start="8"><li>添加子模块到一个仓库</li></ol><p><code>git submodule init</code> 会为子模块创建配置文件，如果配置文件不存在</p><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">git submodule add -b master [URL to Git repo]<br>git submodule init<br></code></pre></td></tr></table></figure><ol start="9"><li>删除子模块</li></ol><p>当前 Git 没有提供标准的接口来删除一个子模块。为了删除一个子模块，你需要做</p><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">git submodule deinit -f — mymodule<br>rm -rf .git/modules/mymodule<br>git rm -f mymodule<br></code></pre></td></tr></table></figure><h2 id="Git-同时-push-到多个远程仓库"><a href="#Git-同时-push-到多个远程仓库" class="headerlink" title="Git 同时 push 到多个远程仓库"></a>Git 同时 push 到多个远程仓库</h2><p><code>git remote set-url --add origin git@github.com:warmfrog/warmfrog.github.io.git</code></p><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://www.vogella.com/tutorials/GitSubmodules/article.html" target="_blank" rel="noopener">Using submodules in Git - Tutorial</a></p>]]></content>
       
       
       <categories>
@@ -355,6 +355,8 @@
         <tags>
             
             <tag> Git </tag>
+            
+            <tag> Git-Submodule </tag>
             
         </tags>
       

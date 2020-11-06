@@ -12,7 +12,8 @@
 
 进入ubuntu虚拟机terminal,输入:
 sudo apt install openssh-server
-ssh 连接虚">
+
+ssh 连接">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -412,7 +413,7 @@ ssh 连接虚">
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    136
+                    151
                 </div>
                 
 
@@ -441,20 +442,24 @@ ssh 连接虚">
 <a id="more"></a>
 
 <p>进入ubuntu虚拟机terminal,输入:</p>
-<pre><code>sudo apt install openssh-server</code></pre><ul>
+<pre><code>sudo apt install openssh-server</code></pre>
+<ul>
 <li><p>ssh 连接虚拟机</p>
-<p>  ssh <a href="mailto:root@192.168.101.236">root@192.168.101.236</a></p>
+<p>  ssh <a href="mailto:&#x72;&#x6f;&#111;&#x74;&#64;&#49;&#57;&#50;&#46;&#x31;&#x36;&#x38;&#x2e;&#x31;&#x30;&#x31;&#x2e;&#x32;&#51;&#54;">&#x72;&#x6f;&#111;&#x74;&#64;&#49;&#57;&#50;&#46;&#x31;&#x36;&#x38;&#x2e;&#x31;&#x30;&#x31;&#x2e;&#x32;&#51;&#54;</a></p>
 </li>
 </ul>
 <h2 id="ubuntu-18-04-1-配置静态IP"><a href="#ubuntu-18-04-1-配置静态IP" class="headerlink" title="ubuntu 18.04.1 配置静态IP"></a>ubuntu 18.04.1 配置静态IP</h2><p>在virtualbox 中配置虚拟机网卡为 host-only，选择一个virtualbox生成的网卡适配器,。</p>
 <p>打开命令行terminal， 输入 ifconfig 查看网卡名称为 enp0s3， 编辑/etc/network/interfaces</p>
-<pre><code>sudo vim /etc/network/interfaces</code></pre><p>添加</p>
+<pre><code>sudo vim /etc/network/interfaces</code></pre>
+<p>添加</p>
 <pre><code>auto enp0s3
 iface enp0s3 inet static
 address 192.168.101.237
 netmask 255.255.255.0
-gateway 192.168.101.102</code></pre><p>重启网卡</p>
+gateway 192.168.101.102</code></pre>
+<p>重启网卡</p>
 <pre><code>/etc/init.d/networking restart</code></pre>
+
             </div>
             <hr/>
 
@@ -775,31 +780,25 @@ gateway 192.168.101.102</code></pre><p>重启网卡</p>
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/01/13/windows-cmd-%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%AD%A6%E4%B9%A0/">
+                <a href="/2019/01/13/Spark%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="windows 下的cmd命令学习">
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="Spark机器学习笔记">
                         
-                        <span class="card-title">windows 下的cmd命令学习</span>
+                        <span class="card-title">Spark机器学习笔记</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            参考网站
-Windows cmd 命令大全
+                            机器学习机器学习是数据通过算法构建出模型并对模型进行评估，评估的性能如果达到要求就拿这个模型来测试其他数据，如果达不到要求就要调整算法来重新建立模型，再次进行评估，如此循环反复，最终获得满意的经验来处理其他数据。
 
 
 
+监督学习
 
-脚本之家-脚本专栏
-
-List of Command Prompt Commands
-
-Batch Script Tutorial
-
-Guide to Windows Batch Scri
+监督是从
                         
                     </div>
                     <div class="publish-info">
@@ -817,12 +816,12 @@ Guide to Windows Batch Scri
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/windows/">
-                        <span class="chip bg-color">windows</span>
+                    <a href="/tags/spark/">
+                        <span class="chip bg-color">spark</span>
                     </a>
                     
-                    <a href="/tags/cmd/">
-                        <span class="chip bg-color">cmd</span>
+                    <a href="/tags/ml/">
+                        <span class="chip bg-color">ml</span>
                     </a>
                     
                 </div>

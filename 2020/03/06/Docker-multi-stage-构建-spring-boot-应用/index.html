@@ -413,7 +413,7 @@ Docker 镜像类似于面向对象编程的类，Docker 容器类似面">
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    311
+                    313
                 </div>
                 
 
@@ -443,7 +443,7 @@ Docker 镜像类似于面向对象编程的类，Docker 容器类似面">
 <h2 id="Multi-stage"><a href="#Multi-stage" class="headerlink" title="Multi-stage"></a>Multi-stage</h2><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 第一阶段</span><br>ARG MAVEN_VERSION=3.6.3-jdk-8-slim<br>FROM maven:<span class="hljs-variable">$&#123;MAVEN_VERSION&#125;</span> AS build-stage<br>ENV PORT=9000<br>ENV WORK_DIR=/app<br><span class="hljs-comment"># 设置工作目录根目录</span><br>WORKDIR <span class="hljs-variable">$&#123;WORK_DIR&#125;</span><br><span class="hljs-comment"># 复制代码 到工作目录</span><br>COPY . .<br><span class="hljs-comment"># 运行命令，设置 npm 注册仓库为 taobao 仓库</span><br>RUN mvn package<br><br><span class="hljs-comment"># 第二阶段</span><br>FROM openjdk:8u242-jre-slim<br><span class="hljs-comment"># 暴露 Spring Boot 应用 9000 端口</span><br>EXPOSE <span class="hljs-variable">$&#123;PORT&#125;</span><br><span class="hljs-comment"># 运行命令</span><br>COPY --from=build-stage /app/target/Star-1.0.0-SNAPSHOT.jar ./app.jar<br>CMD java -jar app.jar<br></code></pre></td></tr></table></figure>
 
 <p>第一个构建阶段，使用 maven 容器来构建 spring boot 应用，将 spring boot 应用打包。在第二个阶段，将 jar 包拷贝过来，在 openjdk 环境下运行 jar 包。</p>
-<p>每个阶段可以被命名，<code>FROM maven:${MAVEN_VERSION} AS build-stage</code> 将这一阶段命名为 <code>build-stage</code>， 然后通过 <code>COPY --from=build-stage /app/target/Star-1.0.0-SNAPSHOT.jar ./app.jar</code> 命令根据阶段名复制上一阶段的数据。</p>
+<p>每个阶段可以被命名，<code>FROM maven:$&#123;MAVEN_VERSION&#125; AS build-stage</code> 将这一阶段命名为 <code>build-stage</code>， 然后通过 <code>COPY --from=build-stage /app/target/Star-1.0.0-SNAPSHOT.jar ./app.jar</code> 命令根据阶段名复制上一阶段的数据。</p>
 
             </div>
             <hr/>
@@ -787,9 +787,9 @@ psql 命令帮助 \?
 查询 \g
 退出 \q
 数据库列表 \l
-schema 列表 \dn
+schema 列表 \dn 
 角色列表 \du
-索
+
                         
                     </div>
                     <div class="publish-info">

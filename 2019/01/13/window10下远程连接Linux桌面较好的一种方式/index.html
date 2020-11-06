@@ -401,7 +401,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    177
+                    179
                 </div>
                 
 
@@ -430,16 +430,21 @@
 <ul>
 <li>方式: linux 远程安装 <em>VNC</em> 服务器 <em>x11nvc</em>, window10 安装 UltraVNC Viewer</li>
 </ul>
-<h2 id="Linux-安装vnc服务端"><a href="#Linux-安装vnc服务端" class="headerlink" title="Linux 安装vnc服务端"></a>Linux 安装vnc服务端</h2><pre><code>sudo apt install x11vnc</code></pre><p>启动</p>
-<pre><code>x11vnc -passwd PASSWORD -display :0 -forever</code></pre><p>停止</p>
-<pre><code>x11vnc -remote stop</code></pre><p>默认端口号为5590</p>
+<h2 id="Linux-安装vnc服务端"><a href="#Linux-安装vnc服务端" class="headerlink" title="Linux 安装vnc服务端"></a>Linux 安装vnc服务端</h2><pre><code>sudo apt install x11vnc</code></pre>
+<p>启动</p>
+<pre><code>x11vnc -passwd PASSWORD -display :0 -forever</code></pre>
+<p>停止</p>
+<pre><code>x11vnc -remote stop</code></pre>
+<p>默认端口号为5590</p>
 <h2 id="window-下安装-vnc-客户端访问linux桌面"><a href="#window-下安装-vnc-客户端访问linux桌面" class="headerlink" title="window 下安装 vnc 客户端访问linux桌面"></a>window 下安装 vnc 客户端访问linux桌面</h2><ul>
-<li>安装 <a href="http://www.uvnc.com/" target="_blank" rel="noopener">ULtraVNC</a></li>
+<li>安装 <a target="_blank" rel="noopener" href="http://www.uvnc.com/">ULtraVNC</a></li>
 </ul>
-<p>在 <a href="http://www.uvnc.com/" target="_blank" rel="noopener">官网</a>下载安装即可，安装成功后，在linux 服务端 vnc server 启动的情况下，访问下面地址即可连接，ipaddress为linux 服务端 <em>IP</em> 地址，</p>
-<pre><code>ipaddress::5590</code></pre><p>完成了上面，即大功告成了。</p>
+<p>在 <a target="_blank" rel="noopener" href="http://www.uvnc.com/">官网</a>下载安装即可，安装成功后，在linux 服务端 vnc server 启动的情况下，访问下面地址即可连接，ipaddress为linux 服务端 <em>IP</em> 地址，</p>
+<pre><code>ipaddress::5590</code></pre>
+<p>完成了上面，即大功告成了。</p>
 <h2 id="linux-远程连接window10"><a href="#linux-远程连接window10" class="headerlink" title="linux 远程连接window10"></a>linux 远程连接window10</h2><p>Linux 安装 remmina, Remmina 同时支持 RDP 和 VNC 协议</p>
-<pre><code>sudo apt install remmina</code></pre><p>Windwo10 开启远程</p>
+<pre><code>sudo apt install remmina</code></pre>
+<p>Windwo10 开启远程</p>
 
             </div>
             <hr/>

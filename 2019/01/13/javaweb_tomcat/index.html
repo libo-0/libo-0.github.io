@@ -404,7 +404,7 @@ tomcat9.0 home page http://tomcat.a">
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    945
+                    946
                 </div>
                 
 
@@ -428,13 +428,14 @@ tomcat9.0 home page http://tomcat.a">
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h2 id="tomcat-篇"><a href="#tomcat-篇" class="headerlink" title="tomcat 篇"></a>tomcat 篇</h2><ul>
-<li>FAQ <a href="https://wiki.apache.org/tomcat/FAQ" target="_blank" rel="noopener">https://wiki.apache.org/tomcat/FAQ</a></li>
-<li>WIKI <a href="https://wiki.apache.org/tomcat/" target="_blank" rel="noopener">https://wiki.apache.org/tomcat/</a></li>
-<li>tomcat9.0 home page <a href="http://tomcat.apache.org/tomcat-9.0-doc/index.html" target="_blank" rel="noopener">http://tomcat.apache.org/tomcat-9.0-doc/index.html</a></li>
+<li>FAQ <a target="_blank" rel="noopener" href="https://wiki.apache.org/tomcat/FAQ">https://wiki.apache.org/tomcat/FAQ</a></li>
+<li>WIKI <a target="_blank" rel="noopener" href="https://wiki.apache.org/tomcat/">https://wiki.apache.org/tomcat/</a></li>
+<li>tomcat9.0 home page <a target="_blank" rel="noopener" href="http://tomcat.apache.org/tomcat-9.0-doc/index.html">http://tomcat.apache.org/tomcat-9.0-doc/index.html</a></li>
 </ul>
 <a id="more"></a>
 
-<h2 id="tomcat-安装路径"><a href="#tomcat-安装路径" class="headerlink" title="tomcat 安装路径"></a>tomcat 安装路径</h2><pre><code>C:\Program Files\Apache Software Foundation\Tomcat 9.0</code></pre><h3 id="环境变量设置"><a href="#环境变量设置" class="headerlink" title="环境变量设置"></a>环境变量设置</h3><ul>
+<h2 id="tomcat-安装路径"><a href="#tomcat-安装路径" class="headerlink" title="tomcat 安装路径"></a>tomcat 安装路径</h2><pre><code>C:\Program Files\Apache Software Foundation\Tomcat 9.0</code></pre>
+<h3 id="环境变量设置"><a href="#环境变量设置" class="headerlink" title="环境变量设置"></a>环境变量设置</h3><ul>
 <li>CATALINA_HOME      “C:\Program Files\Apache Software Foundation\Tomcat 9.0”</li>
 <li>CLASS_PATH         %CATALINA_HOME%\lib;</li>
 </ul>
@@ -444,10 +445,12 @@ tomcat9.0 home page http://tomcat.a">
 <li>/logs</li>
 <li>/webapps</li>
 </ul>
-<h2 id="启动tomcat-服务器"><a href="#启动tomcat-服务器" class="headerlink" title="启动tomcat 服务器"></a>启动tomcat 服务器</h2><pre><code>startup</code></pre><h2 id="jsp-篇"><a href="#jsp-篇" class="headerlink" title="jsp 篇"></a>jsp 篇</h2><h3 id="jsp-指令"><a href="#jsp-指令" class="headerlink" title="jsp 指令"></a>jsp 指令</h3><ul>
+<h2 id="启动tomcat-服务器"><a href="#启动tomcat-服务器" class="headerlink" title="启动tomcat 服务器"></a>启动tomcat 服务器</h2><pre><code>startup</code></pre>
+<h2 id="jsp-篇"><a href="#jsp-篇" class="headerlink" title="jsp 篇"></a>jsp 篇</h2><h3 id="jsp-指令"><a href="#jsp-指令" class="headerlink" title="jsp 指令"></a>jsp 指令</h3><ul>
 <li>jsp 代码写在 &lt;% %&gt; 中</li>
 </ul>
-<h4 id="page-指令"><a href="#page-指令" class="headerlink" title="page 指令"></a>page 指令</h4><pre><code>&lt;%@ page language=&quot;java contentType=&quot;text/html; charset=GB18030&quot; pageEncoding=&quot;GB18030&quot; %&gt;</code></pre><ul>
+<h4 id="page-指令"><a href="#page-指令" class="headerlink" title="page 指令"></a>page 指令</h4><pre><code>&lt;%@ page language=&quot;java contentType=&quot;text/html; charset=GB18030&quot; pageEncoding=&quot;GB18030&quot; %&gt;</code></pre>
+<ul>
 <li>language</li>
 <li>extends 设置jsp页面继承的java类</li>
 <li>import 导入java包<br>  &lt;%@ import=”java.util.*” %&gt;</li>
@@ -459,22 +462,25 @@ tomcat9.0 home page http://tomcat.a">
 <li>isErrorPage<br>  &lt;%@ page isErrorPage=”true” %&gt;</li>
 <li>errorPage<br>  &lt;%@ page errorPage=”error.jsp” %&gt;</li>
 </ul>
-<h4 id="include-指令"><a href="#include-指令" class="headerlink" title="include 指令"></a>include 指令</h4><pre><code>&lt;%@ include file=&quot;path&quot; %&gt;</code></pre><ul>
+<h4 id="include-指令"><a href="#include-指令" class="headerlink" title="include 指令"></a>include 指令</h4><pre><code>&lt;%@ include file=&quot;path&quot; %&gt;</code></pre>
+<ul>
 <li>被包含页面 &lt;%@ page pageEncoding=”GB18030” %&gt;</li>
 <li>包含页面   &lt;%@ page language=”java” contentType=”text/html;charset=GB18030” pageEncoding=”GB18030” %&gt;</li>
 </ul>
-<h4 id="taglib-指令"><a href="#taglib-指令" class="headerlink" title="taglib 指令"></a>taglib 指令</h4><pre><code>&lt;%@ taglib prefix=&quot;tagPrefix&quot; url=&quot;tagURL&quot; %&gt;</code></pre><ul>
+<h4 id="taglib-指令"><a href="#taglib-指令" class="headerlink" title="taglib 指令"></a>taglib 指令</h4><pre><code>&lt;%@ taglib prefix=&quot;tagPrefix&quot; url=&quot;tagURL&quot; %&gt;</code></pre>
+<ul>
 <li><p>prefix 制定标签前缀</p>
 </li>
 <li><p>uri 标签库存放位置</p>
-<p>  &lt;%@ taglib prefix=”c” uri=”<a href="http://java.sun.com/jsp/jstl/core&quot;" target="_blank" rel="noopener">http://java.sun.com/jsp/jstl/core&quot;</a> %&gt;</p>
+<p>  &lt;%@ taglib prefix=”c” uri=”<a target="_blank" rel="noopener" href="http://java.sun.com/jsp/jstl/core&quot;">http://java.sun.com/jsp/jstl/core&quot;</a> %&gt;</p>
 </li>
 </ul>
 <h3 id="jsp-脚本标识"><a href="#jsp-脚本标识" class="headerlink" title="jsp 脚本标识"></a>jsp 脚本标识</h3><ul>
 <li>表达式 &lt;% =表达式  %&gt;</li>
 <li>声明标识 &lt;%! 声明的代码%&gt;. 用于定义全局方法和变量，用于在整个jsp使用.</li>
 </ul>
-<h4 id="代码片段"><a href="#代码片段" class="headerlink" title="代码片段"></a>代码片段</h4><pre><code>&lt;% java代码或者是片段 %&gt;</code></pre><h4 id="jsp-注释"><a href="#jsp-注释" class="headerlink" title="jsp 注释"></a>jsp 注释</h4><ul>
+<h4 id="代码片段"><a href="#代码片段" class="headerlink" title="代码片段"></a>代码片段</h4><pre><code>&lt;% java代码或者是片段 %&gt;</code></pre>
+<h4 id="jsp-注释"><a href="#jsp-注释" class="headerlink" title="jsp 注释"></a>jsp 注释</h4><ul>
 <li>隐藏注释<br>  &lt;%– –%&gt;</li>
 <li>动态注释<br>  &lt;%– &lt;%=new Date()%&gt;–&gt;</li>
 </ul>
@@ -485,9 +491,11 @@ tomcat9.0 home page http://tomcat.a">
 <ul>
 <li><p><a href="jsp:forward">jsp:forward</a>请求转发标识<br>  &lt;jsp:forward page=”url”/&gt;<br>  &lt;jsp:forward page=”url&gt;</p>
 <pre><code>子动作标识&lt;jsp:param&gt;
-&lt;/jsp:forward&gt;</code></pre></li>
+&lt;/jsp:forward&gt;</code></pre>
+</li>
 <li><p><a href="jsp:param">jsp:param</a>传递参数标识<br>  &lt;jsp:forward page=”modify.jsp”&gt;</p>
-<pre><code>&lt;jsp:param name=&quot;userId&quot; value=&quot;7&quot;/&gt;</code></pre><p>  </jsp:forward></p>
+<pre><code>  &lt;jsp:param name=&quot;userId&quot; value=&quot;7&quot;/&gt;</code></pre>
+<p>  </jsp:forward></p>
 </li>
 </ul>
 <h2 id="jsp-内置对象"><a href="#jsp-内置对象" class="headerlink" title="jsp 内置对象"></a>jsp 内置对象</h2><h3 id="request"><a href="#request" class="headerlink" title="request"></a>request</h3><ul>
@@ -539,13 +547,15 @@ tomcat9.0 home page http://tomcat.a">
 &lt;/web-app&gt;
 
 application.getInitParameter(String name);
-application.getInitParameter(&quot;url&quot;);</code></pre><ul>
+application.getInitParameter(&quot;url&quot;);</code></pre>
+<ul>
 <li><p>getAttributeName()</p>
 <p>  &lt;%<br>  Enumeration enema= application.getInitParameterNames();<br>  while(enema.hasMoreElements()){</p>
-<pre><code>String name=(String)enema.nextElements();
-String value = application.getInitParameter(name);
-out.println(name+&quot;: &quot;);
-out.println(value);</code></pre><p>  }<br>  %&gt;</p>
+<pre><code>  String name=(String)enema.nextElements();
+  String value = application.getInitParameter(name);
+  out.println(name+&quot;: &quot;);
+  out.println(value);</code></pre>
+<p>  }<br>  %&gt;</p>
 </li>
 </ul>
 <h4 id="管理应用环境属性"><a href="#管理应用环境属性" class="headerlink" title="管理应用环境属性"></a>管理应用环境属性</h4><ul>
@@ -861,24 +871,21 @@ out.println(value);</code></pre><p>  }<br>  %&gt;</p>
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/01/13/linux-%E5%91%BD%E4%BB%A4%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0/">
+                <a href="/2019/01/13/github/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="linux-命令小程序学习">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="github的使用学习记录">
                         
-                        <span class="card-title">linux-命令小程序学习</span>
+                        <span class="card-title">github的使用学习记录</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            wcwc 字数统计工具
-echo &quot;this is a test&quot; &gt;&gt; test.txt
-wc test.txt
-
-
-echo &quot;this is a test&quot; &gt;&gt; tes
+                            查看配置信息git config --list
+本地配置git config --global user.name &quot;warmfrog&quot;
+git config --global user.email &quot;1594
                         
                     </div>
                     <div class="publish-info">
@@ -896,8 +903,12 @@ echo &quot;this is a test&quot; &gt;&gt; tes
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/linux/">
-                        <span class="chip bg-color">linux</span>
+                    <a href="/tags/github/">
+                        <span class="chip bg-color">github</span>
+                    </a>
+                    
+                    <a href="/tags/git/">
+                        <span class="chip bg-color">git</span>
                     </a>
                     
                 </div>
@@ -911,24 +922,25 @@ echo &quot;this is a test&quot; &gt;&gt; tes
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/01/13/linux%E9%85%8D%E7%BD%AE%E8%BF%9C%E7%A8%8B%E5%85%8D%E5%AF%86%E7%99%BB%E5%BD%95/">
+                <a href="/2019/01/13/linux-%E5%91%BD%E4%BB%A4%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="linux配置远程免密登录">
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="linux-命令小程序学习">
                         
-                        <span class="card-title">linux配置远程免密登录</span>
+                        <span class="card-title">linux-命令小程序学习</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            在本地执行
+                            wcwc 字数统计工具
+echo &quot;this is a test&quot; &gt;&gt; test.txt
+wc test.txt
 
 
-ssh-keygen -t rsa这会在用户目录生成 id_rsa 和 id_rsa.pub 两个文件
-将 id_rsa.pub 发送到远程要登陆的linux 服务器
-scp ./id_rsa.pub  username@r
+
+echo &quot;this is a test&quot; &gt;&gt; te
                         
                     </div>
                     <div class="publish-info">

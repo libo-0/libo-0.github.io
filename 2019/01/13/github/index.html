@@ -5,8 +5,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="github的使用学习记录, java,nodejs">
-    <meta name="description" content="查看配置信息git config --list本地配置git config --global user.name &amp;quot;warmfrog&amp;quot;
-git config --global user.email &amp;quot;15949">
+    <meta name="description" content="查看配置信息git config --list
+本地配置git config --global user.name &amp;quot;warmfrog&amp;quot;
+git config --global user.email &amp;quot;1594">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -398,14 +399,14 @@ git config --global user.email &amp;quot;15949">
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    432
+                    439
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    2 分
                 </div>
                 
 				
@@ -421,8 +422,10 @@ git config --global user.email &amp;quot;15949">
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="查看配置信息"><a href="#查看配置信息" class="headerlink" title="查看配置信息"></a>查看配置信息</h2><pre><code>git config --list</code></pre><h2 id="本地配置"><a href="#本地配置" class="headerlink" title="本地配置"></a>本地配置</h2><pre><code>git config --global user.name &quot;warmfrog&quot;
-git config --global user.email &quot;1594914459@qq.com&quot;</code></pre><a id="more"></a>
+                <h2 id="查看配置信息"><a href="#查看配置信息" class="headerlink" title="查看配置信息"></a>查看配置信息</h2><pre><code>git config --list</code></pre>
+<h2 id="本地配置"><a href="#本地配置" class="headerlink" title="本地配置"></a>本地配置</h2><pre><code>git config --global user.name &quot;warmfrog&quot;
+git config --global user.email &quot;1594914459@qq.com&quot;</code></pre>
+<a id="more"></a>
 
 <h2 id="创建新仓库"><a href="#创建新仓库" class="headerlink" title="创建新仓库"></a>创建新仓库</h2><pre><code>echo &quot;# ShareBook&quot; &gt;&gt; README.md
 git init
@@ -431,32 +434,47 @@ git commit -m &quot;first commit&quot;
 git remote add origin https://github.com/warmfrog/Sharebook.git
 or
 git remote add origin git@github.com:warmfrog/Sharebook.git
-git push -u origin master</code></pre><h2 id="push-已存在的仓库"><a href="#push-已存在的仓库" class="headerlink" title="push 已存在的仓库"></a>push 已存在的仓库</h2><pre><code>git config --global user.name &quot;warmfrog&quot;
+git push -u origin master</code></pre>
+<h2 id="push-已存在的仓库"><a href="#push-已存在的仓库" class="headerlink" title="push 已存在的仓库"></a>push 已存在的仓库</h2><pre><code>git config --global user.name &quot;warmfrog&quot;
 git config --global user.email &quot;1594914459@qq.com&quot;
 
 git remote add origin https://github.com/warmfrog/ShareBook.git
-git push -u origin master</code></pre><h2 id="git-push-每次都需要输入用户名和密码"><a href="#git-push-每次都需要输入用户名和密码" class="headerlink" title="git push 每次都需要输入用户名和密码"></a>git push 每次都需要输入用户名和密码</h2><p>为了不每次都输入用户名和密码，删除以https提交的方式，然后修改提交方式</p>
+git push -u origin master</code></pre>
+<h2 id="git-push-每次都需要输入用户名和密码"><a href="#git-push-每次都需要输入用户名和密码" class="headerlink" title="git push 每次都需要输入用户名和密码"></a>git push 每次都需要输入用户名和密码</h2><p>为了不每次都输入用户名和密码，删除以https提交的方式，然后修改提交方式</p>
 <pre><code>git remote rm origin
-git remote add orign git@github.com:warmfrog/Sharebook.git</code></pre><p>再次push时</p>
-<pre><code>git push -u origin master</code></pre><p>后面就可以使用</p>
-<pre><code>git push</code></pre><p>来直接push了</p>
+git remote add orign git@github.com:warmfrog/Sharebook.git</code></pre>
+<p>再次push时</p>
+<pre><code>git push -u origin master</code></pre>
+<p>后面就可以使用</p>
+<pre><code>git push</code></pre>
+<p>来直接push了</p>
 <h2 id="修改项目后的push"><a href="#修改项目后的push" class="headerlink" title="修改项目后的push"></a>修改项目后的push</h2><h3 id="修改文件后push"><a href="#修改文件后push" class="headerlink" title="修改文件后push"></a>修改文件后push</h3><p>将clone下来的项目修改后，如果需要push，则先将修改后的文件add，commit后，再push</p>
 <pre><code>git add 修改的文件
 git commit -m &quot;修改的内容提示&quot;
-git push</code></pre><h3 id="删除后文件后push"><a href="#删除后文件后push" class="headerlink" title="删除后文件后push"></a>删除后文件后push</h3><pre><code>git rm 删除的文件
+git push</code></pre>
+<h3 id="删除后文件后push"><a href="#删除后文件后push" class="headerlink" title="删除后文件后push"></a>删除后文件后push</h3><pre><code>git rm 删除的文件
 git commit -m &quot;删除的信息&quot;
-git push</code></pre><h4 id="批量删除或者修改后"><a href="#批量删除或者修改后" class="headerlink" title="批量删除或者修改后"></a>批量删除或者修改后</h4><pre><code>git commit -a
-git push</code></pre><h2 id="隐藏本地改变，并-pull-远程仓库"><a href="#隐藏本地改变，并-pull-远程仓库" class="headerlink" title="隐藏本地改变，并 pull 远程仓库"></a>隐藏本地改变，并 pull 远程仓库</h2><pre><code>git stash</code></pre><p>当我们改变本地文件后，使用git pull命令时会有冲突，这时可以用stash隐藏改变，然后pull。pull之后可以</p>
+git push</code></pre>
+<h4 id="批量删除或者修改后"><a href="#批量删除或者修改后" class="headerlink" title="批量删除或者修改后"></a>批量删除或者修改后</h4><pre><code>git commit -a
+git push</code></pre>
+<h2 id="隐藏本地改变，并-pull-远程仓库"><a href="#隐藏本地改变，并-pull-远程仓库" class="headerlink" title="隐藏本地改变，并 pull 远程仓库"></a>隐藏本地改变，并 pull 远程仓库</h2><pre><code>git stash</code></pre>
+<p>当我们改变本地文件后，使用git pull命令时会有冲突，这时可以用stash隐藏改变，然后pull。pull之后可以</p>
 <pre><code>git stash apply 恢复改变
 git stash list  列出改变
 git stash drop  删除改变
-git help stash  查看更多stash命令</code></pre><h2 id="分支"><a href="#分支" class="headerlink" title="分支"></a>分支</h2><p>创建分支</p>
-<pre><code>git branch hello</code></pre><p>转到分支</p>
-<pre><code>git checkout hello</code></pre><p>查看分支</p>
-<pre><code>git branch</code></pre><p>查看所有分支，包括远程</p>
-<pre><code>git branch -a</code></pre><p>删除远程分支</p>
+git help stash  查看更多stash命令</code></pre>
+<h2 id="分支"><a href="#分支" class="headerlink" title="分支"></a>分支</h2><p>创建分支</p>
+<pre><code>git branch hello</code></pre>
+<p>转到分支</p>
+<pre><code>git checkout hello</code></pre>
+<p>查看分支</p>
+<pre><code>git branch</code></pre>
+<p>查看所有分支，包括远程</p>
+<pre><code>git branch -a</code></pre>
+<p>删除远程分支</p>
 <pre><code>git push origin :remote_branch_name
 git push orinin :issu8</code></pre>
+
             </div>
             <hr/>
 
@@ -773,24 +791,22 @@ git push orinin :issu8</code></pre>
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/01/13/linux-%E5%91%BD%E4%BB%A4%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0/">
+                <a href="/2019/01/13/javaweb_tomcat/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="linux-命令小程序学习">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="javaweb_tomcat">
                         
-                        <span class="card-title">linux-命令小程序学习</span>
+                        <span class="card-title">javaweb_tomcat</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            wcwc 字数统计工具
-echo &quot;this is a test&quot; &gt;&gt; test.txt
-wc test.txt
-
-
-echo &quot;this is a test&quot; &gt;&gt; tes
+                            tomcat 篇
+FAQ https://wiki.apache.org/tomcat/FAQ
+WIKI https://wiki.apache.org/tomcat/
+tomcat9.0 home page http://tomcat.a
                         
                     </div>
                     <div class="publish-info">
@@ -808,8 +824,16 @@ echo &quot;this is a test&quot; &gt;&gt; tes
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/linux/">
-                        <span class="chip bg-color">linux</span>
+                    <a href="/tags/javaweb/">
+                        <span class="chip bg-color">javaweb</span>
+                    </a>
+                    
+                    <a href="/tags/tomcat/">
+                        <span class="chip bg-color">tomcat</span>
+                    </a>
+                    
+                    <a href="/tags/jsp/">
+                        <span class="chip bg-color">jsp</span>
                     </a>
                     
                 </div>

@@ -436,11 +436,13 @@
 <p>通过文本文件创建RDD的方法</p>
 <pre><code>val distFile1 = sc.textFile(&quot;data.txt&quot;)
 val distFile2 = sc.textFile(&quot;hdfs://192.168.1.100:9000/input.txt)
-val distFile3 = sc.textFile(&quot;file:/input/data.txt) //本地目录文件</code></pre><p>textFile 可以读取多个文件，或者一个文件夹，压缩文件，通配符路径</p>
+val distFile3 = sc.textFile(&quot;file:/input/data.txt) //本地目录文件</code></pre>
+<p>textFile 可以读取多个文件，或者一个文件夹，压缩文件，通配符路径</p>
 <pre><code>textFile(&quot;/input/001.txt, /input/002.txt&quot;)
 textFile(&quot;/input&quot;) //读取目录
 textFile(&quot;/input/*.txt&quot;)
-textFile(&quot;/input/*.gz&quot;)  </code></pre><h3 id="Spark-RDD-转换操作"><a href="#Spark-RDD-转换操作" class="headerlink" title="Spark RDD 转换操作"></a>Spark RDD 转换操作</h3><ol>
+textFile(&quot;/input/*.gz&quot;)  </code></pre>
+<h3 id="Spark-RDD-转换操作"><a href="#Spark-RDD-转换操作" class="headerlink" title="Spark RDD 转换操作"></a>Spark RDD 转换操作</h3><ol>
 <li><p>map</p>
 <p> map是对RDD中的每一个元素都执行一个制定的函数来产生一个新的RDD；RDD之间元素的关系是一对一关系。</p>
 <p> val rdd1 = sc.parallelize(1 to 9, 3)<br> val rdd2 = rdd1.map(x =&gt; x*2)<br> rdd2.collect</p>
@@ -453,7 +455,8 @@ textFile(&quot;/input/*.gz&quot;)  </code></pre><h3 id="Spark-RDD-转换操作">
 </li>
 </ol>
 <p>flatMap类似map，但每个输入元素，会被映射为 0 到多个输入元素(因此，func函数返回值是一个seq，而不是单一元素)， RDD 之间的元素是一对多关系</p>
-<pre><code>val rdd4 = rdd3.flatMap(x =&gt; x to 20)</code></pre><ol start="4">
+<pre><code>val rdd4 = rdd3.flatMap(x =&gt; x to 20)</code></pre>
+<ol start="4">
 <li>mapPartitions</li>
 </ol>
 <p>mapPartitions 是 map 的一个变种。map的输入函数是应用于RDD中的每个元素；二mapPartitions的输入函数是每个分区的数据，也就是把每个分区中的内容作为整体来处理的。</p>
@@ -751,10 +754,12 @@ textFile(&quot;/input/*.gz&quot;)  </code></pre><h3 id="Spark-RDD-转换操作">
                             安装直接在命令行输入
 mail
 
-提示
-Command &apos;mail&apos; not found, but can be installed with:
 
-sudo apt install mailutils安装
+提示
+Command &#39;mail&#39; not found, but can be installed with:
+
+sudo apt install mailutils
+安装
 sudo ap
                         
                     </div>

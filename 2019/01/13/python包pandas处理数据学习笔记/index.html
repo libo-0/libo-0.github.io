@@ -9,7 +9,8 @@
 for col in df.columns:
     series = df[col]
 
-10 Minutes t">
+
+10 Minutes ">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -401,7 +402,7 @@ for col in df.columns:
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    658
+                    659
                 </div>
                 
 
@@ -426,14 +427,17 @@ for col in df.columns:
             <div id="articleContent">
                 <p>pandas 有两种数据结构： 序列(Series), 数据帧(DataFrame)。数据帧是序列的容器，序列是标量的容器。</p>
 <pre><code>for col in df.columns:
-    series = df[col]</code></pre><a id="more"></a>
+    series = df[col]</code></pre>
+<a id="more"></a>
 
 <h2 id="10-Minutes-to-pandas"><a href="#10-Minutes-to-pandas" class="headerlink" title="10 Minutes to pandas"></a>10 Minutes to pandas</h2><p>导入pandas</p>
 <pre><code>import pandas as pd
 import numpy as np
-import matplotlib.pyplot as plt</code></pre><h3 id="创建数据对象"><a href="#创建数据对象" class="headerlink" title="创建数据对象"></a>创建数据对象</h3><pre><code>s = pd.Series([1,3,5,np.nan,6,8])
-dates = pd.date_range(&apos;20130101&apos;, periods = 6)
-df = pd.DataFrame(np.random.randn(6,4), index=dates, columns = list(&apos;ABCD&apos;))</code></pre><h3 id="查看数据"><a href="#查看数据" class="headerlink" title="查看数据"></a>查看数据</h3><pre><code>df.head()
+import matplotlib.pyplot as plt</code></pre>
+<h3 id="创建数据对象"><a href="#创建数据对象" class="headerlink" title="创建数据对象"></a>创建数据对象</h3><pre><code>s = pd.Series([1,3,5,np.nan,6,8])
+dates = pd.date_range(&#39;20130101&#39;, periods = 6)
+df = pd.DataFrame(np.random.randn(6,4), index=dates, columns = list(&#39;ABCD&#39;))</code></pre>
+<h3 id="查看数据"><a href="#查看数据" class="headerlink" title="查看数据"></a>查看数据</h3><pre><code>df.head()
 df.tail(3)
 df.index
 df.columns
@@ -441,11 +445,14 @@ df.values
 df.describe()
 df.T
 df.sort_index(axis=1, ascending=False)
-df.sort_values(by=&apos;B&apos;)</code></pre><h3 id="选择"><a href="#选择" class="headerlink" title="选择"></a>选择</h3><pre><code>df[&apos;A&apos;]
-df[0:3]</code></pre><h4 id="根据标签选择"><a href="#根据标签选择" class="headerlink" title="根据标签选择"></a>根据标签选择</h4><pre><code>df.loc[dates[0]]
-df.loc[:,[&apos;A&apos;,&apos;B&apos;]]
-df.loc[&apos;20130102&apos;:&apos;20130104&apos;, [&apos;A&apos;,&apos;B&apos;]]
-df.loc[&apos;20130102&apos;,[&apos;A&apos;,&apos;B&apos;]]</code></pre><ul>
+df.sort_values(by=&#39;B&#39;)</code></pre>
+<h3 id="选择"><a href="#选择" class="headerlink" title="选择"></a>选择</h3><pre><code>df[&#39;A&#39;]
+df[0:3]</code></pre>
+<h4 id="根据标签选择"><a href="#根据标签选择" class="headerlink" title="根据标签选择"></a>根据标签选择</h4><pre><code>df.loc[dates[0]]
+df.loc[:,[&#39;A&#39;,&#39;B&#39;]]
+df.loc[&#39;20130102&#39;:&#39;20130104&#39;, [&#39;A&#39;,&#39;B&#39;]]
+df.loc[&#39;20130102&#39;,[&#39;A&#39;,&#39;B&#39;]]</code></pre>
+<ul>
 <li><p>获取标量值</p>
 <p>  df.loc[date[0],’A’]</p>
 </li>
@@ -465,21 +472,24 @@ df.loc[&apos;20130102&apos;,[&apos;A&apos;,&apos;B&apos;]]</code></pre><ul>
 </li>
 </ul>
 <h4 id="Boolean索引"><a href="#Boolean索引" class="headerlink" title="Boolean索引"></a>Boolean索引</h4><pre><code>df[df.A &gt; 0]
-df[df &gt; 0]</code></pre><ul>
+df[df &gt; 0]</code></pre>
+<ul>
 <li><p>isin()方法过滤</p>
 <p>  df2[df2[‘E’].isin([‘two’,’four’])]</p>
 </li>
 </ul>
-<h4 id="设置"><a href="#设置" class="headerlink" title="设置"></a>设置</h4><pre><code>s1 = pd.Series([1,2,3,4,5,6], index = pd.date_range(&apos;20130102&apos;, periods=6))
-df.at[dates[0],&apos;A&apos;] = 0
+<h4 id="设置"><a href="#设置" class="headerlink" title="设置"></a>设置</h4><pre><code>s1 = pd.Series([1,2,3,4,5,6], index = pd.date_range(&#39;20130102&#39;, periods=6))
+df.at[dates[0],&#39;A&#39;] = 0
 df.iat[0,1] = 0
-df.loc[:,&apos;D&apos;] = np.array[5] * len(df))</code></pre><ul>
+df.loc[:,&#39;D&#39;] = np.array[5] * len(df))</code></pre>
+<ul>
 <li><p>拷贝</p>
 <p>  df2 = df.copy()</p>
 </li>
 </ul>
-<h4 id="缺失的数据"><a href="#缺失的数据" class="headerlink" title="缺失的数据"></a>缺失的数据</h4><pre><code>df1 = df.reindex(index = dates[0:4], columns = list(df.columns) + [&apos;E&apos;])
-df1.loc[dates[0]:dates[1], &apos;E&apos;] = 1</code></pre><ul>
+<h4 id="缺失的数据"><a href="#缺失的数据" class="headerlink" title="缺失的数据"></a>缺失的数据</h4><pre><code>df1 = df.reindex(index = dates[0:4], columns = list(df.columns) + [&#39;E&#39;])
+df1.loc[dates[0]:dates[1], &#39;E&#39;] = 1</code></pre>
+<ul>
 <li><p>丢弃遗失数据行</p>
 <p>  df1.dropna(how = ‘any’)</p>
 </li>
@@ -491,7 +501,8 @@ df1.loc[dates[0]:dates[1], &apos;E&apos;] = 1</code></pre><ul>
 </li>
 </ul>
 <h3 id="操作"><a href="#操作" class="headerlink" title="操作"></a>操作</h3><h4 id="统计"><a href="#统计" class="headerlink" title="统计"></a>统计</h4><pre><code>df.mean()
-df.mean(1)</code></pre><h4 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h4><ul>
+df.mean(1)</code></pre>
+<h4 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h4><ul>
 <li><p>应用函数到数据 </p>
 <p>  df.apply(np.cumsum)<br>  df.apply(lambda x: x.max() - x.min())</p>
 </li>
@@ -510,17 +521,22 @@ df.mean(1)</code></pre><h4 id="应用"><a href="#应用" class="headerlink" titl
 <p>  df.append(s, ignore_index= True)</p>
 </li>
 </ul>
-<h4 id="分组"><a href="#分组" class="headerlink" title="分组"></a>分组</h4><pre><code>df.groupby([&apos;A&apos;,&apos;B&apos;]).sum()</code></pre><h3 id="时间序列"><a href="#时间序列" class="headerlink" title="时间序列"></a>时间序列</h3><pre><code>rng = pd.date_range(&apos;1/1/12012&apos;, period=100, freq=&apos;S&apos;)
-ts = pd.Series(np.random.randint(0,500, len(rng)), index = rng)</code></pre><h3 id="从输入输出获取数据"><a href="#从输入输出获取数据" class="headerlink" title="从输入输出获取数据"></a>从输入输出获取数据</h3><h4 id="CSV"><a href="#CSV" class="headerlink" title="CSV"></a>CSV</h4><pre><code>df.to_csv(&apos;foo.csv&apos;)
-pd.read_csv(&apos;foo.csv&apos;)</code></pre><h4 id="HDF5"><a href="#HDF5" class="headerlink" title="HDF5"></a>HDF5</h4><h4 id="Excel"><a href="#Excel" class="headerlink" title="Excel"></a>Excel</h4><pre><code>df.to_excel(&apos;foo.xlsx&apos;, sheet_name=&apos;Sheet1&apos;)
-pd.read_excel(&apos;foo.xlsx&apos;, &apos;Sheet1&apos;, index_col=None, na_values=[&apos;NA&apos;])</code></pre><h3 id="Idioms"><a href="#Idioms" class="headerlink" title="Idioms"></a>Idioms</h3><ul>
+<h4 id="分组"><a href="#分组" class="headerlink" title="分组"></a>分组</h4><pre><code>df.groupby([&#39;A&#39;,&#39;B&#39;]).sum()</code></pre>
+<h3 id="时间序列"><a href="#时间序列" class="headerlink" title="时间序列"></a>时间序列</h3><pre><code>rng = pd.date_range(&#39;1/1/12012&#39;, period=100, freq=&#39;S&#39;)
+ts = pd.Series(np.random.randint(0,500, len(rng)), index = rng)</code></pre>
+<h3 id="从输入输出获取数据"><a href="#从输入输出获取数据" class="headerlink" title="从输入输出获取数据"></a>从输入输出获取数据</h3><h4 id="CSV"><a href="#CSV" class="headerlink" title="CSV"></a>CSV</h4><pre><code>df.to_csv(&#39;foo.csv&#39;)
+pd.read_csv(&#39;foo.csv&#39;)</code></pre>
+<h4 id="HDF5"><a href="#HDF5" class="headerlink" title="HDF5"></a>HDF5</h4><h4 id="Excel"><a href="#Excel" class="headerlink" title="Excel"></a>Excel</h4><pre><code>df.to_excel(&#39;foo.xlsx&#39;, sheet_name=&#39;Sheet1&#39;)
+pd.read_excel(&#39;foo.xlsx&#39;, &#39;Sheet1&#39;, index_col=None, na_values=[&#39;NA&#39;])</code></pre>
+<h3 id="Idioms"><a href="#Idioms" class="headerlink" title="Idioms"></a>Idioms</h3><ul>
 <li><p>if-then</p>
 <p>  df.loc[df.AAA &gt;= 5, ‘BBB’] = -1;<br>  df.loc[df.AAA &gt;=5, [‘BBB’,’CCC’]] = 555;<br>  df.loc[df.AAA &lt;5, [‘BBB’, ‘CCC’]] = 2000;</p>
 </li>
 </ul>
 <h4 id="Splitting"><a href="#Splitting" class="headerlink" title="Splitting"></a>Splitting</h4><pre><code>dflow = df[df.AAA &lt;=5];
-dfhigh = df[df.AAA &gt; 5];</code></pre><h4 id="构建条件-Criteria"><a href="#构建条件-Criteria" class="headerlink" title="构建条件(Criteria)"></a>构建条件(Criteria)</h4><pre><code>newseries = df.loc[(df[&apos;BBB&apos;] &lt; 25 &amp; (df[&apos;CCC&apos;] &gt;= -40), &apos;AAA&apos;)];
-df.loc[(df[&apos;BBB&apos;] &gt; 25) | (df[&apos;CCC&apos;] &gt;= 75), &apos;AAA&apos;] = 0.1;
+dfhigh = df[df.AAA &gt; 5];</code></pre>
+<h4 id="构建条件-Criteria"><a href="#构建条件-Criteria" class="headerlink" title="构建条件(Criteria)"></a>构建条件(Criteria)</h4><pre><code>newseries = df.loc[(df[&#39;BBB&#39;] &lt; 25 &amp; (df[&#39;CCC&#39;] &gt;= -40), &#39;AAA&#39;)];
+df.loc[(df[&#39;BBB&#39;] &gt; 25) | (df[&#39;CCC&#39;] &gt;= 75), &#39;AAA&#39;] = 0.1;
 
 Crit1 = df.AAA &lt;= 5.5
 Crit2 = df.BBB == 10.0
@@ -529,7 +545,8 @@ AllCrit = Crit1 &amp; Crit2 &amp; Crit3
 CritList = [Crit1, Crit2, Crit3]
 AllCrit = functools.reduce(lambda x,y: x &amp; y, CritList)
 df[AllCrit
-]</code></pre><h2 id="必要的基础功能"><a href="#必要的基础功能" class="headerlink" title="必要的基础功能"></a>必要的基础功能</h2>
+]</code></pre>
+<h2 id="必要的基础功能"><a href="#必要的基础功能" class="headerlink" title="必要的基础功能"></a>必要的基础功能</h2>
             </div>
             <hr/>
 
@@ -808,13 +825,14 @@ df[AllCrit
                             create database ShareBook;
 use ShareBook;
 
+
 笔记Mysql 查看帮助? contents
 ? data types
 ? create
 ? create table
 ? int
-? show表修改
-外
+? show
+表修改
                         
                     </div>
                     <div class="publish-info">
@@ -847,22 +865,28 @@ use ShareBook;
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/01/13/spark%E6%A6%82%E5%BF%B5%E5%AD%A6%E4%B9%A0/">
+                <a href="/2019/01/13/spring/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="spark概念学习">
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="spring 学习笔记">
                         
-                        <span class="card-title">spark概念学习</span>
+                        <span class="card-title">spring 学习笔记</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            spark 概念学习Apache Spark 是一个快速通用的族计算系统。它为Java, Scala, Python, R 提供了高层次的API, 并且提供了一个优化的引擎来支持通用图计算。
+                            spring 之旅为了简化java开发的复杂性，spring 采取以下4中策略
 
 
-Quick StartRDD Program
+
+基于POJO的轻量级和最小侵入性编程；
+通过依赖注入和面向接口实现松耦合
+基于切面和惯例进行声明式编程；
+通过切面和模板减少样板式代码
+
+依赖注入 (Dp
                         
                     </div>
                     <div class="publish-info">
@@ -880,8 +904,8 @@ Quick StartRDD Program
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Spark/">
-                        <span class="chip bg-color">Spark</span>
+                    <a href="/tags/Spring/">
+                        <span class="chip bg-color">Spring</span>
                     </a>
                     
                 </div>

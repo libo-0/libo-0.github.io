@@ -8,10 +8,12 @@
     <meta name="description" content="安装直接在命令行输入
 mail
 
-提示
-Command &amp;apos;mail&amp;apos; not found, but can be installed with:
 
-sudo apt install mailutils安装
+提示
+Command &amp;#39;mail&amp;#39; not found, but can be installed with:
+
+sudo apt install mailutils
+安装
 sudo ap">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -428,27 +430,36 @@ sudo ap">
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>直接在命令行输入</p>
-<pre><code>mail</code></pre><a id="more"></a>
+<pre><code>mail</code></pre>
+<a id="more"></a>
 
 <p>提示</p>
-<pre><code>Command &apos;mail&apos; not found, but can be installed with:
+<pre><code>Command &#39;mail&#39; not found, but can be installed with:
 
-sudo apt install mailutils</code></pre><p>安装</p>
-<pre><code>sudo apt install mailutils</code></pre><p>提示将会安装如下包</p>
-<pre><code>The following NEW packages will be installed: guile-2.0-libs libgsasl7 libkyotocabinet16v5 libmailutils5 libntlm0 mailutils mailutils-common postfix</code></pre><p>安装完成后，配置 /etc/mail.rc</p>
-<pre><code>sudo vim /etc/mail.rc</code></pre><p>添加以下内容:</p>
+sudo apt install mailutils</code></pre>
+<p>安装</p>
+<pre><code>sudo apt install mailutils</code></pre>
+<p>提示将会安装如下包</p>
+<pre><code>The following NEW packages will be installed: guile-2.0-libs libgsasl7 libkyotocabinet16v5 libmailutils5 libntlm0 mailutils mailutils-common postfix</code></pre>
+<p>安装完成后，配置 /etc/mail.rc</p>
+<pre><code>sudo vim /etc/mail.rc</code></pre>
+<p>添加以下内容:</p>
 <pre><code>set from=xxx@163.com
 set smtp=stmp.163.com
 set smtp-auth-user=xxx@163.com
 set smtp-auth-password=xxx
-set smtp-auth=login</code></pre><ul>
+set smtp-auth=login</code></pre>
+<ul>
 <li>from: 你的邮箱地址</li>
 <li>smtp-auth-password: 密码或授权码</li>
 </ul>
 <p>保存退出</p>
 <p>测试</p>
-<pre><code>mail -s &quot;hello from test&quot; **@qq.com &lt; ./test.txt</code></pre><p>查看收件人邮箱，可以已收到邮件</p>
-<h3 id="发送带附件的邮件"><a href="#发送带附件的邮件" class="headerlink" title="发送带附件的邮件"></a>发送带附件的邮件</h3><pre><code>mail -s &quot;主题&quot; **@qq.com -A 附件 &lt; 文件(邮件正文.txt)</code></pre><h3 id="更多命令"><a href="#更多命令" class="headerlink" title="更多命令"></a>更多命令</h3><pre><code>mail --help</code></pre>
+<pre><code>mail -s &quot;hello from test&quot; **@qq.com &lt; ./test.txt</code></pre>
+<p>查看收件人邮箱，可以已收到邮件</p>
+<h3 id="发送带附件的邮件"><a href="#发送带附件的邮件" class="headerlink" title="发送带附件的邮件"></a>发送带附件的邮件</h3><pre><code>mail -s &quot;主题&quot; **@qq.com -A 附件 &lt; 文件(邮件正文.txt)</code></pre>
+<h3 id="更多命令"><a href="#更多命令" class="headerlink" title="更多命令"></a>更多命令</h3><pre><code>mail --help</code></pre>
+
             </div>
             <hr/>
 

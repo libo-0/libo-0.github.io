@@ -395,7 +395,7 @@ hadoop home /D:/Env/hadoop-2.9.2
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    446
+                    452
                 </div>
                 
 
@@ -438,9 +438,10 @@ hadoop home /D:/Env/hadoop-2.9.2
 <ul>
 <li>修改hadoop-2.9.2\etc\hadoop\mapred-site.xml</li>
 </ul>
-<figure class="highlight xml"><table><tr><td class="code"><pre><code class="hljs xml"><span class="hljs-meta">&lt;?xml version="1.0"?&gt;</span><br><span class="hljs-meta">&lt;?xml-stylesheet type="text/xsl" href="configuration.xsl"?&gt;</span><br>   <br><span class="hljs-tag">&lt;<span class="hljs-name">configuration</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">property</span>&gt;</span><br>    <span class="hljs-comment">&lt;!-- 定义了JobTracker的位置--&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>mapred.job.tracker<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">value</span>&gt;</span>localhost:9001<span class="hljs-tag">&lt;/<span class="hljs-name">value</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">property</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">configuration</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="code"><pre><code class="hljs xml"><span class="hljs-meta">&lt;?xml version=&quot;1.0&quot;?&gt;</span><br><span class="hljs-meta">&lt;?xml-stylesheet type=&quot;text/xsl&quot; href=&quot;configuration.xsl&quot;?&gt;</span><br>   <br><span class="hljs-tag">&lt;<span class="hljs-name">configuration</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">property</span>&gt;</span><br>    <span class="hljs-comment">&lt;!-- 定义了JobTracker的位置--&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>mapred.job.tracker<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">value</span>&gt;</span>localhost:9001<span class="hljs-tag">&lt;/<span class="hljs-name">value</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">property</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">configuration</span>&gt;</span><br></code></pre></td></tr></table></figure>
 
-<pre><code>由于hadoop 在windows下运行需要winutil, 所以需要另外下载。下载[winutil](https://github.com/steveloughran/winutils), 将原hadoop 的bin 目录重命名为bin.bak， 将hadoop2.8.3/bin 目录复制到hadoop根目录。</code></pre><h3 id="启动hadoop"><a href="#启动hadoop" class="headerlink" title="启动hadoop"></a>启动hadoop</h3><p>首次启动hadoop, 需要格式化hadoop将要用到的HDFS文件系统</p>
+<pre><code>由于hadoop 在windows下运行需要winutil, 所以需要另外下载。下载[winutil](https://github.com/steveloughran/winutils), 将原hadoop 的bin 目录重命名为bin.bak， 将hadoop2.8.3/bin 目录复制到hadoop根目录。</code></pre>
+<h3 id="启动hadoop"><a href="#启动hadoop" class="headerlink" title="启动hadoop"></a>启动hadoop</h3><p>首次启动hadoop, 需要格式化hadoop将要用到的HDFS文件系统</p>
 <ul>
 <li><p>格式化 NameNode<br>  hadoop namenode -format</p>
 </li>
@@ -479,6 +480,7 @@ hadoop home /D:/Env/hadoop-2.9.2
 </li>
 </ul>
 <h4 id="网页查看-hadoop"><a href="#网页查看-hadoop" class="headerlink" title="网页查看 hadoop"></a>网页查看 hadoop</h4><pre><code>[localhost:50070](http://localhost:50070)</code></pre>
+
             </div>
             <hr/>
 

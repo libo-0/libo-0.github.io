@@ -397,14 +397,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.1k
+                    1.2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    4 分
+                    5 分
                 </div>
                 
 				
@@ -425,23 +425,28 @@
 
 <p>目前安装了5台 ubuntu 18.04 linux主机，每台设置内存1GB，硬盘20GB，显存128MB，开启3D加速:</p>
 <ul>
-<li><a href="mailto:node1@192.168.101.237">node1@192.168.101.237</a></li>
-<li><a href="mailto:node2@192.168.101.239">node2@192.168.101.239</a></li>
-<li><a href="mailto:node3@192.168.101.240">node3@192.168.101.240</a></li>
-<li><a href="mailto:node4@192.168.101.241">node4@192.168.101.241</a></li>
-<li><a href="mailto:node5@192.168.101.243">node5@192.168.101.243</a></li>
+<li><a href="mailto:&#110;&#x6f;&#100;&#x65;&#49;&#64;&#49;&#57;&#x32;&#x2e;&#x31;&#54;&#x38;&#46;&#x31;&#48;&#49;&#x2e;&#50;&#x33;&#55;">&#110;&#x6f;&#100;&#x65;&#49;&#64;&#49;&#57;&#x32;&#x2e;&#x31;&#54;&#x38;&#46;&#x31;&#48;&#49;&#x2e;&#50;&#x33;&#55;</a></li>
+<li><a href="mailto:&#x6e;&#111;&#x64;&#x65;&#50;&#x40;&#49;&#x39;&#50;&#46;&#49;&#54;&#56;&#x2e;&#x31;&#x30;&#x31;&#x2e;&#x32;&#51;&#x39;">&#x6e;&#111;&#x64;&#x65;&#50;&#x40;&#49;&#x39;&#50;&#46;&#49;&#54;&#56;&#x2e;&#x31;&#x30;&#x31;&#x2e;&#x32;&#51;&#x39;</a></li>
+<li><a href="mailto:&#110;&#x6f;&#100;&#x65;&#x33;&#x40;&#49;&#x39;&#50;&#x2e;&#x31;&#54;&#x38;&#46;&#49;&#48;&#49;&#46;&#x32;&#52;&#48;">&#110;&#x6f;&#100;&#x65;&#x33;&#x40;&#49;&#x39;&#50;&#x2e;&#x31;&#54;&#x38;&#46;&#49;&#48;&#49;&#46;&#x32;&#52;&#48;</a></li>
+<li><a href="mailto:&#110;&#111;&#x64;&#101;&#52;&#64;&#x31;&#57;&#x32;&#46;&#49;&#x36;&#56;&#x2e;&#49;&#48;&#49;&#46;&#x32;&#52;&#49;">&#110;&#111;&#x64;&#101;&#52;&#64;&#x31;&#57;&#x32;&#46;&#49;&#x36;&#56;&#x2e;&#49;&#48;&#49;&#46;&#x32;&#52;&#49;</a></li>
+<li><a href="mailto:&#x6e;&#x6f;&#100;&#101;&#53;&#64;&#49;&#57;&#50;&#46;&#49;&#54;&#x38;&#46;&#49;&#48;&#x31;&#x2e;&#x32;&#x34;&#51;">&#x6e;&#x6f;&#100;&#101;&#53;&#64;&#49;&#57;&#50;&#46;&#49;&#54;&#x38;&#46;&#49;&#48;&#x31;&#x2e;&#x32;&#x34;&#51;</a></li>
 </ul>
 <p>添加用户</p>
 <pre><code>sudo su root
 useradd hadoop
-passwd &quot;159491&quot;</code></pre><p>将hadoop 添加到sudoers, NOPASSWD 表示切换sudo时无须密码</p>
+passwd &quot;159491&quot;</code></pre>
+<p>将hadoop 添加到sudoers, NOPASSWD 表示切换sudo时无须密码</p>
 <pre><code>chmod u+x /etc/sudoers
 vim /etc/sudoers
-hadoop ALL=NOPASSWD:ALL</code></pre><p>测试hadoop 用户是否有sudo 权限</p>
-<pre><code>sudo whoami</code></pre><p>创建用户目录</p>
+hadoop ALL=NOPASSWD:ALL</code></pre>
+<p>测试hadoop 用户是否有sudo 权限</p>
+<pre><code>sudo whoami</code></pre>
+<p>创建用户目录</p>
 <pre><code>sudo mkdir /home/hadoop
-sudo chown hadoop /home/hadoop</code></pre><p>生成rsa密匙</p>
-<pre><code>ssh-keygen -t rsa</code></pre><p>因为总共有4台虚拟机，每台虚拟机都要用ssh-keygen -t rsa 生成密匙，然后将生成的所有共识 id_rsa追加到同一个authorized_keys 文件中，并复制到每台虚拟机的 hadoop/.ssh/ 目录中。并且修改权限为 chmod 700 ~/.ssh/authorized_keys.</p>
+sudo chown hadoop /home/hadoop</code></pre>
+<p>生成rsa密匙</p>
+<pre><code>ssh-keygen -t rsa</code></pre>
+<p>因为总共有4台虚拟机，每台虚拟机都要用ssh-keygen -t rsa 生成密匙，然后将生成的所有共识 id_rsa追加到同一个authorized_keys 文件中，并复制到每台虚拟机的 hadoop/.ssh/ 目录中。并且修改权限为 chmod 700 ~/.ssh/authorized_keys.</p>
 <p>配置完成后，就可以在任意一台虚拟机通过 ssh hostname , 例如 ssh node4 访问对应node4主机，而不需要密码。</p>
 <h2 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h2><ul>
 <li><p>关闭屏幕锁</p>
@@ -456,7 +461,8 @@ sudo chown hadoop /home/hadoop</code></pre><p>生成rsa密匙</p>
 <li>java8 /env/jdk1.8</li>
 <li>hadoop-2.9.2 /env/hadoop-2.9.2</li>
 </ul>
-<h3 id="设置环境变量-Virtualbox"><a href="#设置环境变量-Virtualbox" class="headerlink" title="设置环境变量 Virtualbox"></a>设置环境变量 Virtualbox</h3><h4 id="环境变量"><a href="#环境变量" class="headerlink" title="环境变量"></a>环境变量</h4><pre><code>vim ~/.bashrc</code></pre><ul>
+<h3 id="设置环境变量-Virtualbox"><a href="#设置环境变量-Virtualbox" class="headerlink" title="设置环境变量 Virtualbox"></a>设置环境变量 Virtualbox</h3><h4 id="环境变量"><a href="#环境变量" class="headerlink" title="环境变量"></a>环境变量</h4><pre><code>vim ~/.bashrc</code></pre>
+<ul>
 <li><p>添加 Java 环境变量</p>
 <p>  export JAVA_HOME=/env/jdk1.8<br>  export JRE_HOME=${JAVA_HOME}/jre<br>  export CLASSPATH=:${JAVA_HOME}/lib:${JRE_HOME}/lib<br>  export PATH=${JAVA_HOME}/bin:$PATH</p>
 </li>
@@ -469,11 +475,14 @@ sudo chown hadoop /home/hadoop</code></pre><p>生成rsa密匙</p>
 <p>添加</p>
 <pre><code>export HADOOP_NAMENODE_OPTS=&quot; -Xms1024m -Xmx1024m -XX:+UseParallelGC&quot;
 export HADOOP_DATANODE_OPTS=&quot; -Xms1024m -Xmx1024m&quot;
-export HADOOP_LOG_DIR=/data/logs/hadoop</code></pre><p>由于本机只有8G内存，并且开了5个虚拟机，所以上述相应的调小了些。该为如下</p>
+export HADOOP_LOG_DIR=/data/logs/hadoop</code></pre>
+<p>由于本机只有8G内存，并且开了5个虚拟机，所以上述相应的调小了些。该为如下</p>
 <pre><code>export HADOOP_NAMENODE_OPTS=&quot; -Xms256m -Xmx512m -XX:+UseParallelGC&quot;
 export HADOOP_DATANODE_OPTS=&quot; -Xms256m -Xmx512m&quot;
-export HADOOP_LOG_DIR=/data/logs/hadoop</code></pre><p>修改 JAVA_HOME</p>
-<pre><code>export JAVA_HOME=/env/jdk1.8</code></pre><ul>
+export HADOOP_LOG_DIR=/data/logs/hadoop</code></pre>
+<p>修改 JAVA_HOME</p>
+<pre><code>export JAVA_HOME=/env/jdk1.8</code></pre>
+<ul>
 <li><p>使环境变量生效</p>
 <p>  source ~/.bashrc</p>
 </li>
@@ -485,16 +494,20 @@ export HADOOP_LOG_DIR=/data/logs/hadoop</code></pre><p>修改 JAVA_HOME</p>
 192.168.101.239  node2
 192.168.101.240 node3
 192.168.101.241 node4
-192.168.101.243 node5</code></pre><p>重启网卡，使立刻生效</p>
+192.168.101.243 node5</code></pre>
+<p>重启网卡，使立刻生效</p>
 <p>sudo /etc/init.d/networking restart</p>
 <p>修改每台虚拟机/etc/hostname,node1只写node1,其他也一样</p>
 <pre><code>node1
 node2
 node3
 node4
-node5</code></pre><p>然后每台主机执行</p>
-<pre><code>hostname 主机名</code></pre><p>例如虚拟机node1</p>
-<pre><code>hostname node1</code></pre><h3 id="hadoop-系统配置"><a href="#hadoop-系统配置" class="headerlink" title="hadoop 系统配置"></a>hadoop 系统配置</h3><ul>
+node5</code></pre>
+<p>然后每台主机执行</p>
+<pre><code>hostname 主机名</code></pre>
+<p>例如虚拟机node1</p>
+<pre><code>hostname node1</code></pre>
+<h3 id="hadoop-系统配置"><a href="#hadoop-系统配置" class="headerlink" title="hadoop 系统配置"></a>hadoop 系统配置</h3><ul>
 <li><p>创建目录,在每台虚拟机上创建，并将拥有者付给hadoop用户</p>
 <p>  sudo mkdir -p /data/logs/hadoop<br>  sudo mkdir -p /data/hadoop/hdfs/nn<br>  sudo mkdir /data/hadoop/hdfs/dn<br>  chown hadoop /data<br>  chown hadoop /data/*</p>
 </li>
@@ -525,7 +538,8 @@ node5</code></pre><p>然后每台主机执行</p>
 </li>
 </ul>
 <p>对每个虚拟机进行此操作</p>
-<pre><code>hdfs namenode -format</code></pre><h3 id="虚拟机配置结果"><a href="#虚拟机配置结果" class="headerlink" title="虚拟机配置结果"></a>虚拟机配置结果</h3><ul>
+<pre><code>hdfs namenode -format</code></pre>
+<h3 id="虚拟机配置结果"><a href="#虚拟机配置结果" class="headerlink" title="虚拟机配置结果"></a>虚拟机配置结果</h3><ul>
 <li>node1 OK</li>
 <li>node2 OK</li>
 <li>node3 OK</li>
@@ -535,7 +549,8 @@ node5</code></pre><p>然后每台主机执行</p>
 <h3 id="Virtualbox端口转发"><a href="#Virtualbox端口转发" class="headerlink" title="Virtualbox端口转发"></a>Virtualbox端口转发</h3><p>在Virtualbox 设置网卡为NAT 模式，点击高级，配置NAT 转发规则，配置主机IP 和端口，虚拟机IP 和端口，然后就可以通过 主机IP 和端口访问在主机中访问虚拟机中提供的服务了。</p>
 <h3 id="集群配置"><a href="#集群配置" class="headerlink" title="集群配置"></a>集群配置</h3><p>修改所有节点core-site.xml fs.defaultFS = hdfs://node1:8020, 并在所有节点上进行如下操作，进行数据删除</p>
 <pre><code>rm -rf /data/hadoop/hdfs/nn/current
-rm -rf /data/hadoop/hdfs/dn/current</code></pre><h3 id="启动集群"><a href="#启动集群" class="headerlink" title="启动集群"></a>启动集群</h3><ul>
+rm -rf /data/hadoop/hdfs/dn/current</code></pre>
+<h3 id="启动集群"><a href="#启动集群" class="headerlink" title="启动集群"></a>启动集群</h3><ul>
 <li><p>在node1 上启动namenode<br>  hadoop-daemon.sh –script hdfs start namenode</p>
 </li>
 <li><p>停止namenode</p>
@@ -547,6 +562,7 @@ rm -rf /data/hadoop/hdfs/dn/current</code></pre><h3 id="启动集群"><a href="#
 </ul>
 <p>关闭 datanode</p>
 <pre><code>hadoop-daemons.sh --script hdfs stop datanode</code></pre>
+
             </div>
             <hr/>
 

@@ -396,7 +396,7 @@ Quick StartRDD Program">
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    4k
+                    4.1k
                 </div>
                 
 
@@ -419,23 +419,27 @@ Quick StartRDD Program">
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="spark-概念学习"><a href="#spark-概念学习" class="headerlink" title="spark 概念学习"></a><a href="https://spark.apache.org/docs/latest/rdd-programming-guide.html" target="_blank" rel="noopener">spark</a> 概念学习</h2><p>Apache Spark 是一个快速通用的族计算系统。它为Java, Scala, Python, R 提供了高层次的API, 并且提供了一个优化的引擎来支持通用图计算。</p>
+                <h2 id="spark-概念学习"><a href="#spark-概念学习" class="headerlink" title="spark 概念学习"></a><a target="_blank" rel="noopener" href="https://spark.apache.org/docs/latest/rdd-programming-guide.html">spark</a> 概念学习</h2><p>Apache Spark 是一个快速通用的族计算系统。它为Java, Scala, Python, R 提供了高层次的API, 并且提供了一个优化的引擎来支持通用图计算。</p>
 <a id="more"></a>
 
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h2 id="RDD-Programming-Guide"><a href="#RDD-Programming-Guide" class="headerlink" title="RDD Programming Guide"></a><a href="https://spark.apache.org/docs/latest/rdd-programming-guide.html" target="_blank" rel="noopener">RDD Programming Guide</a></h2><p>为了用 Java 编写spark应用 ，需要添加以下maven 依赖</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h2 id="RDD-Programming-Guide"><a href="#RDD-Programming-Guide" class="headerlink" title="RDD Programming Guide"></a><a target="_blank" rel="noopener" href="https://spark.apache.org/docs/latest/rdd-programming-guide.html">RDD Programming Guide</a></h2><p>为了用 Java 编写spark应用 ，需要添加以下maven 依赖</p>
 <pre><code>groupId = org.apache.spark
 artifactId = spark-core_2.11
-version = 2.4.0</code></pre><p>如果要进入HDFS 族， 则要添加一下依赖</p>
+version = 2.4.0</code></pre>
+<p>如果要进入HDFS 族， 则要添加一下依赖</p>
 <pre><code>groupId = org.apache.hadoop
 artifactId = hadoop-client
-version = &lt;your-hdfs-version&gt;</code></pre><h3 id="Resilient-Distributed-Datasets-RDDs"><a href="#Resilient-Distributed-Datasets-RDDs" class="headerlink" title="Resilient Distributed Datasets (RDDs)"></a>Resilient Distributed Datasets (RDDs)</h3><p>Spark 围绕 RDD 的概念。 RDD 是一个可以平行操作的容错的集合元素。 有两种方式可以创建RDD： 从驱动程序里并行化一个已存在的集合， 或者引用一个外部存储系统的数据集， HDFS， HBase， 或者其他 Hadoop 输入格式的数据源.</p>
+version = &lt;your-hdfs-version&gt;</code></pre>
+<h3 id="Resilient-Distributed-Datasets-RDDs"><a href="#Resilient-Distributed-Datasets-RDDs" class="headerlink" title="Resilient Distributed Datasets (RDDs)"></a>Resilient Distributed Datasets (RDDs)</h3><p>Spark 围绕 RDD 的概念。 RDD 是一个可以平行操作的容错的集合元素。 有两种方式可以创建RDD： 从驱动程序里并行化一个已存在的集合， 或者引用一个外部存储系统的数据集， HDFS， HBase， 或者其他 Hadoop 输入格式的数据源.</p>
 <h3 id="Parallelized-Collections"><a href="#Parallelized-Collections" class="headerlink" title="Parallelized Collections"></a>Parallelized Collections</h3><p>并行化集合通过在你的驱动程序种调用 JavaSparkContext 的 parallelize 方法作用于一个已存在的集合创建。集合中的元素被复制从而组成一个可以被并行操作的分布式数据集。示例如下:</p>
 <pre><code>List&lt;Integer&gt; data = Arrays.asList(1,2,3,4,5);
-JavaRDD&lt;Integer&gt;  distData = sc.parallelize(data);</code></pre><p>一旦创建， 该分布式数据集可以被并行操作。例如，我们可以调用 distData.reduce((a,b) -&gt; a + b ) 来加列表中的元素</p>
+JavaRDD&lt;Integer&gt;  distData = sc.parallelize(data);</code></pre>
+<p>一旦创建， 该分布式数据集可以被并行操作。例如，我们可以调用 distData.reduce((a,b) -&gt; a + b ) 来加列表中的元素</p>
 <p>并行集合的一个重要的参数是切割数据集的分区数。 Spark 会在族上<br>的每一个分区运行任务。典型的你想要在每个簇上为每个CPU分配2-4个分区。通常，Spark尝试会基于你的簇自动设置分区数量。然而，你也可以通过人工传递第二个参数 sc.parallelize(data,10) 设置它。注意：在代码的某些地方使用数据切片(分区的同义词)来保持向后兼容性。</p>
 <h3 id="外部数据集"><a href="#外部数据集" class="headerlink" title="外部数据集"></a>外部数据集</h3><p>Spark可以从Hadoop支持的任意存储数据源创建分布式数据集，包括你的本地文件系统，HDFS, Cassandra, HBae, Amazon S3, 等等。Spark 支持文本文件，SequenceFiles， 以及其他任何Hadoop 的输入格式。</p>
 <p>文本 RDD 可以使用 SparkContext 的 textFile 方法创建。这个方法使用 URI 作为文件参数， (可以是本地文件，或者 hdfs://, s3a://, etc URI) 然后读到一个行的集合中。以下是一次调用:</p>
-<pre><code>JavaRDD&lt;String&gt; distFile = sc.textFile(&quot;data.txt&quot;);</code></pre><p>一旦创建， distFile 可以进行数据集操作。例如，我们可以将所有行的大小都加起来使用 map 和 reduce 操作如下: distFile.map(s-&gt; s.length()).ruduce((a,b) -&gt; a + b).</p>
+<pre><code>JavaRDD&lt;String&gt; distFile = sc.textFile(&quot;data.txt&quot;);</code></pre>
+<p>一旦创建， distFile 可以进行数据集操作。例如，我们可以将所有行的大小都加起来使用 map 和 reduce 操作如下: distFile.map(s-&gt; s.length()).ruduce((a,b) -&gt; a + b).</p>
 <p>除了文本文件，Spark 的 Java API 同样支持几个其他的数据格式：</p>
 <ul>
 <li>JavaSparkContext.wholeTextFiles 让你读取一个包含多个文本文件的目录， 返回 （filename， content）的pairs。 相对于 textFile， textFile 只返回每个文件的每行记录。</li>
@@ -453,7 +457,8 @@ JavaRDD&lt;Integer&gt;  distData = sc.parallelize(data);</code></pre><p>一旦�
 <p>默认，每个转换的 RDD 可能会重新计算在你每次执行action 的时候。然而，你也可以持久化一个 RDD 到内存中使用persist( or cache) 方法， Spark 会在粗上保存 元素 为了你下次查询能够更快的进入。同样有方法支持持久化 RDD 到磁盘，或者在多个节点之间复制。</p>
 <h3 id="Basics-基础-Java"><a href="#Basics-基础-Java" class="headerlink" title="Basics 基础(Java)"></a>Basics 基础(Java)</h3><pre><code>JavaRDD&lt;String&gt; lines = sc.textFile(&quot;data.txt&quot;);
 JavaRDD&lt;Integer&gt; lineLengths = lines.map(s -&gt; s.length());
-int totalLength = lineLengths.reduce((a,b) -&gt; a + b);</code></pre><h3 id="Passing-Functions-to-Spark"><a href="#Passing-Functions-to-Spark" class="headerlink" title="Passing Functions to Spark"></a>Passing Functions to Spark</h3><p>Spark API 为了在簇上运行，严重依赖传递给驱动程序的函数。 在Java中，函数表现为继承了 org.apache.spark.api.java.function 包中接口的类。 有两种方式创建这样的函数：</p>
+int totalLength = lineLengths.reduce((a,b) -&gt; a + b);</code></pre>
+<h3 id="Passing-Functions-to-Spark"><a href="#Passing-Functions-to-Spark" class="headerlink" title="Passing Functions to Spark"></a>Passing Functions to Spark</h3><p>Spark API 为了在簇上运行，严重依赖传递给驱动程序的函数。 在Java中，函数表现为继承了 org.apache.spark.api.java.function 包中接口的类。 有两种方式创建这样的函数：</p>
 <ul>
 <li><p>在你自己的类中实现函数接口， 可以通过 匿名(anonymous)内部类或有名类， 传递一个实例给 Spark。</p>
 </li>
@@ -462,35 +467,38 @@ int totalLength = lineLengths.reduce((a,b) -&gt; a + b);</code></pre><h3 id="Pas
 </ul>
 <p>为了简单，大多数指导使用lamda 表达式， 它易于使用相同的API 形成长形式的语句。例如，可以将代码写成下列形式： </p>
 <pre><code>JavaRDD&lt;String&gt; lines = sc.textFile(&quot;data.txt&quot;);
-JavaRDD&lt;Integer&gt; lineLengths = line.map(new Function&lt;String, Integer&gt;(){
-    public Integer call(String s) {
+JavaRDD&lt;Integer&gt; lineLengths = line.map(new Function&lt;String, Integer&gt;()&#123;
+    public Integer call(String s) &#123;
         return s.length();
-    }
-});
-int totalLength = lineLength.reduce(new Function2&lt;Integer, Integer, Integer&gt;((){
-    public Integer call(Integer a, Integer b){
+    &#125;
+&#125;);
+int totalLength = lineLength.reduce(new Function2&lt;Integer, Integer, Integer&gt;(()&#123;
+    public Integer call(Integer a, Integer b)&#123;
         return a + b;
-    }
-});</code></pre><p>或者笨重的下列方式：</p>
-<pre><code>class GetLength implements Function&lt;String, Integer&gt;{
-    public Integer call(String s) { return s.length()(); }
-}
+    &#125;
+&#125;);</code></pre>
+<p>或者笨重的下列方式：</p>
+<pre><code>class GetLength implements Function&lt;String, Integer&gt;&#123;
+    public Integer call(String s) &#123; return s.length()(); &#125;
+&#125;
 class Sum implemnets Function2&lt;Integer, Integer, Integer&gt;
-{
-    public Integer call(Integer a, Integer b) { return a + b;}
-}
+&#123;
+    public Integer call(Integer a, Integer b) &#123; return a + b;&#125;
+&#125;
 
 JavaRDD&lt;String&gt; lines =sc.textFile(&quot;data.txt&quot;);
 JavaRDD&lt;Integer&gt; lineLengths = lines.map(new GetLength());
-int totalLength = lineLengths.reduce(new Sum());</code></pre><h3 id="理解簇"><a href="#理解簇" class="headerlink" title="理解簇"></a>理解簇</h3><p>Spark 难点之一就是理解跨簇执行代码时候变量和方法的范围和生命周期。RDD 操作可以修改它们范围之外的变量，这通常是造成困惑的来源。在下面的例子中我们看使用一个foreach() 来递增一个计数器，但是在其他操作中相同的问题也会发生。</p>
+int totalLength = lineLengths.reduce(new Sum());</code></pre>
+<h3 id="理解簇"><a href="#理解簇" class="headerlink" title="理解簇"></a>理解簇</h3><p>Spark 难点之一就是理解跨簇执行代码时候变量和方法的范围和生命周期。RDD 操作可以修改它们范围之外的变量，这通常是造成困惑的来源。在下面的例子中我们看使用一个foreach() 来递增一个计数器，但是在其他操作中相同的问题也会发生。</p>
 <h3 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h3><p>考虑下列的 RDD 元素， 表现可能不同，这取决于它们是否运行在相同的 JVM。 一种通常的例子是运行 Spark 在本地模式 对比运行Spark 应用在簇中(例如 spark-submit to YARN)。</p>
 <pre><code>int counter = 0;
 JavaRDD&lt;Integer&gt; rdd = sc.parallelize(data);
 
-// Wrong: Don&apos;t do this!!
+// Wrong: Don&#39;t do this!!
 rdd.foreach(x -&gt; count += x);
 
-println(&quot;Counter value: &quot; + counter);</code></pre><h3 id="Local-vs-cluster-modes-本地模式-对比-簇模式"><a href="#Local-vs-cluster-modes-本地模式-对比-簇模式" class="headerlink" title="Local vs. cluster modes 本地模式 对比 簇模式"></a>Local vs. cluster modes 本地模式 对比 簇模式</h3><p>上述代码的行为是未定义的， 可能不会预期工作。为了执行工作，Spark 将 RDD 作为划分为 <em>任务*， 每个任务被一个 *执行者</em> 执行。在计算之前， Spark 计算任务闭包。 闭包是处理器在RDD上执行计算时必须知道的变量和方法(当前是 foreach())。这个闭包被序列化被发送到每个 <em>执行者</em>。</p>
+println(&quot;Counter value: &quot; + counter);</code></pre>
+<h3 id="Local-vs-cluster-modes-本地模式-对比-簇模式"><a href="#Local-vs-cluster-modes-本地模式-对比-簇模式" class="headerlink" title="Local vs. cluster modes 本地模式 对比 簇模式"></a>Local vs. cluster modes 本地模式 对比 簇模式</h3><p>上述代码的行为是未定义的， 可能不会预期工作。为了执行工作，Spark 将 RDD 作为划分为 <em>任务</em>， 每个任务被一个 <em>执行者</em> 执行。在计算之前， Spark 计算任务闭包。 闭包是处理器在RDD上执行计算时必须知道的变量和方法(当前是 foreach())。这个闭包被序列化被发送到每个 <em>执行者</em>。</p>
 <p>发送个每个 <em>执行者</em> 的闭包中的变量现在被复制，因此，当 counter 被foreach 函数引用时，它不再是驱动节点上的 counter 了。驱动节点内存中仍然有一个 counter, 但是不再对 <em>执行者</em> 可见了。<em>执行者</em> 只看见序列化闭包的拷贝。 因此， counter 的最终值仍然是 0， 因为所有对 counter 的操作都引用的是序列化闭包中的值。</p>
 <p>在本地模式，有些情况， foreach 函数实际上会在和驱动相同的 JVM 中执行， 并且会引用相同的原始 counter, 实际上将会更新 counter.</p>
 <p>为了确保在这些场景上代码预期工作， 应该使用 Accumulator(累加器). 当在簇中跨worker节点执行时，在 Spark 中提供了一个特别的方法来安全更新变量 Accumulator。Accumulator 一节 会讨论更多细节。</p>
@@ -502,7 +510,8 @@ println(&quot;Counter value: &quot; + counter);</code></pre><h3 id="Local-vs-clu
 <p>例如，下面代码使用 reduceByKey 操作在键值对上来计算一个文件中每行文本出现了多少次：</p>
 <pre><code>JavaRDD&lt;String&gt; lines = sc.textFile(&quot;data.txt&quot;);
 JavaPairRDD&lt;String, Integer&gt; pairs = lines.mapToPair(s -&gt; new Tuple2(s,1));
-JavaPairRDD&lt;String,Integer&gt; counts = pairs.reduceByKey((a,b) -&gt; a + b);</code></pre><p>我们可以使用 counts.sortByKey(), 例如，为了按字母排序，最终 counts.collect() 将结果返回给驱动程序作为对象数组。</p>
+JavaPairRDD&lt;String,Integer&gt; counts = pairs.reduceByKey((a,b) -&gt; a + b);</code></pre>
+<p>我们可以使用 counts.sortByKey(), 例如，为了按字母排序，最终 counts.collect() 将结果返回给驱动程序作为对象数组。</p>
 <h3 id="转换"><a href="#转换" class="headerlink" title="转换"></a>转换</h3><p>下面的表格列出了Spark 支持的一些常用的转换操作。</p>
 <table>
 <tr><th>Transformation</th><th>Meaning</th></tr>
@@ -852,23 +861,25 @@ Note: By default, the level of parallelism in the output depends on the number o
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/01/13/python%E5%8C%85pandas%E5%A4%84%E7%90%86%E6%95%B0%E6%8D%AE%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+                <a href="/2019/01/13/Spark%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="python包pandas处理数据学习笔记">
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="Spark机器学习笔记">
                         
-                        <span class="card-title">python包pandas处理数据学习笔记</span>
+                        <span class="card-title">Spark机器学习笔记</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            pandas 有两种数据结构： 序列(Series), 数据帧(DataFrame)。数据帧是序列的容器，序列是标量的容器。
-for col in df.columns:
-    series = df[col]
+                            机器学习机器学习是数据通过算法构建出模型并对模型进行评估，评估的性能如果达到要求就拿这个模型来测试其他数据，如果达不到要求就要调整算法来重新建立模型，再次进行评估，如此循环反复，最终获得满意的经验来处理其他数据。
 
-10 Minutes t
+
+
+监督学习
+
+监督是从
                         
                     </div>
                     <div class="publish-info">
@@ -886,12 +897,12 @@ for col in df.columns:
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/python/">
-                        <span class="chip bg-color">python</span>
+                    <a href="/tags/spark/">
+                        <span class="chip bg-color">spark</span>
                     </a>
                     
-                    <a href="/tags/pandas/">
-                        <span class="chip bg-color">pandas</span>
+                    <a href="/tags/ml/">
+                        <span class="chip bg-color">ml</span>
                     </a>
                     
                 </div>
@@ -905,28 +916,31 @@ for col in df.columns:
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/01/13/spring/">
+                <a href="/2019/01/13/windows-cmd-%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%AD%A6%E4%B9%A0/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="spring 学习笔记">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="windows 下的cmd命令学习">
                         
-                        <span class="card-title">spring 学习笔记</span>
+                        <span class="card-title">windows 下的cmd命令学习</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            spring 之旅为了简化java开发的复杂性，spring 采取以下4中策略
+                            参考网站
+Windows cmd 命令大全
 
 
 
-基于POJO的轻量级和最小侵入性编程；
-通过依赖注入和面向接口实现松耦合
-基于切面和惯例进行声明式编程；
-通过切面和模板减少样板式代码
 
-依赖注入 (Dp
+脚本之家-脚本专栏
+
+List of Command Prompt Commands
+
+Batch Script Tutorial
+
+Guide to Windows Batch Scri
                         
                     </div>
                     <div class="publish-info">
@@ -944,8 +958,12 @@ for col in df.columns:
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Spring/">
-                        <span class="chip bg-color">Spring</span>
+                    <a href="/tags/windows/">
+                        <span class="chip bg-color">windows</span>
+                    </a>
+                    
+                    <a href="/tags/cmd/">
+                        <span class="chip bg-color">cmd</span>
                     </a>
                     
                 </div>

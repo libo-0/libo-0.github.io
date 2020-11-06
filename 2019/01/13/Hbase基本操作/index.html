@@ -405,7 +405,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    335
+                    339
                 </div>
                 
 
@@ -474,17 +474,20 @@
 </li>
 </ul>
 <p>获取多个版本</p>
-<pre><code>get &apos;test&apos;,&apos;row7&apos;,{COLUMN=&gt;&apos;cd:name&apos;, VERSIONS=&gt;5}
+<pre><code>get &#39;test&#39;,&#39;row7&#39;,&#123;COLUMN=&gt;&#39;cd:name&#39;, VERSIONS=&gt;5&#125;
 
-scan &apos;test&apos;,{VERSIONS=&gt;5}</code></pre><ul>
+scan &#39;test&#39;,&#123;VERSIONS=&gt;5&#125;</code></pre>
+<ul>
 <li><p>删除数据</p>
 <p>  delete ‘test’, ‘row112’,’cf:name’</p>
 </li>
 </ul>
 <p>根据版本删除数据</p>
-<pre><code>delete &apos;t1&apos;,&apos;r1&apos;,&apos;c1&apos;,ts</code></pre><p>该命令删除改版本及以前的数据。ts 版本号。</p>
+<pre><code>delete &#39;t1&#39;,&#39;r1&#39;,&#39;c1&#39;,ts</code></pre>
+<p>该命令删除改版本及以前的数据。ts 版本号。</p>
 <p>删除整行</p>
-<pre><code>delete all &apos;test&apos;,&apos;row3&apos;</code></pre><ul>
+<pre><code>delete all &#39;test&#39;,&#39;row3&#39;</code></pre>
+<ul>
 <li><p>disable 停用表</p>
 <p>  disable ‘test’</p>
 </li>

@@ -398,7 +398,7 @@ java8 /home/bigdata/e">
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    701
+                    709
                 </div>
                 
 
@@ -438,9 +438,10 @@ java8 /home/bigdata/e">
 <h3 id="Java-环境变量"><a href="#Java-环境变量" class="headerlink" title="Java 环境变量"></a>Java 环境变量</h3><pre><code>vim ~/.bashrc
 
 export JAVA_HOME=/home/bigdata/env/jdk1.8
-export JRE_HOME=${JAVA_HOME}/jre
-export CLASSPATH=.:${JAVA_HOME}/lib:${JRE_HOME}/lib
-export PATH=${JAVA_HOME}/bin:$PATH</code></pre><ul>
+export JRE_HOME=$&#123;JAVA_HOME&#125;/jre
+export CLASSPATH=.:$&#123;JAVA_HOME&#125;/lib:$&#123;JRE_HOME&#125;/lib
+export PATH=$&#123;JAVA_HOME&#125;/bin:$PATH</code></pre>
+<ul>
 <li><p>使环境变量生效</p>
 <p>  source ~/.bashrc</p>
 </li>
@@ -458,53 +459,56 @@ export PATH=${JAVA_HOME}/bin:$PATH</code></pre><ul>
 </li>
 </ul>
 <p>添加以下属性到configuration标签里</p>
-<pre><code>&lt;property&gt;
-           &lt;name&gt;mapreduce.framework.name&lt;/name&gt;
-           &lt;value&gt;yarn&lt;/value&gt;
-           &lt;final&gt;true&lt;/final&gt;
-   &lt;/property&gt;
-   &lt;property&gt;
-           &lt;name&gt;mapreduce.jobhistory.address&lt;/name&gt;
-           &lt;value&gt;127.0.0.1:10020&lt;/value&gt;
-   &lt;/property&gt;
-   &lt;property&gt;
-           &lt;name&gt;mapreduce.jobhistory.webapp.address&lt;/name&gt;
-           &lt;value&gt;127.0.0.1:19888&lt;/value&gt;
-   &lt;/property&gt;</code></pre><ul>
+<pre><code> &lt;property&gt;
+            &lt;name&gt;mapreduce.framework.name&lt;/name&gt;
+            &lt;value&gt;yarn&lt;/value&gt;
+            &lt;final&gt;true&lt;/final&gt;
+    &lt;/property&gt;
+    &lt;property&gt;
+            &lt;name&gt;mapreduce.jobhistory.address&lt;/name&gt;
+            &lt;value&gt;127.0.0.1:10020&lt;/value&gt;
+    &lt;/property&gt;
+    &lt;property&gt;
+            &lt;name&gt;mapreduce.jobhistory.webapp.address&lt;/name&gt;
+            &lt;value&gt;127.0.0.1:19888&lt;/value&gt;
+    &lt;/property&gt;</code></pre>
+<ul>
 <li><p>core-site.xml</p>
-<pre><code>&lt;property&gt;
-        &lt;name&gt;fs.defaultFS&lt;/name&gt;
-        &lt;value&gt;hdfs://127.0.0.1:8020&lt;/value&gt;
-&lt;/property&gt;
-&lt;property&gt;
-        &lt;name&gt;hadoop.tmp.dir&lt;/name&gt;
-        &lt;value&gt;/home/bigdata/HDFSData&lt;/value&gt;
-&lt;/property&gt;
-&lt;property&gt;
-        &lt;name&gt;ha.zookeeper.quorum&lt;/name&gt;
-        &lt;value&gt;127.0.0.1:2181&lt;/value&gt;
-&lt;/property&gt;</code></pre></li>
+<pre><code>  &lt;property&gt;
+          &lt;name&gt;fs.defaultFS&lt;/name&gt;
+          &lt;value&gt;hdfs://127.0.0.1:8020&lt;/value&gt;
+  &lt;/property&gt;
+  &lt;property&gt;
+          &lt;name&gt;hadoop.tmp.dir&lt;/name&gt;
+          &lt;value&gt;/home/bigdata/HDFSData&lt;/value&gt;
+  &lt;/property&gt;
+  &lt;property&gt;
+          &lt;name&gt;ha.zookeeper.quorum&lt;/name&gt;
+          &lt;value&gt;127.0.0.1:2181&lt;/value&gt;
+  &lt;/property&gt;</code></pre>
+</li>
 <li><p>hdfs-site.xml</p>
-<pre><code>&lt;property&gt;
-        &lt;name&gt;dfs.namenode.name.dir&lt;/name&gt;
-        &lt;value&gt;/home/bigdata/HDFSData/dfs/name&lt;/value&gt;
-&lt;/property&gt;
-&lt;property&gt;
-        &lt;name&gt;dfs.datanode.data.dir&lt;/name&gt;
-        &lt;value&gt;/home/bigdata/HDFSData/dfs/data&lt;/value&gt;
-&lt;/property&gt;
-&lt;property&gt;
-        &lt;name&gt;dfs.replication&lt;/name&gt;
-        &lt;value&gt;1&lt;/value&gt;
-&lt;/property&gt;
-&lt;property&gt;
-        &lt;name&gt;dfs.namenode.handler.count&lt;/name&gt;
-        &lt;value&gt;100&lt;/value&gt;
-&lt;/property&gt;
-&lt;property&gt;
-        &lt;name&gt;dfs.webhdfs.enabled&lt;/name&gt;
-        &lt;value&gt;true&lt;/value&gt;
-&lt;/property&gt;</code></pre></li>
+<pre><code>  &lt;property&gt;
+          &lt;name&gt;dfs.namenode.name.dir&lt;/name&gt;
+          &lt;value&gt;/home/bigdata/HDFSData/dfs/name&lt;/value&gt;
+  &lt;/property&gt;
+  &lt;property&gt;
+          &lt;name&gt;dfs.datanode.data.dir&lt;/name&gt;
+          &lt;value&gt;/home/bigdata/HDFSData/dfs/data&lt;/value&gt;
+  &lt;/property&gt;
+  &lt;property&gt;
+          &lt;name&gt;dfs.replication&lt;/name&gt;
+          &lt;value&gt;1&lt;/value&gt;
+  &lt;/property&gt;
+  &lt;property&gt;
+          &lt;name&gt;dfs.namenode.handler.count&lt;/name&gt;
+          &lt;value&gt;100&lt;/value&gt;
+  &lt;/property&gt;
+  &lt;property&gt;
+          &lt;name&gt;dfs.webhdfs.enabled&lt;/name&gt;
+          &lt;value&gt;true&lt;/value&gt;
+  &lt;/property&gt;</code></pre>
+</li>
 </ul>
 <h4 id="初始化-hadoop"><a href="#初始化-hadoop" class="headerlink" title="初始化 hadoop"></a>初始化 hadoop</h4><ul>
 <li><p>初始化 hadoop<br>  hadoop namenode -format</p>
@@ -526,32 +530,36 @@ export PATH=${JAVA_HOME}/bin:$PATH</code></pre><ul>
 </li>
 </ul>
 <p>*hbase-env.sh</p>
-<pre><code>exporg JAVA_HOME=/env/jdk1.8</code></pre><ul>
+<pre><code>exporg JAVA_HOME=/env/jdk1.8</code></pre>
+<ul>
 <li><p>hbase-site.xml</p>
-<pre><code>&lt;property&gt;
-        &lt;name&gt;hbase.rootdir&lt;/name&gt;
-        &lt;value&gt;hdfs://127.0.0.1:8020/hbase&lt;/value&gt;
-&lt;/property&gt;
-&lt;property&gt;
-        &lt;name&gt;hbase.cluster.distributed&lt;/name&gt;
-        &lt;value&gt;true&lt;/value&gt;
-&lt;/property&gt;
-&lt;property&gt;
-        &lt;name&gt;hbase.master&lt;/name&gt;
-        &lt;value&gt;127.0.0.1:60000&lt;/value&gt;
-&lt;/property&gt;
-&lt;property&gt;
-        &lt;name&gt;hbase.zookeeper.quorum&lt;/name&gt;
-        &lt;value&gt;127.0.0.1&lt;/value&gt;
-&lt;/property&gt;
-&lt;property&gt;
-        &lt;name&gt;zookeeper.znode.parent&lt;/name&gt;
-        &lt;value&gt;/hbase&lt;/value&gt;
-&lt;/property&gt;</code></pre></li>
+<pre><code>  &lt;property&gt;
+          &lt;name&gt;hbase.rootdir&lt;/name&gt;
+          &lt;value&gt;hdfs://127.0.0.1:8020/hbase&lt;/value&gt;
+  &lt;/property&gt;
+  &lt;property&gt;
+          &lt;name&gt;hbase.cluster.distributed&lt;/name&gt;
+          &lt;value&gt;true&lt;/value&gt;
+  &lt;/property&gt;
+  &lt;property&gt;
+          &lt;name&gt;hbase.master&lt;/name&gt;
+          &lt;value&gt;127.0.0.1:60000&lt;/value&gt;
+  &lt;/property&gt;
+  &lt;property&gt;
+          &lt;name&gt;hbase.zookeeper.quorum&lt;/name&gt;
+          &lt;value&gt;127.0.0.1&lt;/value&gt;
+  &lt;/property&gt;
+  &lt;property&gt;
+          &lt;name&gt;zookeeper.znode.parent&lt;/name&gt;
+          &lt;value&gt;/hbase&lt;/value&gt;
+  &lt;/property&gt;</code></pre>
+</li>
 <li><p>启动hbase</p>
-<pre><code>start-hbase.sh</code></pre></li>
+<pre><code>  start-hbase.sh</code></pre>
+</li>
 <li><p>关闭hbase</p>
-<pre><code>stop-hbase.sh</code></pre></li>
+<pre><code>  stop-hbase.sh</code></pre>
+</li>
 </ul>
 
             </div>

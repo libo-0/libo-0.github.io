@@ -8,13 +8,14 @@
     <meta name="description" content="create database ShareBook;
 use ShareBook;
 
+
 笔记Mysql 查看帮助? contents
 ? data types
 ? create
 ? create table
 ? int
-? show表修改
-外">
+? show
+表修改">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -426,18 +427,21 @@ use ShareBook;
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <pre><code>create database ShareBook;
-use ShareBook;</code></pre><a id="more"></a>
+use ShareBook;</code></pre>
+<a id="more"></a>
 
 <h2 id="笔记"><a href="#笔记" class="headerlink" title="笔记"></a>笔记</h2><h3 id="Mysql-查看帮助"><a href="#Mysql-查看帮助" class="headerlink" title="Mysql 查看帮助"></a>Mysql 查看帮助</h3><pre><code>? contents
 ? data types
 ? create
 ? create table
 ? int
-? show</code></pre><h3 id="表修改"><a href="#表修改" class="headerlink" title="表修改"></a>表修改</h3><ul>
+? show</code></pre>
+<h3 id="表修改"><a href="#表修改" class="headerlink" title="表修改"></a>表修改</h3><ul>
 <li>外键支持</li>
 </ul>
 <p>mysql只有InnoDB 引擎支持外键，所以可以在建表最后添加 engine=InnoDB 来更改默认引擎，也可以通过修改： alter table user engine = innodb;然后通过下面代码增加约束</p>
-<pre><code>alter table Admin add constraint foreign key (username) references User(username) on delete restrict on update cascade;</code></pre><ul>
+<pre><code>alter table Admin add constraint foreign key (username) references User(username) on delete restrict on update cascade;</code></pre>
+<ul>
 <li><p>查看表的详细描述信息</p>
 <p>  show create table user \G;</p>
 </li>
@@ -491,7 +495,8 @@ use ShareBook;</code></pre><a id="more"></a>
 </li>
 </ul>
 <p>limit 和 order by 一起配合进行分页查询</p>
-<h4 id="删除多条记录"><a href="#删除多条记录" class="headerlink" title="删除多条记录"></a>删除多条记录</h4><pre><code>delete from User where username in (&apos;warmfrog10&apos;,&apos;warmfrog9&apos;);</code></pre><h2 id="数据表"><a href="#数据表" class="headerlink" title="数据表"></a>数据表</h2><h3 id="user"><a href="#user" class="headerlink" title="user"></a>user</h3><p>   create table user(<br>        user_id bigint auto_increment,<br>        nickname varchar(20),<br>        password varchar(20),<br>        address varchar(50),<br>        register_time timestamp,<br>        phone_number varchar(11) unique,<br>        user_email varchar(20) unique,<br>        primary key (user_id)<br>    )engine=InnoDB character set=utf8;</p>
+<h4 id="删除多条记录"><a href="#删除多条记录" class="headerlink" title="删除多条记录"></a>删除多条记录</h4><pre><code>delete from User where username in (&#39;warmfrog10&#39;,&#39;warmfrog9&#39;);</code></pre>
+<h2 id="数据表"><a href="#数据表" class="headerlink" title="数据表"></a>数据表</h2><h3 id="user"><a href="#user" class="headerlink" title="user"></a>user</h3><p>   create table user(<br>        user_id bigint auto_increment,<br>        nickname varchar(20),<br>        password varchar(20),<br>        address varchar(50),<br>        register_time timestamp,<br>        phone_number varchar(11) unique,<br>        user_email varchar(20) unique,<br>        primary key (user_id)<br>    )engine=InnoDB character set=utf8;</p>
 <h3 id="book"><a href="#book" class="headerlink" title="book"></a>book</h3><pre><code>create table book(
     book_id bigint auto_increment,
     order_id bigint,
@@ -510,7 +515,8 @@ use ShareBook;</code></pre><a id="more"></a>
     foreign key(book_owner_id) references user(user_id) on delete cascade on update cascade,
     foreign key(order_id) references orders(order_id),
     primary key(book_id)
-  )engine=InnoDB character set=utf8;</code></pre><h3 id="orders"><a href="#orders" class="headerlink" title="orders"></a>orders</h3><pre><code>create table orders(
+  )engine=InnoDB character set=utf8;</code></pre>
+<h3 id="orders"><a href="#orders" class="headerlink" title="orders"></a>orders</h3><pre><code>create table orders(
     order_id bigint auto_increment,
     start_time timestamp,
     trade_type varchar(10),
@@ -518,11 +524,19 @@ use ShareBook;</code></pre><a id="more"></a>
     deliver_id bigint,
     customer_id bigint,
     primary key(order_id)
-  )engine=InnoDB character set=utf8;</code></pre><h3 id="deliver"><a href="#deliver" class="headerlink" title="deliver"></a>deliver</h3><p>   create table deliver(<br>        deliver_id bigint auto_increment,<br>        deliver_order_id bigint,<br>        deliver_status varchar(10),<br>        deliver_method varchar(10),<br>        foreign key(deliver_order_id) references orders(order_id) on delete restrict on update cascade,<br>        primary key (deliver_id)<br>      )engine=InnoDB character set=utf8;</p>
-<p> <a href="https://dev.mysql.com/doc/refman/8.0/en/" target="_blank" rel="noopener">MySQL 8.0 Reference Manual</a></p>
-<h2 id="数据库操作"><a href="#数据库操作" class="headerlink" title="数据库操作"></a>数据库操作</h2><h4 id="连接到数据库"><a href="#连接到数据库" class="headerlink" title="连接到数据库"></a>连接到数据库</h4><pre><code>mysql -h localhost -u warmfrog -p</code></pre><h4 id="查看数据库"><a href="#查看数据库" class="headerlink" title="查看数据库"></a>查看数据库</h4><pre><code>show databases;
+  )engine=InnoDB character set=utf8;</code></pre>
+<h3 id="deliver"><a href="#deliver" class="headerlink" title="deliver"></a>deliver</h3><p>   create table deliver(<br>        deliver_id bigint auto_increment,<br>        deliver_order_id bigint,<br>        deliver_status varchar(10),<br>        deliver_method varchar(10),<br>        foreign key(deliver_order_id) references orders(order_id) on delete restrict on update cascade,<br>        primary key (deliver_id)<br>      )engine=InnoDB character set=utf8;</p>
+<p> <a target="_blank" rel="noopener" href="https://dev.mysql.com/doc/refman/8.0/en/">MySQL 8.0 Reference Manual</a></p>
+<h2 id="数据库操作"><a href="#数据库操作" class="headerlink" title="数据库操作"></a>数据库操作</h2><h4 id="连接到数据库"><a href="#连接到数据库" class="headerlink" title="连接到数据库"></a>连接到数据库</h4><pre><code> mysql -h localhost -u warmfrog -p</code></pre>
+<h4 id="查看数据库"><a href="#查看数据库" class="headerlink" title="查看数据库"></a>查看数据库</h4><pre><code> show databases;
 
-select database();</code></pre><h4 id="使用数据库"><a href="#使用数据库" class="headerlink" title="使用数据库"></a>使用数据库</h4><pre><code>user test</code></pre><h4 id="创建数据库"><a href="#创建数据库" class="headerlink" title="创建数据库"></a>创建数据库</h4><pre><code>create database *menagerie*;</code></pre><h2 id="表操作"><a href="#表操作" class="headerlink" title="表操作"></a>表操作</h2><h4 id="创建表"><a href="#创建表" class="headerlink" title="创建表"></a><a href="https://dev.mysql.com/doc/refman/8.0/en/creating-tables.html" target="_blank" rel="noopener">创建表</a></h4><pre><code>create table pet (name varchar(20), owner varchar(20), species varchar(20), sex char(1), birth date, death date);</code></pre><h4 id="查看表"><a href="#查看表" class="headerlink" title="查看表"></a>查看表</h4><pre><code>show tables;</code></pre><h4 id="描述表信息"><a href="#描述表信息" class="headerlink" title="描述表信息"></a>描述表信息</h4><pre><code>describe pet;</code></pre><h2 id="数据操作-1"><a href="#数据操作-1" class="headerlink" title="数据操作"></a>数据操作</h2><h4 id="将数据载入表"><a href="#将数据载入表" class="headerlink" title="将数据载入表"></a>将数据载入表</h4><p>有如下数据，保存为 pet.txt. \N 表示 NULL. 数据之间以 tab 间隔.</p>
+ select database();</code></pre>
+<h4 id="使用数据库"><a href="#使用数据库" class="headerlink" title="使用数据库"></a>使用数据库</h4><pre><code> user test</code></pre>
+<h4 id="创建数据库"><a href="#创建数据库" class="headerlink" title="创建数据库"></a>创建数据库</h4><pre><code> create database *menagerie*;</code></pre>
+<h2 id="表操作"><a href="#表操作" class="headerlink" title="表操作"></a>表操作</h2><h4 id="创建表"><a href="#创建表" class="headerlink" title="创建表"></a><a target="_blank" rel="noopener" href="https://dev.mysql.com/doc/refman/8.0/en/creating-tables.html">创建表</a></h4><pre><code> create table pet (name varchar(20), owner varchar(20), species varchar(20), sex char(1), birth date, death date);</code></pre>
+<h4 id="查看表"><a href="#查看表" class="headerlink" title="查看表"></a>查看表</h4><pre><code> show tables;</code></pre>
+<h4 id="描述表信息"><a href="#描述表信息" class="headerlink" title="描述表信息"></a>描述表信息</h4><pre><code>describe pet;</code></pre>
+<h2 id="数据操作-1"><a href="#数据操作-1" class="headerlink" title="数据操作"></a>数据操作</h2><h4 id="将数据载入表"><a href="#将数据载入表" class="headerlink" title="将数据载入表"></a>将数据载入表</h4><p>有如下数据，保存为 pet.txt. \N 表示 NULL. 数据之间以 tab 间隔.</p>
 <hr>
 <table>
 <thead>
@@ -599,69 +613,65 @@ select database();</code></pre><h4 id="使用数据库"><a href="#使用数据�
 <td>1996-04-29</td>
 <td>\N</td>
 </tr>
-<tr>
-<td><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>****</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>#### 载入操作</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
 </tbody></table>
-<pre><code>load data local infile /mnt/d/pet.txt into table pet;</code></pre><h4 id="显示结果"><a href="#显示结果" class="headerlink" title="显示结果"></a>显示结果</h4><pre><code>mysql&gt; load data local infile &apos;/root/pet.txt&apos; into table pet;
-Query OK, 8 rows affected, 48 warnings (0.01 sec)
-Records: 8  Deleted: 0  Skipped: 0  Warnings: 48</code></pre><h4 id="查看表中所有数据"><a href="#查看表中所有数据" class="headerlink" title="查看表中所有数据"></a>查看表中所有数据</h4><pre><code>select * from pet;</code></pre><h4 id="删除表中所有数据"><a href="#删除表中所有数据" class="headerlink" title="删除表中所有数据"></a>删除表中所有数据</h4><pre><code>delete from pet;</code></pre><h2 id="数据查询"><a href="#数据查询" class="headerlink" title="数据查询"></a>数据查询</h2><h4 id="单表查询"><a href="#单表查询" class="headerlink" title="单表查询"></a>单表查询</h4><pre><code>1.  select * from pet where name = &apos;Bowser&apos;;
+<hr>
+<h4 id="载入操作"><a href="#载入操作" class="headerlink" title="载入操作"></a>载入操作</h4><pre><code>load data local infile /mnt/d/pet.txt into table pet;</code></pre>
+<h4 id="显示结果"><a href="#显示结果" class="headerlink" title="显示结果"></a>显示结果</h4><pre><code> mysql&gt; load data local infile &#39;/root/pet.txt&#39; into table pet;
+ Query OK, 8 rows affected, 48 warnings (0.01 sec)
+ Records: 8  Deleted: 0  Skipped: 0  Warnings: 48</code></pre>
+<h4 id="查看表中所有数据"><a href="#查看表中所有数据" class="headerlink" title="查看表中所有数据"></a>查看表中所有数据</h4><pre><code> select * from pet;</code></pre>
+<h4 id="删除表中所有数据"><a href="#删除表中所有数据" class="headerlink" title="删除表中所有数据"></a>删除表中所有数据</h4><pre><code> delete from pet;</code></pre>
+<h2 id="数据查询"><a href="#数据查询" class="headerlink" title="数据查询"></a>数据查询</h2><h4 id="单表查询"><a href="#单表查询" class="headerlink" title="单表查询"></a>单表查询</h4><pre><code>1.  select * from pet where name = &#39;Bowser&#39;;
 
-2.  SELECT * FROM pet WHERE birth &gt;= &apos;1998-1-1&apos;;
+2.  SELECT * FROM pet WHERE birth &gt;= &#39;1998-1-1&#39;;
 
-3.  SELECT * FROM pet WHERE species = &apos;dog&apos; AND sex = &apos;f&apos;;
+3.  SELECT * FROM pet WHERE species = &#39;dog&#39; AND sex = &#39;f&#39;;
 
-4.  SELECT * FROM pet WHERE species = &apos;snake&apos; OR species = &apos;bird&apos;;
+4.  SELECT * FROM pet WHERE species = &#39;snake&#39; OR species = &#39;bird&#39;;
 
-5.  SELECT * FROM pet WHERE (species = &apos;cat&apos; AND sex = &apos;m&apos;) OR (species = &apos;dog&apos; AND sex = &apos;f&apos;);</code></pre><h4 id="选择特定列"><a href="#选择特定列" class="headerlink" title="选择特定列"></a>选择特定列</h4><pre><code>1.  SELECT name, birth FROM pet;
+5.  SELECT * FROM pet WHERE (species = &#39;cat&#39; AND sex = &#39;m&#39;) OR (species = &#39;dog&#39; AND sex = &#39;f&#39;);</code></pre>
+<h4 id="选择特定列"><a href="#选择特定列" class="headerlink" title="选择特定列"></a>选择特定列</h4><pre><code>1.  SELECT name, birth FROM pet;
 
-2.  SELECT owner FROM pet;</code></pre><h4 id="去重显示"><a href="#去重显示" class="headerlink" title="去重显示"></a>去重显示</h4><pre><code>1.   SELECT DISTINCT owner FROM pet;</code></pre><h4 id="按序显示"><a href="#按序显示" class="headerlink" title="按序显示"></a>按序显示</h4><pre><code>1.  SELECT name, birth FROM pet ORDER BY birth;
+2.  SELECT owner FROM pet;</code></pre>
+<h4 id="去重显示"><a href="#去重显示" class="headerlink" title="去重显示"></a>去重显示</h4><pre><code>1.   SELECT DISTINCT owner FROM pet;</code></pre>
+<h4 id="按序显示"><a href="#按序显示" class="headerlink" title="按序显示"></a>按序显示</h4><pre><code>1.  SELECT name, birth FROM pet ORDER BY birth;
 
 2.  SELECT name, birth FROM pet ORDER BY birth DESC;
 
-3.  SELECT name, species, birth FROM pet ORDER BY species, birth DESC;</code></pre><h4 id="图案匹配"><a href="#图案匹配" class="headerlink" title="图案匹配"></a>图案匹配</h4><pre><code>‘%’ 表示匹配任意数量的字符。
+3.  SELECT name, species, birth FROM pet ORDER BY species, birth DESC;</code></pre>
+<h4 id="图案匹配"><a href="#图案匹配" class="headerlink" title="图案匹配"></a>图案匹配</h4><pre><code>‘%’ 表示匹配任意数量的字符。
 
-1.  SELECT * FROM pet WHERE name LIKE &apos;b%&apos;;
-2.  SELECT * FROM pet WHERE name LIKE &apos;%fy&apos;;
-3.  SELECT * FROM pet WHERE name LIKE &apos;%w%&apos;;
+1.  SELECT * FROM pet WHERE name LIKE &#39;b%&#39;;
+2.  SELECT * FROM pet WHERE name LIKE &#39;%fy&#39;;
+3.  SELECT * FROM pet WHERE name LIKE &#39;%w%&#39;;
 
-一个 ‘_&apos; 表示一个字符，5个’_&apos; 的字符 &apos;_____&apos; 表示仅仅匹配 5 个字符.
+一个 ‘_&#39; 表示一个字符，5个’_&#39; 的字符 &#39;_____&#39; 表示仅仅匹配 5 个字符.
 
-4.  &lt;SELECT * FROM pet WHERE name LIKE &apos;_____&apos;;&gt;</code></pre><h4 id="正则匹配"><a href="#正则匹配" class="headerlink" title="正则匹配"></a>正则匹配</h4><pre><code>1.  . 匹配任意单个字符。
+4.  &lt;SELECT * FROM pet WHERE name LIKE &#39;_____&#39;;&gt;</code></pre>
+<h4 id="正则匹配"><a href="#正则匹配" class="headerlink" title="正则匹配"></a>正则匹配</h4><pre><code>1.  . 匹配任意单个字符。
 2.  [...] 匹配方括号内的任意字符，[abc] 匹配 a, b, c.
 3.  * 表示匹配 0 个或 多个 * 之前的字符.
 4.  为了定位一个图案的开始和结束字符，^ 在开头， $ 在结尾.
 
 示例：
 
-1.  SELECT * FROM pet WHERE REGEXP_LIKE(name, &apos;^b&apos;);
+1.  SELECT * FROM pet WHERE REGEXP_LIKE(name, &#39;^b&#39;);
 
-2.  SELECT * FROM pet WHERE REGEXP_LIKE(name, &apos;^b&apos; COLLATE utf8mb4_0900_as_cs);
+2.  SELECT * FROM pet WHERE REGEXP_LIKE(name, &#39;^b&#39; COLLATE utf8mb4_0900_as_cs);
 
-3.  SELECT * FROM pet WHERE REGEXP_LIKE(name, BINARY &apos;^b&apos;);
+3.  SELECT * FROM pet WHERE REGEXP_LIKE(name, BINARY &#39;^b&#39;);
 
-4.  SELECT * FROM pet WHERE REGEXP_LIKE(name, &apos;^b&apos;, &apos;c&apos;);
+4.  SELECT * FROM pet WHERE REGEXP_LIKE(name, &#39;^b&#39;, &#39;c&#39;);
 
-5.  SELECT * FROM pet WHERE REGEXP_LIKE(name, &apos;fy$&apos;);
+5.  SELECT * FROM pet WHERE REGEXP_LIKE(name, &#39;fy$&#39;);
 
-6.  SELECT * FROM pet WHERE REGEXP_LIKE(name, &apos;w&apos;);
+6.  SELECT * FROM pet WHERE REGEXP_LIKE(name, &#39;w&#39;);
 
-7.  SELECT * FROM pet WHERE REGEXP_LIKE(name, &apos;^.....$&apos;);    正好匹配5个字符.
+7.  SELECT * FROM pet WHERE REGEXP_LIKE(name, &#39;^.....$&#39;);    正好匹配5个字符.
 
-8.  SELECT * FROM pet WHERE REGEXP_LIKE(name, &apos;^.{5}$&apos;);    同7.</code></pre><h2 id="计数"><a href="#计数" class="headerlink" title="计数"></a>计数</h2><h5 id="查看有多少宠物"><a href="#查看有多少宠物" class="headerlink" title="查看有多少宠物"></a>查看有多少宠物</h5><pre><code>1. SELECT COUNT(*) FROM pet;</code></pre><h5 id="查看拥有宠物的人养了多少宠物"><a href="#查看拥有宠物的人养了多少宠物" class="headerlink" title="查看拥有宠物的人养了多少宠物"></a>查看拥有宠物的人养了多少宠物</h5><pre><code>2. SELECT owner, COUNT(*) FROM pet GROUP BY owner;
+8.  SELECT * FROM pet WHERE REGEXP_LIKE(name, &#39;^.&#123;5&#125;$&#39;);    同7.</code></pre>
+<h2 id="计数"><a href="#计数" class="headerlink" title="计数"></a>计数</h2><h5 id="查看有多少宠物"><a href="#查看有多少宠物" class="headerlink" title="查看有多少宠物"></a>查看有多少宠物</h5><pre><code>1. SELECT COUNT(*) FROM pet;</code></pre>
+<h5 id="查看拥有宠物的人养了多少宠物"><a href="#查看拥有宠物的人养了多少宠物" class="headerlink" title="查看拥有宠物的人养了多少宠物"></a>查看拥有宠物的人养了多少宠物</h5><pre><code>2. SELECT owner, COUNT(*) FROM pet GROUP BY owner;
 
 3. SELECT species, COUNT(*) FROM pet GROUP BY species;
 
@@ -670,12 +680,14 @@ Records: 8  Deleted: 0  Skipped: 0  Warnings: 48</code></pre><h4 id="查看表�
 5. SELECT species, sex, COUNT(*) FROM pet GROUP BY species, sex;
 
 6. SELECT species, sex, COUNT(*) FROM pet
-   WHERE species = &apos;dog&apos; OR species = &apos;cat&apos;
+   WHERE species = &#39;dog&#39; OR species = &#39;cat&#39;
    GROUP BY species, sex;
 
 7. SELECT species, sex, COUNT(*) FROM pet
 -&gt; WHERE sex IS NOT NULL
--&gt; GROUP BY species, sex;</code></pre><h2 id="多表查询"><a href="#多表查询" class="headerlink" title="多表查询"></a>多表查询</h2><h4 id="创建表-event"><a href="#创建表-event" class="headerlink" title="创建表 event"></a><a href="https://dev.mysql.com/doc/refman/8.0/en/multiple-tables.html" target="_blank" rel="noopener">创建表 event</a></h4><pre><code>create table event (name varchar(20), date date, type varchar(15), remark varchar(255));</code></pre><h4 id="载入下表数据"><a href="#载入下表数据" class="headerlink" title="载入下表数据"></a>载入下表数据</h4><table summary="pet record data that will appear in a tab delimited text file, as described in the preceding text."><col width="15%"><col width="15%"><col width="15%"><col width="35%"><thead><tr>
+-&gt; GROUP BY species, sex;</code></pre>
+<h2 id="多表查询"><a href="#多表查询" class="headerlink" title="多表查询"></a>多表查询</h2><h4 id="创建表-event"><a href="#创建表-event" class="headerlink" title="创建表 event"></a><a target="_blank" rel="noopener" href="https://dev.mysql.com/doc/refman/8.0/en/multiple-tables.html">创建表 event</a></h4><pre><code>create table event (name varchar(20), date date, type varchar(15), remark varchar(255));</code></pre>
+<h4 id="载入下表数据"><a href="#载入下表数据" class="headerlink" title="载入下表数据"></a>载入下表数据</h4><table summary="pet record data that will appear in a tab delimited text file, as described in the preceding text."><col width="15%"><col width="15%"><col width="15%"><col width="35%"><thead><tr>
               <th scope="col">name</th>
               <th scope="col">date</th>
               <th scope="col">type</th>
@@ -732,12 +744,14 @@ Records: 8  Deleted: 0  Skipped: 0  Warnings: 48</code></pre><h4 id="查看表�
               <td>First birthday</td>
 </tr></tbody></table>
 
-<pre><code>load data local infile &apos;/root/event.txt&apos; into table event;</code></pre><h4 id="查询宠物年龄和家庭情况"><a href="#查询宠物年龄和家庭情况" class="headerlink" title="查询宠物年龄和家庭情况"></a>查询宠物年龄和家庭情况</h4><pre><code>select pet.name,
+<pre><code>load data local infile &#39;/root/event.txt&#39; into table event;</code></pre>
+<h4 id="查询宠物年龄和家庭情况"><a href="#查询宠物年龄和家庭情况" class="headerlink" title="查询宠物年龄和家庭情况"></a>查询宠物年龄和家庭情况</h4><pre><code>select pet.name,
 timestampdiff(year,birth,date) as age,
 remark
 from pet inner join event
 on pet.name = event.name
-where event.type = &apos;litter&apos;;</code></pre>
+where event.type = &#39;litter&#39;;</code></pre>
+
             </div>
             <hr/>
 
@@ -1012,9 +1026,10 @@ where event.type = &apos;litter&apos;;</code></pre>
                             在本地执行
 
 
-ssh-keygen -t rsa这会在用户目录生成 id_rsa 和 id_rsa.pub 两个文件
+ssh-keygen -t rsa
+这会在用户目录生成 id_rsa 和 id_rsa.pub 两个文件
 将 id_rsa.pub 发送到远程要登陆的linux 服务器
-scp ./id_rsa.pub  username@r
+scp ./id_rsa.pub  username@
                         
                     </div>
                     <div class="publish-info">
@@ -1063,7 +1078,8 @@ scp ./id_rsa.pub  username@r
 for col in df.columns:
     series = df[col]
 
-10 Minutes t
+
+10 Minutes 
                         
                     </div>
                     <div class="publish-info">

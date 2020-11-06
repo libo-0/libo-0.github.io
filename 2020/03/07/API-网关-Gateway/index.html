@@ -443,13 +443,13 @@
 <li>它创建了客户端和后端的耦合。客户端必须知道单个服务是怎样分解的。这让客户端更难维持，同样更难重构服务。</li>
 <li>单次操作可能需要调用多次服务。这会导致多个网络 round trip 在客户端和服务之间，添加了很大的延迟。</li>
 <li>每个公共面对的服务必须处理例如认证，SSL，和客户端速率限制。</li>
-<li>服务必须暴露客户端友好的协议，例如 HTTP 或者 WebSocket。这限制了<a href="https://docs.microsoft.com/en-us/azure/architecture/microservices/design/interservice-communication" target="_blank" rel="noopener">沟通协议</a>的选择。</li>
+<li>服务必须暴露客户端友好的协议，例如 HTTP 或者 WebSocket。这限制了<a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/azure/architecture/microservices/design/interservice-communication">沟通协议</a>的选择。</li>
 <li>公共端点的服务面临潜在的攻击风险，必须被加强。</li>
 </ul>
 <p>一个网关帮忙处理这些问题，功过解耦客户端与服务端。网关可能执行很多不同的功能，你可能不需要所有的，这些功能可能被分类为下列的设计模式：</p>
-<p><a href="https://docs.microsoft.com/en-us/azure/architecture/patterns/gateway-routing" target="_blank" rel="noopener">网关路由</a>： 使用网关作为反向代理来路由请求到一个或多个后端服务，使用第 7 层路由。网关给客户端提供了一个单一端点，帮助客户端与服务解耦。</p>
-<p><a href="https://docs.microsoft.com/en-us/azure/architecture/patterns/gateway-aggregation" target="_blank" rel="noopener">网关聚集</a>：使用网关来聚集多个请求到单个请求。这个模式应用，当单次操作需要调用多个后端服务时。客户端发送一个请求到网关。网关分发请求到各种后端服务，然后聚集结果，把它们发送回给客户端。这减少了客户端和后端的沟通。</p>
-<p><a href="https://docs.microsoft.com/en-us/azure/architecture/patterns/gateway-offloading" target="_blank" rel="noopener">网关 Offloading</a>：使用网关来卸载功能，从单个服务到网关，尤其是跨-切的关注点。这非常有用，将这些功能在一个地方加固，而不是让每个服务都实现它们。这对于需要特定技巧来实现的特点相当有用，例如认证和授权。</p>
+<p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/azure/architecture/patterns/gateway-routing">网关路由</a>： 使用网关作为反向代理来路由请求到一个或多个后端服务，使用第 7 层路由。网关给客户端提供了一个单一端点，帮助客户端与服务解耦。</p>
+<p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/azure/architecture/patterns/gateway-aggregation">网关聚集</a>：使用网关来聚集多个请求到单个请求。这个模式应用，当单次操作需要调用多个后端服务时。客户端发送一个请求到网关。网关分发请求到各种后端服务，然后聚集结果，把它们发送回给客户端。这减少了客户端和后端的沟通。</p>
+<p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/azure/architecture/patterns/gateway-offloading">网关 Offloading</a>：使用网关来卸载功能，从单个服务到网关，尤其是跨-切的关注点。这非常有用，将这些功能在一个地方加固，而不是让每个服务都实现它们。这对于需要特定技巧来实现的特点相当有用，例如认证和授权。</p>
 <p>这里是一些功能能够卸载到网关的：</p>
 <ul>
 <li>SSL termination</li>
@@ -468,12 +468,12 @@
 </li>
 <li><p>服务网进入控制器。如果你使用服务网例如 linkerd 或者 Istio，考虑相应的服务网对应的进入控制特点。例如 Istio 进入控制提供第 7 层路由，HTTP 重定向，重试和其他特点。</p>
 </li>
-<li><p><a href="https://docs.microsoft.com/en-us/azure/application-gateway/" target="_blank" rel="noopener">Azure Application Gateway</a>. 应用网关是一个管理负载均衡服务，可以执行第7层路由和 SSL termination。它同样提供了应用防火墙。</p>
+<li><p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/azure/application-gateway/">Azure Application Gateway</a>. 应用网关是一个管理负载均衡服务，可以执行第7层路由和 SSL termination。它同样提供了应用防火墙。</p>
 </li>
-<li><p><a href="https://docs.microsoft.com/en-us/azure/api-management/" target="_blank" rel="noopener">Azure API Management</a>. API 管理是一个完整并立刻可用的解决方法来出版 API 到外部或内部客户端。它提供了有用的特点来管理公共 API，包括速率限制，IP 白名单，使用 Azure Active Directory 来认证和其他身份提供商。API 管理不提供任何负载均衡，所以它应该结合负载均衡器例如应用网关或反向代理。</p>
+<li><p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/azure/api-management/">Azure API Management</a>. API 管理是一个完整并立刻可用的解决方法来出版 API 到外部或内部客户端。它提供了有用的特点来管理公共 API，包括速率限制，IP 白名单，使用 Azure Active Directory 来认证和其他身份提供商。API 管理不提供任何负载均衡，所以它应该结合负载均衡器例如应用网关或反向代理。</p>
 </li>
 </ul>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>Microsoft Azure <a href="https://docs.microsoft.com/en-us/azure/architecture/microservices/design/gateway" target="_blank" rel="noopener">Using API gateways in microservices</a></p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>Microsoft Azure <a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/azure/architecture/microservices/design/gateway">Using API gateways in microservices</a></p>
 
             </div>
             <hr/>

@@ -397,7 +397,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    331
+                    334
                 </div>
                 
 
@@ -428,21 +428,28 @@
 主机node2 192.168.101.239
 主机node3 192.168.101.240
 主机node4 192.168.101.241
-主机node5 192.168.101.243</code></pre><p>所有主机网管设置为 192.168.101.102， 即 VirtualBox Host-Only Ethernet Adapter 的IP 地址</p>
+主机node5 192.168.101.243</code></pre>
+<p>所有主机网管设置为 192.168.101.102， 即 VirtualBox Host-Only Ethernet Adapter 的IP 地址</p>
 <p>安装虚拟机，配置网络连接方式为hostonly，5台虚拟机均选择网络适配器 VirtualBox Host-Only Ethernet Adapter. 在 win10 宿主机上对以太网进行共享，右击 <em>以太网</em> -&gt; <em>属性</em> -&gt; <em>共享</em> -&gt; 勾选两个复选框，选择分享到 VirtualBox Host-Only Ethernet Adapter 网卡。</p>
 <p>虚拟机安装完后，对每台虚拟机: 修改 /etc/network/interfaces.</p>
 <p>首先，查看网卡名称</p>
-<pre><code>ifconfig</code></pre><p>我的为 enp0s3</p>
+<pre><code>ifconfig</code></pre>
+<p>我的为 enp0s3</p>
 <p>修改 /etc/network/interfaces</p>
-<pre><code>sudo vim /etc/network/interfaces</code></pre><p>添加以下设置静态ip，网关设置为 VirtualBox Host-Only Ethernet Adapter 网卡的IP地址</p>
+<pre><code>sudo vim /etc/network/interfaces</code></pre>
+<p>添加以下设置静态ip，网关设置为 VirtualBox Host-Only Ethernet Adapter 网卡的IP地址</p>
 <pre><code>auto enp0s3
 iface enp0s3 inet static
 address 192.168.101.237
 netmask 255.255.255.0
-gateway 192.168.101.102</code></pre><p>重启网卡</p>
-<pre><code>/etc/init.d/networking restart</code></pre><p>设置DNS</p>
-<pre><code>sudo vim /etc/systemd/resolved.conf</code></pre><p>修改DNS</p>
-<pre><code>DNS=114.114.114.114</code></pre><p>重启虚拟机</p>
+gateway 192.168.101.102</code></pre>
+<p>重启网卡</p>
+<pre><code>/etc/init.d/networking restart</code></pre>
+<p>设置DNS</p>
+<pre><code>sudo vim /etc/systemd/resolved.conf</code></pre>
+<p>修改DNS</p>
+<pre><code>DNS=114.114.114.114</code></pre>
+<p>重启虚拟机</p>
 
             </div>
             <hr/>
@@ -703,25 +710,26 @@ gateway 192.168.101.102</code></pre><p>重启网卡</p>
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/01/13/Spark%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+                <a href="/2019/01/13/Spark%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="Spark机器学习笔记">
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="Spark安装与配置">
                         
-                        <span class="card-title">Spark机器学习笔记</span>
+                        <span class="card-title">Spark安装与配置</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            机器学习机器学习是数据通过算法构建出模型并对模型进行评估，评估的性能如果达到要求就拿这个模型来测试其他数据，如果达不到要求就要调整算法来重新建立模型，再次进行评估，如此循环反复，最终获得满意的经验来处理其他数据。
+                            
+安装Spark-2.4.0
+  tar xf spark-2.4.0.tar.gz -C /env
 
 
 
-监督学习
 
-监督是从
+将 spark-2.4.0/yarn 目录下的 spark-2.4.0-yarn-shuffle.jar 拷贝到/env/hado
                         
                     </div>
                     <div class="publish-info">
@@ -739,12 +747,8 @@ gateway 192.168.101.102</code></pre><p>重启网卡</p>
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/spark/">
-                        <span class="chip bg-color">spark</span>
-                    </a>
-                    
-                    <a href="/tags/ml/">
-                        <span class="chip bg-color">ml</span>
+                    <a href="/tags/Spark/">
+                        <span class="chip bg-color">Spark</span>
                     </a>
                     
                 </div>

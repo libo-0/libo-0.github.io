@@ -113,6 +113,15 @@ deploy:
    verbose: true
    ignore_errors: true
 
+- type: rsync
+  host: localhost
+  user: warmfrog
+  root: /Users/warmfrog/Sites/Docs/gitee.io
+  port: 22
+  delete: true
+  verbose: true
+  ignore_errors: false
+
 -  type: git
    repo: git@github.com:libo-0/libo-0.github.io.git
    branch: master
